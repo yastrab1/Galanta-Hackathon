@@ -1,0 +1,1 @@
+# KockatýKalendár.sk Frontend
