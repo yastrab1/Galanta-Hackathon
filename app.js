@@ -127,7 +127,7 @@ const list_render = () => {
 	// Sciences filter
 	if (FILTER.sciences.length != 0) {
 		visible_events = visible_events.filter((event) => {
-			for (var i = FILTER.sciences.length - 1; i >= 0; i--) {
+			for (let i = FILTER.sciences.length - 1; i >= 0; i--) {
 				if (event.sciences.indexOf(FILTER.sciences[i]) === -1) {
 					return false
 				}
@@ -137,7 +137,7 @@ const list_render = () => {
 		})
 	}
 
-	for (var i = 0; i < visible_events.length; i++) {
+	for (let i = 0; i < visible_events.length; i++) {
 		let event = visible_events[i]
 		event['fmt'] = fmt
 		document.getElementById('event-list').innerHTML += Mustache.render(TEMPLATE, event)
