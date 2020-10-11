@@ -178,14 +178,14 @@ const dropdown_set_active = (elem, active) => {
 }
 
 document.getElementById('dropdown-school').querySelectorAll('li').forEach((elem) => elem.onclick = (event) => {
-	let school = event.target.dataset.school
+	let school = event.currentTarget.dataset.school
 
 	if (FILTER.school == school) {
-		dropdown_set_active(event.target, false)
+		dropdown_set_active(event.currentTarget, false)
 		FILTER.school = false
 	} else {
 		document.querySelectorAll('#dropdown-school li').forEach((elem) => dropdown_set_active(elem, false))
-		dropdown_set_active(event.target, true)
+		dropdown_set_active(event.currentTarget, true)
 		FILTER.school = school
 	}
 
@@ -195,13 +195,13 @@ document.getElementById('dropdown-school').querySelectorAll('li').forEach((elem)
 })
 
 document.getElementById('dropdown-sciences').querySelectorAll('li').forEach((elem) => elem.onclick = (event) => {
-	let science = event.target.dataset.science
+	let science = event.currentTarget.dataset.science
 
 	if (FILTER.sciences.indexOf(science) !== -1) {
-		dropdown_set_active(event.target, false)
+		dropdown_set_active(event.currentTarget, false)
 		FILTER.sciences = FILTER.sciences.filter((x) => x != science)
 	} else {
-		dropdown_set_active(event.target, true)
+		dropdown_set_active(event.currentTarget, true)
 		FILTER.sciences.push(science)
 	}
 
