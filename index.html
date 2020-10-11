@@ -177,30 +177,32 @@
             <i data-feather="filter" class="mr-2"></i> Filter:
           </div>
 
-          <div class="relative">
-            <button class="flex bg-white border px-3 rounded-md py-1 text-black mr-2 focus:shadow-outline focus:border-blue-500 focus:bg-gray-400">
-              <span>ZŠ</span>
+          <div class="relative js-dropdown" id="dropdown-school">
+            <button class="js-dropdown-button flex bg-white border px-3 rounded-md py-1 text-black mr-2 focus:shadow-outline focus:border-blue-500 focus:bg-gray-400">
+              <span>(všetky školy)</span>
               <i data-feather="chevron-down" class="w-4 ml-1"></i>
             </button>
 
-            <div class="hidden absolute mt-1 bg-white border border-gray-500 rounded-md shadow-md">
+            <div class="js-dropdown-menu hidden absolute mt-1 bg-white border border-gray-500 rounded-md shadow-md">
               <ul class="py-2 px-2 -mb-1">
-                <li class="whitespace-no-wrap py-1 bg-blue-500 text-white px-3 rounded-md mb-1">Základná škola</li>
-                <li class="whitespace-no-wrap py-1 text-black hover:bg-blue-500 hover:text-white px-3 rounded-md mb-1">Stredná škola</li>
+                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-school="zs">Základná škola</li>
+                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-school="ss">Stredná škola</li>
               </ul>
             </div>
           </div>
 
-          <div class="relative">
-            <button class="flex bg-white border px-3 rounded-md py-1 text-black mr-2 focus:shadow-outline focus:border-blue-500 focus:bg-gray-400">
-              <span>matematika</span>
+          <div class="relative js-dropdown" id="dropdown-sciences">
+            <button class="js-dropdown-button flex bg-white border px-3 rounded-md py-1 text-black mr-2 focus:shadow-outline focus:border-blue-500 focus:bg-gray-400">
+              <span>(všetky vedy)</span>
               <i data-feather="chevron-down" class="w-4 ml-1"></i>
             </button>
 
-            <div class="hidden absolute mt-1 bg-white border border-gray-500 rounded-md shadow-md">
+            <div class="js-dropdown-menu hidden absolute mt-1 bg-white border border-gray-500 rounded-md shadow-md">
               <ul class="py-2 px-2 -mb-1">
-                <li class="whitespace-no-wrap py-1 bg-blue-500 text-white px-3 rounded-md mb-1">Stredná škola</li>
-                <li class="whitespace-no-wrap py-1 text-black hover:bg-blue-500 hover:text-white px-3 rounded-md mb-1">Základná škola</li>
+                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="mat">Matematika</li>
+                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="fyz">Fyzika</li>
+                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="inf">Informatika</li>
+                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="other">Ostatné</li>
               </ul>
             </div>
           </div>
@@ -226,7 +228,10 @@
             <h2 class="font-bold text-xl">{{ name }}</h2>
           </div>
           <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
-            <div class="mr-5">{{ fmt.type }}</div>
+            <div class="flex items-center mr-5">
+              <i class="w-4 mr-2" data-feather="info"></i>
+              <span>{{ fmt.type }}</span>
+            </div>
 
             <div class="flex items-center mr-5">
               <i class="w-4 mr-2" data-feather="users"></i>

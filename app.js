@@ -20,11 +20,26 @@ const LANG = {
 		'fyz': 'fyzika',
 		'inf': 'informatika',
 		'other': 'iné',
+	},
+	sciences_short: {
+		'mat': 'M',
+		'fyz': 'F',
+		'inf': 'I',
+		'other': 'iné',
 	}
+}
+
+const DROPDOWN_CLASSES = {
+	on: ['bg-blue-500', 'text-white'],
+	off: ['text-black', 'hover:bg-blue-500', 'hover:text-white'],
 }
 
 const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/master/build/2019_20.json'
 let DATA = []
+let FILTER = {
+	school: false,
+	sciences: [],
+}
 
 const load_data = () => {
 	let xhr = new XMLHttpRequest()
@@ -38,14 +53,13 @@ const load_data = () => {
 			return new Date(a.date.start) - new Date(b.date.start)
 		})
 
-		render()
+		list_render()
 	}
 }
 
 // Formatting utilities
 const fmt = {
 	places: function () {
-		console.log(this)
 		return this.places.join(', ')
 	},
 
@@ -97,12 +111,34 @@ const fmt = {
 	}
 }
 
-const render = () => {
+const list_render = () => {
 	const TEMPLATE = document.getElementById('template-event-item').innerHTML
 	document.getElementById('event-list').innerHTML = ''
 
-	for (var i = 0; i < DATA.length; i++) {
-		let event = DATA[i]
+	let visible_events = DATA
+
+	// School filter
+	if (FILTER.school) {
+		visible_events = visible_events.filter((event) => {
+			return (event.contestants.min.substr(0, 2) == FILTER.school || event.contestants.max.substr(0, 2) == FILTER.school)
+		})
+	}
+
+	// Sciences filter
+	if (FILTER.sciences.length != 0) {
+		visible_events = visible_events.filter((event) => {
+			for (var i = FILTER.sciences.length - 1; i >= 0; i--) {
+				if (event.sciences.indexOf(FILTER.sciences[i]) === -1) {
+					return false
+				}
+			}
+
+			return true
+		})
+	}
+
+	for (var i = 0; i < visible_events.length; i++) {
+		let event = visible_events[i]
 		event['fmt'] = fmt
 		document.getElementById('event-list').innerHTML += Mustache.render(TEMPLATE, event)
 	}
@@ -113,3 +149,73 @@ const render = () => {
 
 feather.replace()
 load_data()
+
+// FILTERS
+const dropdown_onclick = (e) => {
+	let menu = e.currentTarget.parentElement.querySelector('.js-dropdown-menu')
+
+	if (menu.classList.contains('hidden')) {
+		dropdown_hide()
+		menu.classList.remove('hidden')
+	} else {
+		menu.classList.add('hidden')
+	}
+}
+document.querySelectorAll('.js-dropdown-button').forEach((elem) => elem.onclick = dropdown_onclick)
+
+const dropdown_hide = () => {
+	document.querySelectorAll('.js-dropdown-menu').forEach((elem) => elem.classList.add('hidden'))
+}
+
+const dropdown_set_active = (elem, active) => {
+	if (active) {
+		DROPDOWN_CLASSES.off.forEach((cls) => elem.classList.remove(cls))
+		DROPDOWN_CLASSES.on.forEach((cls) => elem.classList.add(cls))
+	} else {
+		DROPDOWN_CLASSES.on.forEach((cls) => elem.classList.remove(cls))
+		DROPDOWN_CLASSES.off.forEach((cls) => elem.classList.add(cls))
+	}
+}
+
+document.getElementById('dropdown-school').querySelectorAll('li').forEach((elem) => elem.onclick = (event) => {
+	let school = event.target.dataset.school
+
+	if (FILTER.school == school) {
+		dropdown_set_active(event.target, false)
+		FILTER.school = false
+	} else {
+		document.querySelectorAll('#dropdown-school li').forEach((elem) => dropdown_set_active(elem, false))
+		dropdown_set_active(event.target, true)
+		FILTER.school = school
+	}
+
+	dropdown_hide()
+	document.querySelector('#dropdown-school .js-dropdown-button span').innerHTML = LANG.contestant_types[FILTER.school] || "(všetky školy)"
+	list_render()
+})
+
+document.getElementById('dropdown-sciences').querySelectorAll('li').forEach((elem) => elem.onclick = (event) => {
+	let science = event.target.dataset.science
+
+	if (FILTER.sciences.indexOf(science) !== -1) {
+		dropdown_set_active(event.target, false)
+		FILTER.sciences = FILTER.sciences.filter((x) => x != science)
+	} else {
+		dropdown_set_active(event.target, true)
+		FILTER.sciences.push(science)
+	}
+
+	dropdown_hide()
+
+	let display = ''
+	if (FILTER.sciences.length == 0) {
+		display = '(všetky vedy)'
+	} else if (FILTER.sciences.length == 1) {
+		display = LANG.sciences[FILTER.sciences[0]]
+	} else {
+		display = FILTER.sciences.map((x) => LANG.sciences_short[x]).join(', ')
+	}
+
+ 	document.querySelector('#dropdown-sciences .js-dropdown-button span').innerHTML = display
+ 	list_render()
+})
