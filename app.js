@@ -111,5 +111,85 @@ const render = () => {
 	feather.replace()
 }
 
+const insert_event = (node, color) => {
+	var event_dot = document.createElement("div")
+	event_dot.setAttribute("class", `w-2 h-2 ${color} rounded-full mr-1 mb-1`)
+	node.appendChild(event_dot)
+}
+
+const setup_calendar = () => {
+
+    var calendar = jsCalendar.new({
+        target: '#calendar',
+        firstDayOfTheWeek: "2",
+        monthFormat: "month YYYY",
+        language : "sk"
+    });
+
+    // Render header
+    calendar.onMonthRender(function(index, element, info) {
+		// Setup arrows & filter
+		var right =  document.createElement("div")
+		right.setAttribute("class", "flex flex-1 justify-end")
+		var filter = document.createElement("i")
+		filter.setAttribute("data-feather", "filter")
+		filter.setAttribute("class", "mr-2 md:hidden")
+		filter.setAttribute("style", "margin-left: -24;")
+		right.appendChild(filter)
+		var right_arrow = document.createElement("i")
+		right_arrow.setAttribute("data-feather", "arrow-right")
+		right.appendChild(right_arrow)
+		element.parentElement.getElementsByClassName("jsCalendar-nav-right")[0].appendChild(right)
+		
+		var left = document.createElement("i")
+		left.setAttribute("data-feather", "arrow-left")
+		element.parentElement.getElementsByClassName("jsCalendar-nav-left")[0].appendChild(left)
+    });
+
+    // Render day names ( P U S Š P S N )
+    calendar.onDayRender(function(index, element, info) {
+		if (index == 0 || index == 6) {
+			element.style.color = '#c32525'
+		}
+    });
+    
+    // Render individual days
+    calendar.onDateRender(function(date, element, info) {
+		if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
+			element.style.color = (info.isCurrentMonth) ? '#c32525' : '#c3252577'
+		}
+		
+		// Insert event container
+		var event_container = document.createElement("div")
+		event_container.setAttribute("class", "flex justify-center -mr-1 flex-wrap")
+		element.appendChild(event_container)
+
+		// TODO: Load from data
+		// Example:
+		var event_dates = [
+			jsCalendar.tools.stringToDate("15-10-2020"),
+			jsCalendar.tools.stringToDate("18-10-2020")
+		]
+		
+		event_dates.forEach(event_date => {
+			if (event_date.getTime() === date.getTime()) {
+				insert_event(event_container, "bg-red-600")
+				insert_event(event_container, "bg-gray-500")
+			}
+		});
+    });
+
+	calendar.onDateClick(function(event, date){
+		// TODO: scroll to events around clicked date
+		// Test:
+		document.getElementById("scroll").scrollTo(0, 5000)
+		// maybe add smooth scroll 
+	});
+
+    // Refresh layout
+    calendar.refresh()
+}
+
 feather.replace()
 load_data()
+setup_calendar()

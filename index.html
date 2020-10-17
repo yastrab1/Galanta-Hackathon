@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css" />
   <title>KockatýKalendár.sk</title>
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
@@ -17,159 +18,11 @@
   </div>
 
   <div class="flex overflow-hidden flex-col md:flex-row flex-grow">
-    <div class="bg-gray-100 py-2 border-b md:border-b-0 md:border-r">
-
-      <div class="px-4 md:px-6 flex items-center justify-between md:py-2 flex-row flex-wrap text-gray-700">
-        <div class="flex-1">
-          <i data-feather="arrow-left"></i>
-        </div>
-        <h2 class="text-xl text-center font-bold flex-shrink-0">Január 2020</h2>
-        <div class="flex flex-1 justify-end">
-          <i data-feather="filter" class="mr-2 md:hidden"></i>
-          <i data-feather="arrow-right"></i>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-7 border border-gray-400 mx-2 my-2 text-center" style="grid-auto-rows: 1fr;">
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">1</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">2</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">3</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">4</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">5</div>
-          <div class="flex justify-center -mr-1 flex-wrap">
-            <div class="w-2 h-2 bg-red-600 rounded-full mr-1 mb-1"></div>
-            <div class="w-2 h-2 bg-gray-500 rounded-full mr-1 mb-1"></div>
-            <div class="w-2 h-2 bg-gray-500 rounded-full mr-1 mb-1"></div>
-          </div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">6</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">7</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">8</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">9</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">10</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">11</div>
-          <div class="flex justify-center -mr-1 flex-wrap">
-            <div class="w-2 h-2 bg-orange-500 rounded-full mr-1 mb-1"></div>
-          </div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">12</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">13</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">14</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">15</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">16</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">17</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">18</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">19</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">20</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">21</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">22</div>
-          <div class="flex justify-center -mr-1 flex-wrap">
-            <div class="w-2 h-2 bg-gray-500 rounded-full mr-1 mb-1"></div>
-            <div class="w-2 h-2 bg-gray-500 rounded-full mr-1 mb-1"></div>
-          </div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">23</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">24</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">25</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">26</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">27</div>
-        </div>
-
-        <div class="border-b border-gray-400 px-2 py-1">
-          <div class="font-bold text-red-700 text-xs">28</div>
-        </div>
-
-        <div class="border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">29</div>
-        </div>
-
-        <div class="border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">30</div>
-        </div>
-
-        <div class="border-gray-400 px-2 py-1">
-          <div class="font-bold text-gray-600 text-xs">31</div>
-        </div>
-      </div>
+    <div class="calendar-holder bg-gray-100 py-2 border-b md:border-b-0 md:border-r">
+      <div id="calendar" class="kk flex mx-2 my-2 text-center"></div>
     </div>
 
-    <div class="flex-1 overflow-y-scroll">
+    <div id="scroll" class="flex-1 overflow-y-scroll">
       <!-- filter -->
       <div class="hidden md:block bg-gray-100 border-b text-gray-700 sticky">
         <div class="max-w-4xl mx-auto px-4 py-3 flex items-center flex-row flex-wrap">
@@ -259,8 +112,9 @@
       </div>
     </div>
   </script>
-
   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.lang.sk.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" integrity="sha512-6AXIWogbKpsHvoZJrJtHpIYES4wP8czSj0zk7ZfwOYS8GWYFNSykwdfapt7yQc4ikZytemBu+QyVObzBHJMwYg==" crossorigin="anonymous"></script>
   <script src="./app.js"></script>
 </body>
