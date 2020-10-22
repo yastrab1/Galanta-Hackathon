@@ -1,27 +1,26 @@
 /* BEGIN CALENDAR STYLES */
 
-
-@media (min-width: 768px) { 
-	.calendar-holder {
-		width: 22.125rem;
-	}
+@media (min-width: 768px) {
+  .calendar-holder {
+    width: 22.125rem;
+  }
 }
 
 .jsCalendar.kk {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .jsCalendar.kk tbody .mr-1 {
-	margin-right: .25rem !important;
+  margin-right: .25rem !important;
 }
 
 .jsCalendar.kk tbody .mb-1 {
-	margin-bottom: .25rem !important;
+  margin-bottom: .25rem !important;
 }
 
 .jsCalendar.kk table {
-  font-family: inherit; 
+  font-family: inherit;
   display: block;
   border-collapse: collapse;
   background-color: transparent;
@@ -43,7 +42,7 @@
 .jsCalendar.kk thead .jsCalendar-nav-right:after {
   content: "" !important;
 }
-  
+
 .jsCalendar.kk thead .jsCalendar-title {
   text-align: center;
   width: 100%;
@@ -106,12 +105,12 @@
   display: table-cell;
 }
 
-.jsCalendar.kk tbody tr { 
+.jsCalendar.kk tbody tr {
   border-bottom-width: 1px;
   border-color: rgba(203,213,224,1);
 }
 
-.jsCalendar.kk tbody tr:last-child { 
+.jsCalendar.kk tbody tr:last-child {
   border-bottom-width: 0px;
 }
 
@@ -125,3 +124,23 @@
 .jsCalendar.kk tbody td.jsCalendar-previous {
   color: rgba(74,85,104,0.2);
 }
+
+/* END CALENDAR STYLES*/
+/* BEGIN DETAILS STYLES*/
+
+summary {
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-position: right;
+  background-repeat: no-repeat;
+  list-style-image: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary{
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>');
+}
+
+/* END DETAILS STYLES*/

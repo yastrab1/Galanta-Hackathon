@@ -122,6 +122,7 @@ const render = () => {
 	for (var i = 0; i < DATA.length; i++) {
 		let event = DATA[i]
 		event['fmt'] = fmt
+		if (window.innerWidth > 768) event["open"] = true;
 		document.getElementById('event-list').innerHTML += Mustache.render(TEMPLATE, event)
 	}
 
@@ -211,3 +212,12 @@ const setup_calendar = () => {
 feather.replace()
 load_data()
 setup_calendar()
+
+window.onresize = () => {
+	if (window.innerWidth > 768) {
+		[...document.getElementsByTagName("details")].forEach(node => {
+			node.open = true;
+		})
+	}
+}
+

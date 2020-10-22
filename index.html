@@ -1,30 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="sk-SK">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
   <link rel="stylesheet" href="app.css" />
   <title>KockatýKalendár.sk</title>
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
-  <div class="bg-blue-500 text-white">
-    <div class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
+  <header class="bg-blue-500 text-white">
+    <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
       <a href="#" class="font-bold text-xl mb-1 md:mb-0">KockatýKalendár.sk</a>
 
       <!-- <a href="#" class="font-medium px-3 py-1 bg-blue-600 rounded-lg hover:bg-blue-700 text-xs md:text-sm">Prihlásiť sa na odber noviniek</a> -->
-    </div>
-  </div>
+    </nav>
+  </header>
 
   <div class="flex overflow-hidden flex-col md:flex-row flex-grow">
-    <div class="calendar-holder bg-gray-100 border-b md:border-b-0 md:border-r">
-      <div id="calendar" class="kk flex mx-2 my-2 text-center"></div>
-    </div>
+    <aside class="calendar-holder bg-gray-100 border-b md:border-b-0 md:border-r">
+      <section id="calendar" class="kk flex mx-2 my-2 text-center"></section>
+    </aside>
 
-    <div id="scroll" class="flex-1 overflow-y-scroll">
+    <main id="scroll" class="flex-1 overflow-y-scroll">
       <!-- filter -->
-      <div class="hidden md:block bg-gray-100 border-b text-gray-700 sticky">
+      <section class="hidden md:block bg-gray-100 border-b text-gray-700 sticky">
         <div class="max-w-4xl mx-auto px-4 py-3 flex items-center flex-row flex-wrap">
           <div class="flex mr-4">
             <i data-feather="filter" class="mr-2"></i> Filter:
@@ -58,64 +58,81 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="max-w-4xl mx-auto px-4 py-2" id="event-list">
+      <section class="max-w-4xl mx-auto px-4 py-2" id="event-list">
 
         Loading...
 
-      </div>
-    </div>
-    </div>
+      </section>
+    </main>
   </div>
 
   <script id="template-event-item" type="x-tmpl-mustache">
-    <div class="mb-2 md:mb-4">
-      <div class="flex items-center">
-        <div>
-          <div class="flex items-baseline space-x-1">
-            <div>{{ fmt.date }}</div>
-            <span class="text-3xl" style="color: {{ fmt.color }}">●</span>
-            <h2 class="font-bold text-xl">{{ name }}</h2>
+    <details class="mb-2 md:mb-4" {{#open}}open{{/open}}>
+      <summary class="md:hidden block">
+        <div class="flex items-baseline space-x-1">
+          <div>{{ fmt.date }}</div>
+          <span class="text-3xl" style="color: {{ fmt.color }}">●</span>
+          <h2 class="font-bold text-xl">{{ name }}</h2>
+        </div>
+        <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
+          <div class="mr-5">{{ fmt.type }}</div>
+
+          <div class="flex items-center mr-5">
+            <i class="w-4 mr-2" data-feather="users"></i>
+            <span>{{ fmt.contestants }}</span>
           </div>
-          <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
-            <div class="mr-5">{{ fmt.type }}</div>
 
-            <div class="flex items-center mr-5">
-              <i class="w-4 mr-2" data-feather="users"></i>
-              <span>{{ fmt.contestants }}</span>
-            </div>
+          <div class="flex items-center mr-5">
+            <i class="w-4 mr-2" data-feather="book"></i>
+            <span>{{ fmt.sciences }}</span>
+          </div>
 
-            <div class="flex items-center mr-5">
-              <i class="w-4 mr-2" data-feather="book"></i>
-              <span>{{ fmt.sciences }}</span>
-            </div>
-
-            <div class="flex items-center mr-5">
-              <i class="w-4 mr-2" data-feather="map-pin"></i>
-              <span>{{ fmt.places }}</span>
-            </div>
+          <div class="flex items-center mr-5">
+            <i class="w-4 mr-2" data-feather="map-pin"></i>
+            <span>{{ fmt.places }}</span>
           </div>
         </div>
-
-        <div class="flex rounded-full border-gray-400 text-gray-700 md:hidden">
-          <i data-feather="chevron-up"></i>
+      </summary>
+      <header class="md:block hidden">
+        <div class="flex items-baseline space-x-1">
+          <div>{{ fmt.date }}</div>
+          <span class="text-3xl" style="color: {{ fmt.color }}">●</span>
+          <h2 class="font-bold text-xl">{{ name }}</h2>
         </div>
-      </div>
+        <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
+          <div class="mr-5">{{ fmt.type }}</div>
 
-      <div>
+          <div class="flex items-center mr-5">
+            <i class="w-4 mr-2" data-feather="users"></i>
+            <span>{{ fmt.contestants }}</span>
+          </div>
+
+          <div class="flex items-center mr-5">
+            <i class="w-4 mr-2" data-feather="book"></i>
+            <span>{{ fmt.sciences }}</span>
+          </div>
+
+          <div class="flex items-center mr-5">
+            <i class="w-4 mr-2" data-feather="map-pin"></i>
+            <span>{{ fmt.places }}</span>
+          </div>
+        </div>
+      </header>
+      <article>
         <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil blanditiis, nulla modi, natus doloribus temporibus. Natus tempore, tempora quam doloribus.</p>
 
         {{#link}}
         <a href="{{ link }}" class="rounded-lg bg-gray-300 text-gray-700 font-bold px-3 py-2 hover:bg-gray-400 text-xs">Viac informácií &raquo;</a>
         {{/link}}
-      </div>
-    </div>
+      </article>
+    </details>
   </script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.lang.sk.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" integrity="sha512-6AXIWogbKpsHvoZJrJtHpIYES4wP8czSj0zk7ZfwOYS8GWYFNSykwdfapt7yQc4ikZytemBu+QyVObzBHJMwYg==" crossorigin="anonymous"></script>
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
