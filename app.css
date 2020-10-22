@@ -47,6 +47,7 @@
 .jsCalendar.kk thead .jsCalendar-title {
   text-align: center;
   width: 100%;
+  line-height: 50px;
 }
 
 .jsCalendar.kk thead .jsCalendar-title-name {
