@@ -20,6 +20,20 @@ const LANG = {
 		'fyz': 'fyzika',
 		'inf': 'informatika',
 		'other': 'iné',
+	},
+	colors: {
+		'red': '#E53E3E',
+		'orange': '#ED8936',
+		'yellow': '#F6BF26',
+		'green': '#7CB342',
+		'blue': '#4299E1',
+		'purple': '#8E24AA',
+	},
+	science_color: {
+		'mat': 'blue',
+		'fyz': 'orange',
+		'inf': 'green',
+		'other': 'red',
 	}
 }
 
@@ -94,6 +108,10 @@ const fmt = {
 
 	sciences: function () {
 		return this.sciences.map((x) => LANG.sciences[x]).join(', ')
+	},
+
+	color: function () {
+		return LANG.colors?.[this.color] ?? this.color ?? LANG.colors[LANG.science_color[this.sciences[0]]]
 	}
 }
 
@@ -119,15 +137,15 @@ const insert_event = (node, color) => {
 
 const setup_calendar = () => {
 
-    var calendar = jsCalendar.new({
-        target: '#calendar',
-        firstDayOfTheWeek: "2",
-        monthFormat: "month YYYY",
-        language : "sk"
-    });
+	var calendar = jsCalendar.new({
+		target: '#calendar',
+		firstDayOfTheWeek: "2",
+		monthFormat: "month YYYY",
+		language : "sk"
+	});
 
-    // Render header
-    calendar.onMonthRender(function(index, element, info) {
+	// Render header
+	calendar.onMonthRender(function(index, element, info) {
 		// Setup arrows & filter
 		var right =  document.createElement("div")
 		right.setAttribute("class", "flex flex-1 justify-end")
@@ -140,25 +158,25 @@ const setup_calendar = () => {
 		right_arrow.setAttribute("data-feather", "arrow-right")
 		right.appendChild(right_arrow)
 		element.parentElement.getElementsByClassName("jsCalendar-nav-right")[0].appendChild(right)
-		
+
 		var left = document.createElement("i")
 		left.setAttribute("data-feather", "arrow-left")
 		element.parentElement.getElementsByClassName("jsCalendar-nav-left")[0].appendChild(left)
-    });
+	});
 
-    // Render day names ( P U S Š P S N )
-    calendar.onDayRender(function(index, element, info) {
+	// Render day names ( P U S Š P S N )
+	calendar.onDayRender(function(index, element, info) {
 		if (index == 0 || index == 6) {
 			element.style.color = '#c32525'
 		}
-    });
-    
-    // Render individual days
-    calendar.onDateRender(function(date, element, info) {
+	});
+
+	// Render individual days
+	calendar.onDateRender(function(date, element, info) {
 		if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
 			element.style.color = (info.isCurrentMonth) ? '#c32525' : '#c3252577'
 		}
-		
+
 		// Insert event container
 		var event_container = document.createElement("div")
 		event_container.setAttribute("class", "flex justify-center -mr-1 flex-wrap")
@@ -170,24 +188,24 @@ const setup_calendar = () => {
 			jsCalendar.tools.stringToDate("15-10-2020"),
 			jsCalendar.tools.stringToDate("18-10-2020")
 		]
-		
+
 		event_dates.forEach(event_date => {
 			if (event_date.getTime() === date.getTime()) {
 				insert_event(event_container, "bg-red-600")
 				insert_event(event_container, "bg-gray-500")
 			}
 		});
-    });
+	});
 
 	calendar.onDateClick(function(event, date){
 		// TODO: scroll to events around clicked date
 		// Test:
 		document.getElementById("scroll").scrollTo(0, 5000)
-		// maybe add smooth scroll 
+		// maybe add smooth scroll
 	});
 
-    // Refresh layout
-    calendar.refresh()
+	// Refresh layout
+	calendar.refresh()
 }
 
 feather.replace()
