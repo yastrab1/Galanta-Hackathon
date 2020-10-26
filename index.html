@@ -69,33 +69,8 @@
   </div>
 
   <script id="template-event-item" type="x-tmpl-mustache">
-    <details class="mb-2 md:mb-4" {{#open}}open{{/open}}>
-      <summary class="md:hidden block">
-        <div class="flex items-baseline space-x-1">
-          <div>{{ fmt.date }}</div>
-          <span class="text-3xl" style="color: {{ fmt.color }}">●</span>
-          <h2 class="font-bold text-xl">{{ name }}</h2>
-        </div>
-        <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
-          <div class="mr-5">{{ fmt.type }}</div>
-
-          <div class="flex items-center mr-5">
-            <i class="w-4 mr-2" data-feather="users"></i>
-            <span>{{ fmt.contestants }}</span>
-          </div>
-
-          <div class="flex items-center mr-5">
-            <i class="w-4 mr-2" data-feather="book"></i>
-            <span>{{ fmt.sciences }}</span>
-          </div>
-
-          <div class="flex items-center mr-5">
-            <i class="w-4 mr-2" data-feather="map-pin"></i>
-            <span>{{ fmt.places }}</span>
-          </div>
-        </div>
-      </summary>
-      <header class="md:block hidden">
+    <section class="mb-2 md:mb-4 close">
+      <header class="event-header">
         <div class="flex items-baseline space-x-1">
           <div>{{ fmt.date }}</div>
           <span class="text-3xl" style="color: {{ fmt.color }}">●</span>
@@ -127,7 +102,7 @@
         <a href="{{ link }}" class="rounded-lg bg-gray-300 text-gray-700 font-bold px-3 py-2 hover:bg-gray-400 text-xs">Viac informácií &raquo;</a>
         {{/link}}
       </article>
-    </details>
+    </section>
   </script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>

@@ -126,6 +126,12 @@ const render = () => {
 		document.getElementById('event-list').innerHTML += Mustache.render(TEMPLATE, event)
 	}
 
+	[...document.getElementsByClassName("event-header")].forEach(node => {
+		node.addEventListener("click", () => {
+			node.parentElement.classList.toggle("close")
+		})
+	})
+
 	// render icons
 	feather.replace()
 }
@@ -212,12 +218,3 @@ const setup_calendar = () => {
 feather.replace()
 load_data()
 setup_calendar()
-
-window.onresize = () => {
-	if (window.innerWidth > 768) {
-		[...document.getElementsByTagName("details")].forEach(node => {
-			node.open = true;
-		})
-	}
-}
-
