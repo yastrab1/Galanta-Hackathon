@@ -58,40 +58,39 @@ const load_data = () => {
 
 // Formatting utilities
 const fmt = {
-	places: function () {
-		console.log(this)
-		return this.places.join(', ')
+	places: function (event) {
+		return event.places.join(', ')
 	},
 
-	date: function () {
-		if (this.date.text) {
-			return this.date.text
+	date: function (event) {
+		if (event.date.text) {
+			return event.date.text
 		}
 
-		let date_start = new Date(this.date.start)
+		let date_start = new Date(event.date.start)
 		let result = date_start.getDate() + '. ' + LANG.months[date_start.getMonth()]
 
-		if (this.date.end) {
-			let date_end = new Date(this.date.end)
+		if (event.date.end) {
+			let date_end = new Date(event.date.end)
 			result += ' – ' + date_end.getDate() + '. ' + LANG.months[date_end.getMonth()]
 		}
 
 		return result
 	},
 
-	type: function () {
-		return LANG.types[this.type]
+	type: function (event) {
+		return LANG.types[event.type]
 	},
 
-	contestants: function () {
-		let min_type = this.contestants.min.substr(0, 2)
-		let min_year = this.contestants.min.substr(2)
-		let max_type = this.contestants.max.substr(0, 2)
-		let max_year = this.contestants.max.substr(2)
+	contestants: function (event) {
+		let min_type = event.contestants.min.substr(0, 2)
+		let min_year = event.contestants.min.substr(2)
+		let max_type = event.contestants.max.substr(0, 2)
+		let max_year = event.contestants.max.substr(2)
 
 		let result = LANG.contestant_types[min_type] + ' ' + min_year
 
-		if (this.contestants.min == this.contestants.max) {
+		if (event.contestants.min == event.contestants.max) {
 			return result
 		}
 
@@ -106,25 +105,35 @@ const fmt = {
 		return result
 	},
 
-	sciences: function () {
-		return this.sciences.map((x) => LANG.sciences[x]).join(', ')
+	sciences: function (event) {
+		return event.sciences.map((x) => LANG.sciences[x]).join(', ')
 	},
 
-	color: function () {
-		return LANG.colors?.[this.color] ?? this.color ?? LANG.colors[LANG.science_color[this.sciences[0]]]
+	color: function (event) {
+		return LANG.colors?.[event.color] ?? event.color ?? LANG.colors[LANG.science_color[event.sciences[0]]]
 	}
 }
 
-const render = () => {
-	const TEMPLATE = document.getElementById('template-event-item').innerHTML
-	document.getElementById('event-list').innerHTML = ''
+const TEMPLATE = document.getElementById('template-main').innerHTML;
+const PARTIAL_TEMPLATE = document.getElementById('template-event-item').innerHTML;
 
-	for (var i = 0; i < DATA.length; i++) {
-		let event = DATA[i]
-		event['fmt'] = fmt
-		if (window.innerWidth > 768) event["open"] = true;
-		document.getElementById('event-list').innerHTML += Mustache.render(TEMPLATE, event)
-	}
+Mustache.parse(TEMPLATE)
+Mustache.parse(PARTIAL_TEMPLATE)
+
+const render = () => {
+	let event_list = document.getElementById('event-list')
+	event_list.innerHTML = ''
+
+	DATA.forEach(event => {
+		event.color = fmt.color(event)
+		event.places = fmt.places(event)
+		event.date = fmt.date(event)
+		event.type = fmt.type(event)
+		event.contestants = fmt.contestants(event)
+		event.sciences = fmt.sciences(event)
+	})
+
+	event_list.innerHTML = Mustache.render(TEMPLATE, {data: DATA}, {partial : PARTIAL_TEMPLATE});
 
 	[...document.getElementsByClassName("event-header")].forEach(node => {
 		node.addEventListener("click", () => {
@@ -132,8 +141,6 @@ const render = () => {
 		})
 	})
 
-	// render icons
-	feather.replace()
 }
 
 const insert_event = (node, color) => {

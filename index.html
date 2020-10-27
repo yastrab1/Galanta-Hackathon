@@ -72,26 +72,26 @@
     <section class="mb-2 md:mb-4 close">
       <header class="event-header">
         <div class="flex items-baseline space-x-1">
-          <div>{{ fmt.date }}</div>
-          <span class="text-3xl" style="color: {{ fmt.color }}">●</span>
+          <div>{{ date }}</div>
+          <span class="text-3xl" style="color: {{ color }}">●</span>
           <h2 class="font-bold text-xl">{{ name }}</h2>
         </div>
         <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
-          <div class="mr-5">{{ fmt.type }}</div>
+          <div class="mr-5">{{ type }}</div>
 
           <div class="flex items-center mr-5">
-            <i class="w-4 mr-2" data-feather="users"></i>
-            <span>{{ fmt.contestants }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-4 mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>{{ contestants }}</span>
           </div>
 
           <div class="flex items-center mr-5">
-            <i class="w-4 mr-2" data-feather="book"></i>
-            <span>{{ fmt.sciences }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span>{{ sciences }}</span>
           </div>
 
           <div class="flex items-center mr-5">
-            <i class="w-4 mr-2" data-feather="map-pin"></i>
-            <span>{{ fmt.places }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 mr-2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>{{ places }}</span>
           </div>
         </div>
       </header>
@@ -103,6 +103,11 @@
         {{/link}}
       </article>
     </section>
+  </script>
+  <script id="template-main" type="x-tmpl-mustache">
+    {{#data}}
+    {{>partial}}
+    {{/data}}
   </script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
