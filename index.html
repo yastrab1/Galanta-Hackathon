@@ -167,48 +167,44 @@
           <div class="font-bold text-gray-600 text-xs">31</div>
         </div>
       </div>
+
+      <div class="mx-6 mt-6">
+        <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Typ školy</h2>
+
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="school" value="zs">
+          Základná škola
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="school" value="ss">
+          Stredná škola
+        </label>
+
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Vedy</h2>
+
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="mat">
+          Matematika
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="fyz">
+          Fyzika
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="inf">
+          Informatika
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="other">
+          Ostatné
+        </label>
+
+        <button class="mt-6 rounded-lg bg-blue-500 text-white font-bold px-3 py-2 hover:bg-blue-600 text-xs" onclick="load_data()">Zobraziť výsledky</button>
+      </div>
+
     </div>
 
     <div class="flex-1 overflow-y-scroll">
-      <!-- filter -->
-      <div class="hidden md:block bg-gray-100 border-b text-gray-700 sticky">
-        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center flex-row flex-wrap">
-          <div class="flex mr-4">
-            <i data-feather="filter" class="mr-2"></i> Filter:
-          </div>
-
-          <div class="relative js-dropdown" id="dropdown-school">
-            <button class="js-dropdown-button flex bg-white border px-3 rounded-md py-1 text-black mr-2 focus:shadow-outline focus:border-blue-500 focus:bg-gray-400">
-              <span>(všetky školy)</span>
-              <i data-feather="chevron-down" class="w-4 ml-1"></i>
-            </button>
-
-            <div class="js-dropdown-menu hidden absolute mt-1 bg-white border border-gray-500 rounded-md shadow-md">
-              <ul class="py-2 px-2 -mb-1">
-                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-school="zs">Základná škola</li>
-                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-school="ss">Stredná škola</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="relative js-dropdown" id="dropdown-sciences">
-            <button class="js-dropdown-button flex bg-white border px-3 rounded-md py-1 text-black mr-2 focus:shadow-outline focus:border-blue-500 focus:bg-gray-400">
-              <span>(všetky vedy)</span>
-              <i data-feather="chevron-down" class="w-4 ml-1"></i>
-            </button>
-
-            <div class="js-dropdown-menu hidden absolute mt-1 bg-white border border-gray-500 rounded-md shadow-md">
-              <ul class="py-2 px-2 -mb-1">
-                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="mat">Matematika</li>
-                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="fyz">Fyzika</li>
-                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="inf">Informatika</li>
-                <li class="whitespace-no-wrap py-1 px-3 rounded-md mb-1 text-black hover:bg-blue-500 hover:text-white" data-science="other">Ostatné</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="max-w-4xl mx-auto px-4 py-2" id="event-list">
 
         Loading...
