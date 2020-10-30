@@ -107,39 +107,76 @@
   </div>
 
   <script id="template-event-item" type="x-tmpl-mustache">
-    <section class="mb-2 md:mb-4 close">
-      <header class="event-header">
-        <div class="flex items-baseline space-x-1">
-          <div>{{ date }}</div>
-          <span class="text-3xl" style="color: {{ color }}">●</span>
-          <h2 class="font-bold text-xl">{{ name }}</h2>
-        </div>
-        <div class="flex text-gray-600 mb-1 flex-wrap items-center text-sm">
-          <div class="mr-5">{{ type }}</div>
+    <section class="mb-6">
+      <header class="flex items-center js-event-header">
+        <div class="rounded-full w-6 h-6 flex-shrink-0 mr-3" style="background: {{ color }};"></div>
+        <div class="w-full">
+          <div class="text-sm text-gray-600">{{ date }}</div>
+          <h2 class="text-2xl -mt-1">{{ name }}</h2>
 
-          <div class="flex items-center mr-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-4 mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            <span>{{ contestants }}</span>
+          <div class="hidden md:block -mt-1 mb-2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil blanditiis, nulla modi, natus doloribus temporibus. Natus tempore, tempora quam doloribus.
           </div>
 
-          <div class="flex items-center mr-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            <span>{{ sciences }}</span>
-          </div>
+          <div class="flex flex-wrap justify-between md:justify-start text-gray-600 -mt-1 w-full js-event-icons md:flex">
+            <div class="flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2 flex-shrink-0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>{{ sciences }}</span>
+            </div>
+            <div class="flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-4 mr-2 flex-shrink-0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>{{ contestants }}</span>
+            </div>
+            <div class="hidden md:flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 mr-2 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>{{ places }}</span>
+            </div>
+            <div class="hidden md:flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info w-4 mr-2 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>{{ type }}</span>
+            </div>
+            {{#link}}
+            <div class="hidden md:flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2 flex-shrink-0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 
-          <div class="flex items-center mr-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 mr-2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>{{ places }}</span>
+              <a href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+            </div>
+            {{/link}}
           </div>
         </div>
       </header>
-      <article>
-        <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil blanditiis, nulla modi, natus doloribus temporibus. Natus tempore, tempora quam doloribus.</p>
 
-        {{#link}}
-        <a href="{{ link }}" class="rounded-lg bg-gray-300 text-gray-700 font-bold px-3 py-2 hover:bg-gray-400 text-xs">Viac informácií &raquo;</a>
-        {{/link}}
-      </article>
+      <div class="mt-2 js-event-description hidden md:hidden">
+        <div class="flex flex-col text-gray-600">
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span>{{ sciences }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-4 mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>{{ contestants }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 mr-2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>{{ places }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info w-4 mr-2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>{{ type }}</span>
+          </div>
+          {{#link}}
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+
+            <a href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+          </div>
+          {{/link}}
+        </div>
+
+        <div class="mt-2">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil blanditiis, nulla modi, natus doloribus temporibus. Natus tempore, tempora quam doloribus.
+        </div>
+      </div>
     </section>
   </script>
   <script id="template-main" type="x-tmpl-mustache">

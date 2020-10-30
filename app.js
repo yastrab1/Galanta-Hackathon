@@ -16,9 +16,9 @@ const LANG = {
 		'ss': 'SŠ',
 	},
 	sciences: {
-		'mat': 'matematika',
-		'fyz': 'fyzika',
-		'inf': 'informatika',
+		'mat': 'MAT',
+		'fyz': 'FYZ',
+		'inf': 'INF',
 		'other': 'iné',
 	},
 	colors: {
@@ -154,9 +154,10 @@ const render = () => {
 
 	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events}, {partial : PARTIAL_TEMPLATE});
 
-	[...document.getElementsByClassName("event-header")].forEach(node => {
+	[...document.getElementsByClassName("js-event-header")].forEach(node => {
 		node.addEventListener("click", () => {
-			node.parentElement.classList.toggle("close")
+			node.parentElement.querySelector(".js-event-description").classList.toggle("hidden")
+			node.querySelector(".js-event-icons").classList.toggle("hidden")
 		})
 	})
 
