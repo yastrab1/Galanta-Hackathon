@@ -34,7 +34,7 @@ const LANG = {
 		'fyz': 'orange',
 		'inf': 'green',
 		'other': 'red',
-	}
+	},
 	logo: {
 		'trojsten': 'logos/trojsten.svg',
 		'p-mat': 'logos/p-mat.svg',
