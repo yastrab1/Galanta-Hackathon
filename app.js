@@ -271,6 +271,8 @@ document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange
 		FILTER[filter_type] = FILTER[filter_type].filter((x) => x != value)
 		filter_update_checked()
 	}
+
+	load_data()
 })
 
 
@@ -280,5 +282,4 @@ const open_modal = () => {
 
 const close_modal = () => {
 	document.getElementById("filter-modal").style.display = 'none'
-	load_data()
 }
