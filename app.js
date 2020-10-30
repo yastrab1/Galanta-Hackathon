@@ -39,6 +39,10 @@ const LANG = {
 
 const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/master/build/2019_20.json'
 let DATA = []
+let FILTER = {
+	school: ['zs', 'ss'],
+	sciences: ['mat', 'fyz', 'inf', 'other'],
+}
 
 const load_data = () => {
 	let xhr = new XMLHttpRequest()
@@ -117,14 +121,29 @@ const fmt = {
 const TEMPLATE = document.getElementById('template-main').innerHTML;
 const PARTIAL_TEMPLATE = document.getElementById('template-event-item').innerHTML;
 
-Mustache.parse(TEMPLATE)
-Mustache.parse(PARTIAL_TEMPLATE)
-
 const render = () => {
 	let event_list = document.getElementById('event-list')
 	event_list.innerHTML = ''
 
-	DATA.forEach(event => {
+	let visible_events = DATA
+
+	// School filter
+	visible_events = visible_events.filter((event) => {
+		return (FILTER.school.indexOf(event.contestants.min.substr(0, 2)) !== -1 || FILTER.school.indexOf(event.contestants.max.substr(0, 2)) !== -1)
+	})
+
+	// Sciences filter
+	visible_events = visible_events.filter((event) => {
+		for (let i = FILTER.sciences.length - 1; i >= 0; i--) {
+			if (event.sciences.indexOf(FILTER.sciences[i]) !== -1) {
+				return true
+			}
+		}
+
+		return false
+	})
+
+	visible_events.forEach(event => {
 		event.color = fmt.color(event)
 		event.places = fmt.places(event)
 		event.date = fmt.date(event)
@@ -133,7 +152,7 @@ const render = () => {
 		event.sciences = fmt.sciences(event)
 	})
 
-	event_list.innerHTML = Mustache.render(TEMPLATE, {data: DATA}, {partial : PARTIAL_TEMPLATE});
+	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events}, {partial : PARTIAL_TEMPLATE});
 
 	[...document.getElementsByClassName("event-header")].forEach(node => {
 		node.addEventListener("click", () => {
@@ -225,3 +244,41 @@ const setup_calendar = () => {
 feather.replace()
 load_data()
 setup_calendar()
+
+// FILTERS
+const filter_update_checked = () => {
+	document.querySelectorAll('.js-filter-checkbox').forEach((elem) => {
+		if (FILTER[elem.dataset.filter].indexOf(elem.value) !== -1) {
+			elem.checked = true
+		} else {
+			elem.checked = false
+		}
+	})
+}
+filter_update_checked()
+
+document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange = (event) => {
+	const filter_type = event.currentTarget.dataset.filter
+	const value = event.currentTarget.value
+	const checked = event.currentTarget.checked
+
+	if (checked && FILTER[filter_type].indexOf(value) === -1) {
+		FILTER[filter_type].push(value)
+		filter_update_checked()
+	}
+
+	if (!checked && FILTER[filter_type].indexOf(value) !== -1) {
+		FILTER[filter_type] = FILTER[filter_type].filter((x) => x != value)
+		filter_update_checked()
+	}
+})
+
+
+const open_modal = () => {
+	document.getElementById("filter-modal").style.display = 'block'
+}
+
+const close_modal = () => {
+	document.getElementById("filter-modal").style.display = 'none'
+	load_data()
+}
