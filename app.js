@@ -83,7 +83,7 @@ const fmt = {
 		return event.places.join(', ')
 	},
 
-	date: function (event) {
+	date_verbose: function (event) {
 		if (event.date.text) {
 			return event.date.text
 		}
@@ -137,7 +137,12 @@ const fmt = {
 
 	color: function (event) {
 		return CONSTANTS.colors?.[event.color] ?? event.color ?? CONSTANTS.colors[CONSTANTS.science_color[event.sciences[0]]]
-	}
+	},
+
+	background_color: function(event) {
+		const date_end = new Date(event.date.end || event.date.start)
+		return date_end < new Date() ? 'bg-gray-300' : ''
+	},
 }
 
 const TEMPLATE = document.getElementById('template-main').innerHTML;
@@ -176,10 +181,12 @@ const render = () => {
 		return false
 	})
 
-	visible_events.forEach(event => {
+	visible_events.forEach((event, index) => {
+		event.id = index
 		event.color = fmt.color(event)
 		event.places = fmt.places(event)
-		event.date = fmt.date(event)
+		event.background_color = fmt.background_color(event)
+		event.date_verbose = fmt.date_verbose(event)
 		event.type = fmt.type(event)
 		event.organizers = fmt.organizers(event)
 		event.contestants = fmt.contestants(event)
@@ -195,6 +202,14 @@ const render = () => {
 		})
 	})
 
+	const currentEventId = `event-item-${visible_events.find(event => 
+		new Date(event.date.end || event.date.start) > new Date()
+	).id}`
+	document.getElementById('scroll').scrollTo({
+		top: document.getElementById(currentEventId).getBoundingClientRect().top - 200,
+		left: 0,
+		behavior: 'smooth'
+	})
 }
 
 const insert_event = (node, color) => {
