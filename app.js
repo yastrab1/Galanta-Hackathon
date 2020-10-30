@@ -35,6 +35,16 @@ const LANG = {
 		'inf': 'green',
 		'other': 'red',
 	}
+	logo: {
+		'trojsten': 'logos/trojsten.svg',
+		'p-mat': 'logos/p-mat.svg',
+		'sezam': 'logos/sezam.svg',
+		'riesky': 'logos/riesky.svg',
+		'strom': 'logos/strom.svg',
+		'riesky': 'logos/riesky.svg',
+		'siov': 'logos/siov.svg',
+		//'iuventa': 'logos/iuventa.svg',
+	}
 }
 
 const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/master/build/2019_20.json'
