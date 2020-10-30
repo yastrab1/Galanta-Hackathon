@@ -15,9 +15,10 @@ const CONSTANTS = {
 		'trojsten': 'Trojsten',
 		'p-mat': 'P-mat',
 		'sezam': 'SEZAM',
-		'riesky': 'Riešky',	
+		'riesky': 'Riešky',
 		'strom': 'Strom',
-		'siov': 'ŠIOV',		
+		'siov': 'ŠIOV',
+		'iuventa': 'Iuventa',
 	},
 	contestant_types: {
 		'zs': 'ZŠ',
@@ -50,6 +51,7 @@ const CONSTANTS = {
 		'riesky': 'logos/riesky.svg',
 		'strom': 'logos/strom.svg',
 		'siov': 'logos/siov.svg',
+		'iuventa': 'logos/iuventa.svg',
 	}
 }
 
@@ -65,7 +67,7 @@ const CALENDAR = jsCalendar.new({
 	firstDayOfTheWeek: "2",
 	monthFormat: "month YYYY",
 	language : "sk"
-}) 
+})
 
 const load_data = () => {
 	let xhr = new XMLHttpRequest()
@@ -210,7 +212,7 @@ const render = () => {
 		})
 	})
 
-	const currentEventId = `event-item-${visible_events.find(event => 
+	const currentEventId = `event-item-${visible_events.find(event =>
 		new Date(event.date.end || event.date.start) > new Date()
 	).id}`
 	document.getElementById('scroll').scrollTo({
