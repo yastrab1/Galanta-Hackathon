@@ -60,6 +60,12 @@ let FILTER = {
 	sciences: ['mat', 'fyz', 'inf', 'other'],
 	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', 'siov'],
 }
+const CALENDAR = jsCalendar.new({
+	target: '#calendar',
+	firstDayOfTheWeek: "2",
+	monthFormat: "month YYYY",
+	language : "sk"
+}) 
 
 const load_data = () => {
 	let xhr = new XMLHttpRequest()
@@ -74,6 +80,7 @@ const load_data = () => {
 		})
 
 		render()
+		CALENDAR.refresh()
 	}
 }
 
@@ -147,12 +154,13 @@ const fmt = {
 
 const TEMPLATE = document.getElementById('template-main').innerHTML;
 const PARTIAL_TEMPLATE = document.getElementById('template-event-item').innerHTML;
+let visible_events = DATA
 
 const render = () => {
 	let event_list = document.getElementById('event-list')
 	event_list.innerHTML = ''
 
-	let visible_events = DATA
+	visible_events = DATA
 
 	// School filter
 	visible_events = visible_events.filter((event) => {
@@ -214,22 +222,17 @@ const render = () => {
 
 const insert_event = (node, color) => {
 	let event_dot = document.createElement("div")
-	event_dot.setAttribute("class", `w-2 h-2 ${color} rounded-full mr-1 mb-1`)
+	event_dot.setAttribute("class", "w-2 h-2 rounded-full mr-1 mb-1")
+	event_dot.style.backgroundColor = color
 	node.appendChild(event_dot)
 }
 
 const setup_calendar = () => {
 
-	let calendar = jsCalendar.new({
-		target: '#calendar',
-		firstDayOfTheWeek: "2",
-		monthFormat: "month YYYY",
-		language : "sk"
-	});
 	let rendered = false;
 
 	// Render header
-	calendar.onMonthRender(function(index, element, info) {
+	CALENDAR.onMonthRender(function(index, element, info) {
 		if(!rendered) {
 			rendered = true;
 			let icon = document.createElementNS("http://www.w3.org/2000/svg", "svg")
@@ -259,17 +262,17 @@ const setup_calendar = () => {
 	});
 
 	// Render day names ( P U S Š P S N )
-	calendar.onDayRender(function(index, element, info) {
+	CALENDAR.onDayRender(function(index, element, info) {
 		if (index == 0 || index == 6) {
 			element.style.color = '#c32525'
 		}
 	});
 
 	// Render individual days
-	calendar.onDateRender(function(date, element, info) {
+	CALENDAR.onDateRender(function(date, element, info) {
 		if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
 			// We could use info.isCurrentMonth but it has bugs (10/2020)
-			element.style.color = (calendar._date.getMonth() == date.getMonth()) ? '#c32525' : '#c3252577'
+			element.style.color = (CALENDAR._date.getMonth() == date.getMonth()) ? '#c32525' : '#c3252577'
 		}
 
 		// Insert event container
@@ -277,30 +280,23 @@ const setup_calendar = () => {
 		event_container.setAttribute("class", "flex justify-center -mr-1 flex-wrap")
 		element.appendChild(event_container)
 
-		// TODO: Load from data
-		// Example:
-		let event_dates = [
-			jsCalendar.tools.stringToDate("15-10-2020"),
-			jsCalendar.tools.stringToDate("18-10-2020")
-		]
-
-		event_dates.forEach(event_date => {
-			if (event_date.getTime() === date.getTime()) {
-				insert_event(event_container, "bg-red-600")
-				insert_event(event_container, "bg-gray-500")
+		// Load from data
+		visible_events.forEach(event => {
+			let d = event.date.end ? event.date.end : event.date.start
+			d = new Date(d.split("-").reverse().join("-"))
+			if (d.getTime() === date.getTime()) {
+				insert_event(event_container, event.color)
 			}
 		});
 	});
 
-	calendar.onDateClick(function(event, date){
+	CALENDAR.onDateClick(function(event, date){
 		// TODO: scroll to events around clicked date
 		// Test:
 		document.getElementById("scroll").scrollTo(0, 5000)
 		// maybe add smooth scroll
 	});
-
-	// Refresh layout
-	calendar.refresh()
+	CALENDAR.refresh()
 }
 
 feather.replace()
