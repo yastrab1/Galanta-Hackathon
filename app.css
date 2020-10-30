@@ -1,14 +1,19 @@
 /* BEGIN CALENDAR STYLES */
 
 @media (min-width: 768px) {
-  .calendar-holder {
+  aside {
     width: 22.125rem;
   }
+
+  .calendar-filter {
+		display: none;
+	}
 }
 
 .jsCalendar.kk {
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .jsCalendar.kk tbody .mr-1 {
@@ -81,10 +86,6 @@
   width: 100%;
 }
 
-.jsCalendar.kk tbody td {
-  line-height: inherit;
-}
-
 .jsCalendar.kk tbody td,
 .jsCalendar.kk thead .jsCalendar-week-days th {
   padding-left: .5rem;
@@ -99,6 +100,8 @@
   font-weight: 700;
   color: rgba(74,85,104,1);
   width: calc(100% / 7);
+  overflow-wrap: anywhere;
+  line-height: .8rem;
 }
 
 .jsCalendar thead .jsCalendar-week-days th {
@@ -123,6 +126,21 @@
 .jsCalendar.kk tbody td.jsCalendar-next,
 .jsCalendar.kk tbody td.jsCalendar-previous {
   color: rgba(74,85,104,0.2);
+}
+
+.calendar-filter {
+	margin: 10px 8px;
+}
+
+.jsCalendar-nav-right, .jsCalendar-nav-left {
+	height: 24px !important;
+	width: 24px !important;
+}
+
+.calendar-event-container {
+	justify-content: center;
+	flex-wrap: wrap;
+	display: flex;
 }
 
 /* END CALENDAR STYLES*/

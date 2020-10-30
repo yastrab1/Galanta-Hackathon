@@ -163,38 +163,49 @@ const render = () => {
 }
 
 const insert_event = (node, color) => {
-	var event_dot = document.createElement("div")
+	let event_dot = document.createElement("div")
 	event_dot.setAttribute("class", `w-2 h-2 ${color} rounded-full mr-1 mb-1`)
 	node.appendChild(event_dot)
 }
 
 const setup_calendar = () => {
 
-	var calendar = jsCalendar.new({
+	let calendar = jsCalendar.new({
 		target: '#calendar',
 		firstDayOfTheWeek: "2",
 		monthFormat: "month YYYY",
 		language : "sk"
 	});
+	let rendered = false;
 
 	// Render header
 	calendar.onMonthRender(function(index, element, info) {
-		// Setup arrows & filter
-		var right =  document.createElement("div")
-		right.setAttribute("class", "flex flex-1 justify-end")
-		var filter = document.createElement("i")
-		filter.setAttribute("data-feather", "filter")
-		filter.setAttribute("class", "mr-2 md:hidden")
-		filter.setAttribute("style", "margin-left: -24;")
-		right.appendChild(filter)
-		var right_arrow = document.createElement("i")
-		right_arrow.setAttribute("data-feather", "arrow-right")
-		right.appendChild(right_arrow)
-		element.parentElement.getElementsByClassName("jsCalendar-nav-right")[0].appendChild(right)
-
-		var left = document.createElement("i")
-		left.setAttribute("data-feather", "arrow-left")
-		element.parentElement.getElementsByClassName("jsCalendar-nav-left")[0].appendChild(left)
+		if(!rendered) {
+			rendered = true;
+			let icon = document.createElementNS("http://www.w3.org/2000/svg", "svg")
+			icon.setAttribute("viewBox", "0 0 24 24")
+			icon.setAttribute("width", "24")
+			icon.setAttribute("height", "24")
+			icon.setAttribute("fill", "none")
+			icon.setAttribute("stroke", "currentColor")
+			icon.setAttribute("stroke-width", "2")
+			icon.setAttribute("stroke-linecap", "round")
+			icon.setAttribute("stroke-linejoin", "round")
+			// Setup arrows & filter
+			//filter icon
+			let filter = icon.cloneNode()
+			filter.setAttribute("class", "calendar-filter mx-10 my-8")
+			filter.innerHTML = '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>';
+			element.parentElement.getElementsByClassName("jsCalendar-title-right")[0].appendChild(filter)
+			//right arrow
+			let right_arrow = icon.cloneNode()
+			right_arrow.innerHTML = '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>';
+			element.parentElement.getElementsByClassName("jsCalendar-nav-right")[0].appendChild(right_arrow)
+			//left arrow
+			let left = icon.cloneNode()
+			left.innerHTML = '<line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>';
+			element.parentElement.getElementsByClassName("jsCalendar-nav-left")[0].appendChild(left)
+		}
 	});
 
 	// Render day names ( P U S Š P S N )
@@ -211,13 +222,13 @@ const setup_calendar = () => {
 		}
 
 		// Insert event container
-		var event_container = document.createElement("div")
+		let event_container = document.createElement("div")
 		event_container.setAttribute("class", "flex justify-center -mr-1 flex-wrap")
 		element.appendChild(event_container)
 
 		// TODO: Load from data
 		// Example:
-		var event_dates = [
+		let event_dates = [
 			jsCalendar.tools.stringToDate("15-10-2020"),
 			jsCalendar.tools.stringToDate("18-10-2020")
 		]
