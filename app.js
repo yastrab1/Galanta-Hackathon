@@ -218,7 +218,8 @@ const setup_calendar = () => {
 	// Render individual days
 	calendar.onDateRender(function(date, element, info) {
 		if (!info.isCurrent && (date.getDay() == 0 || date.getDay() == 6)) {
-			element.style.color = (info.isCurrentMonth) ? '#c32525' : '#c3252577'
+			// We could use info.isCurrentMonth but it has bugs (10/2020)
+			element.style.color = (calendar._date.getMonth() == date.getMonth()) ? '#c32525' : '#c3252577'
 		}
 
 		// Insert event container
