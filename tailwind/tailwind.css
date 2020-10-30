@@ -21638,6 +21638,15 @@ video {
           animation: bounce 1s infinite;
 }
 
+.slider {
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 0.5rem;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

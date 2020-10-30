@@ -3,3 +3,8 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.slider {
+    @apply w-10 h-6 rounded-full cursor-pointer relative mr-2;
+}
+

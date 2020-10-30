@@ -53,11 +53,12 @@ const CONSTANTS = {
 	}
 }
 
-const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/master/build/2019_20.json'
+const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/gh-pages/2019_20.json'
 let DATA = []
 let FILTER = {
 	school: ['zs', 'ss'],
 	sciences: ['mat', 'fyz', 'inf', 'other'],
+	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', 'siov'],
 }
 
 const load_data = () => {
@@ -157,6 +158,17 @@ const render = () => {
 	visible_events = visible_events.filter((event) => {
 		for (let i = FILTER.sciences.length - 1; i >= 0; i--) {
 			if (event.sciences.indexOf(FILTER.sciences[i]) !== -1) {
+				return true
+			}
+		}
+
+		return false
+	})
+
+	// Organizers filter
+	visible_events = visible_events.filter((event) => {
+		for (let i = FILTER.organizers.length - 1; i >= 0; i--) {
+			if (event.organizers.indexOf(FILTER.organizers[i]) !== -1) {
 				return true
 			}
 		}
