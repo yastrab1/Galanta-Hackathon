@@ -162,3 +162,13 @@ document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange
 		filter_update_checked()
 	}
 })
+
+
+const open_modal = () => {
+	document.getElementById("filter-modal").style.display = 'block'
+}
+
+const close_modal = () => {
+	document.getElementById("filter-modal").style.display = 'none'
+	load_data()
+}

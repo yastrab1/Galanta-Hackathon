@@ -25,7 +25,7 @@
         </div>
         <h2 class="text-xl text-center font-bold flex-shrink-0">Január 2020</h2>
         <div class="flex flex-1 justify-end">
-          <i data-feather="filter" class="mr-2 md:hidden"></i>
+          <i data-feather="filter" class="mr-2 md:hidden" onclick="open_modal()"></i>
           <i data-feather="arrow-right"></i>
         </div>
       </div>
@@ -168,7 +168,7 @@
         </div>
       </div>
 
-      <div class="mx-6 mt-6">
+      <div class="mx-6 mt-6 hidden md:block">
         <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Typ školy</h2>
 
         <label class="flex select-none">
@@ -211,6 +211,46 @@
 
       </div>
     </div>
+    </div>
+  </div>
+
+  <div class="fixed z-10 overflow-y-auto" id="filter-modal" style="display: none;">
+    <div class="fixed min-h-screen w-screen bg-black opacity-25"></div>
+
+    <div class="fixed py-8 px-4 min-h-screen w-screen">
+      <div class="bg-white max-w-xl mx-auto p-8 rounded-lg">
+        <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Typ školy</h2>
+
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="school" value="zs">
+          Základná škola
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="school" value="ss">
+          Stredná škola
+        </label>
+
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Vedy</h2>
+
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="mat">
+          Matematika
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="fyz">
+          Fyzika
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="inf">
+          Informatika
+        </label>
+        <label class="flex select-none">
+          <input class="mr-2 js-filter-checkbox" type="checkbox" data-filter="sciences" value="other">
+          Ostatné
+        </label>
+
+        <button class="mt-6 rounded-lg bg-blue-500 text-white font-bold px-3 py-2 hover:bg-blue-600 text-xs" onclick="close_modal()">Zobraziť výsledky</button>
+      </div>
     </div>
   </div>
 
