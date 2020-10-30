@@ -10,7 +10,7 @@
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
   <header class="bg-blue-500 text-white">
-    <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
+    <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row h-16">
       <a href="#" class="font-bold text-xl mb-1 md:mb-0">KockatýKalendár.sk</a>
 
       <!-- <a href="#" class="font-medium px-3 py-1 bg-blue-600 rounded-lg hover:bg-blue-700 text-xs md:text-sm">Prihlásiť sa na odber noviniek</a> -->
@@ -21,7 +21,7 @@
     <aside class="calendar-holder bg-gray-100 border-b md:border-b-0 md:border-r">
       <section id="calendar" class="kk flex mx-2 my-2 text-center"></section>
 
-      <div class="mx-6 mt-6 hidden md:block">
+      <section class="px-6 pt-6 hidden md:block overflow-auto filter">
         <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Typ školy</h2>
 
         <label class="flex select-none items-center my-1">
@@ -85,7 +85,7 @@
           <span class="slider"></span>
           Strom
         </label>
-      </div>
+      </section>
     </aside>
 
     <main id="scroll" class="flex-1 overflow-y-scroll">
