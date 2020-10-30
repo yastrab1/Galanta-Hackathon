@@ -19,6 +19,7 @@ const CONSTANTS = {
 		'strom': 'Strom',
 		'siov': 'ŠIOV',
 		'iuventa': 'Iuventa',
+		'matfyz': 'FMFI UK',
 	},
 	contestant_types: {
 		'zs': 'ZŠ',
@@ -52,6 +53,7 @@ const CONSTANTS = {
 		'strom': 'logos/strom.svg',
 		'siov': 'logos/siov.svg',
 		'iuventa': 'logos/iuventa.svg',
+		'matfyz': 'logos/matfyz.svg',
 	}
 }
 
