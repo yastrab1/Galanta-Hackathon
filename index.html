@@ -55,7 +55,7 @@
     </aside>
 
     <main id="scroll" class="flex-1 overflow-y-scroll">
-      <section class="max-w-4xl mx-auto px-4 py-2 h-full" id="event-list">
+      <section class="max-w-4xl mx-auto px-4 py-2 h-full divide-y divide-gray-400" id="event-list">
         <div class="flex flex-col justify-center items-center h-full">
           <div class="spinner ease-linear rounded-full border-gray-200 h-64 w-64"></div>
           <div class="text-3xl mt-5">Načítavame údaje...</div>
@@ -105,13 +105,22 @@
       </div>
     </div>
   </div>
+  
 
   <script id="template-event-item" type="x-tmpl-mustache">
-    <section class="mb-6">
+    <section class="py-4">
       <header class="flex items-center js-event-header">
         <div class="rounded-full w-6 h-6 flex-shrink-0 mr-3" style="background: {{ color }};"></div>
         <div class="w-full">
-          <div class="text-sm text-gray-600">{{ date }}</div>
+          <div class="flex flex-wrap justify-between text-gray-600 text-sm md:mr-5">
+            <div>{{ date }}</div>
+            <div>
+              {{#organizers}}
+              <img class="ml-4 h-4 inline" src="{{ logo }}" />
+              {{name}}
+              {{/organizers}}
+            </div>
+          </div>
           <h2 class="text-2xl -mt-1">{{ name }}</h2>
 
           <div class="hidden md:block -mt-1 mb-2">

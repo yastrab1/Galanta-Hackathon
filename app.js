@@ -1,4 +1,4 @@
-const LANG = {
+const CONSTANTS = {
 	months: [
 		'jan', 'feb', 'mar', 'apr', 'máj', 'jún', 'júl', 'aug', 'sept', 'okt', 'nov', 'dec'
 	],
@@ -10,6 +10,14 @@ const LANG = {
 		'tabor': 'tábor',
 		'olympiada': 'olympiáda',
 		'prednasky': 'prednášky',
+	},
+	organizers: {
+		'trojsten': 'Trojsten',
+		'p-mat': 'P-mat',
+		'sezam': 'SEZAM',
+		'riesky': 'Riešky',	
+		'strom': 'Strom',
+		'siov': 'ŠIOV',		
 	},
 	contestant_types: {
 		'zs': 'ZŠ',
@@ -41,9 +49,7 @@ const LANG = {
 		'sezam': 'logos/sezam.svg',
 		'riesky': 'logos/riesky.svg',
 		'strom': 'logos/strom.svg',
-		'riesky': 'logos/riesky.svg',
 		'siov': 'logos/siov.svg',
-		//'iuventa': 'logos/iuventa.svg',
 	}
 }
 
@@ -82,18 +88,23 @@ const fmt = {
 		}
 
 		let date_start = new Date(event.date.start)
-		let result = date_start.getDate() + '. ' + LANG.months[date_start.getMonth()]
+		let result = date_start.getDate() + '. ' + CONSTANTS.months[date_start.getMonth()]
 
 		if (event.date.end) {
 			let date_end = new Date(event.date.end)
-			result += ' – ' + date_end.getDate() + '. ' + LANG.months[date_end.getMonth()]
+			result += ' – ' + date_end.getDate() + '. ' + CONSTANTS.months[date_end.getMonth()]
 		}
 
 		return result
 	},
 
 	type: function (event) {
-		return LANG.types[event.type]
+		return CONSTANTS.types[event.type]
+	},
+
+	organizers: function(event) {
+		return event.organizers.map((x) => ({'logo': CONSTANTS.logo[x], 'name': CONSTANTS.organizers[x] || x}))
+
 	},
 
 	contestants: function (event) {
@@ -102,7 +113,7 @@ const fmt = {
 		let max_type = event.contestants.max.substr(0, 2)
 		let max_year = event.contestants.max.substr(2)
 
-		let result = LANG.contestant_types[min_type] + ' ' + min_year
+		let result = CONSTANTS.contestant_types[min_type] + ' ' + min_year
 
 		if (event.contestants.min == event.contestants.max) {
 			return result
@@ -111,7 +122,7 @@ const fmt = {
 		result += ' – '
 
 		if (min_type != max_type) {
-			result += LANG.contestant_types[max_type] + ' '
+			result += CONSTANTS.contestant_types[max_type] + ' '
 		}
 
 		result += max_year
@@ -120,11 +131,11 @@ const fmt = {
 	},
 
 	sciences: function (event) {
-		return event.sciences.map((x) => LANG.sciences[x]).join(', ')
+		return event.sciences.map((x) => CONSTANTS.sciences[x]).join(', ')
 	},
 
 	color: function (event) {
-		return LANG.colors?.[event.color] ?? event.color ?? LANG.colors[LANG.science_color[event.sciences[0]]]
+		return CONSTANTS.colors?.[event.color] ?? event.color ?? CONSTANTS.colors[CONSTANTS.science_color[event.sciences[0]]]
 	}
 }
 
@@ -158,6 +169,7 @@ const render = () => {
 		event.places = fmt.places(event)
 		event.date = fmt.date(event)
 		event.type = fmt.type(event)
+		event.organizers = fmt.organizers(event)
 		event.contestants = fmt.contestants(event)
 		event.sciences = fmt.sciences(event)
 	})
