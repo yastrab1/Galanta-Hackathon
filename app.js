@@ -49,7 +49,7 @@ const CONSTANTS = {
 		'trojsten': 'logos/trojsten.svg',
 		'p-mat': 'logos/p-mat.svg',
 		'sezam': 'logos/sezam.svg',
-		'riesky': 'logos/riesky.svg',
+		'riesky': 'logos/riesky.png',
 		'strom': 'logos/strom.svg',
 		'siov': 'logos/siov.svg',
 		'iuventa': 'logos/iuventa.svg',
