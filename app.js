@@ -18,11 +18,8 @@ const CONSTANTS = {
 		'riesky': 'Riešky',
 		'strom': 'Strom',
 		'siov': 'ŠIOV',
-<<<<<<< HEAD
 		'iuventa': 'Iuventa',
 		'matfyz': 'FMFI UK',
-=======
->>>>>>> 473d807 (fix modal)
 	},
 	contestant_types: {
 		'zs': 'ZŠ',
