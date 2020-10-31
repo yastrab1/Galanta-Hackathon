@@ -173,7 +173,7 @@
       </div>
     </div>
   </div>
-  
+
 
   <script id="template-event-item" type="x-tmpl-mustache">
     <section class="py-4 px-8 {{ background_color }}" id="event-item-{{ id }}">
@@ -191,9 +191,12 @@
           </div>
           <h2 class="text-2xl -mt-1">{{ name }}</h2>
 
-          <div class="hidden md:block -mt-1 mb-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil blanditiis, nulla modi, natus doloribus temporibus. Natus tempore, tempora quam doloribus.
-          </div>
+          {{#info}}
+          <div class="hidden md:block -mt-1 mb-2">{{ info }}</div>
+          {{/info}}
+          {{^info}}
+          <div class="hidden md:block -mt-1 mb-2">Podrobnosti o tejto udalosti nie sú dostupné.</div>
+          {{/info}}
 
           <div class="flex flex-wrap justify-between md:justify-start text-gray-600 -mt-1 w-full js-event-icons md:flex">
             <div class="flex items-center md:mr-5">
@@ -250,9 +253,12 @@
           {{/link}}
         </div>
 
-        <div class="mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil blanditiis, nulla modi, natus doloribus temporibus. Natus tempore, tempora quam doloribus.
-        </div>
+        {{#info}}
+        <div class="mt-2">{{ info }}</div>
+        {{/info}}
+        {{^info}}
+        <div class="mt-2">Podrobnosti o tejto udalosti nie sú dostupné.</div>
+        {{/info}}
       </div>
     </section>
   </script>
