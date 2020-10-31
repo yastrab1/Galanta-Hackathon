@@ -241,5 +241,10 @@ input:checked + .slider:before {
 
 aside .filter {
   height: calc(100vh - 338px - 4rem);
+  direction: rtl;
+}
+
+aside .filter > *{
+  direction: ltr;
 }
 /* END FILTER STYLES*/
