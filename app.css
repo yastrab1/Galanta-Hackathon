@@ -239,12 +239,8 @@ input:checked + .slider:before {
 /* END SLIDER STYLES*/
 /* BEGIN FILTER STYLES*/
 
-aside .filter {
-  height: calc(100vh - 338px - 4rem);
-  direction: rtl;
+aside {
+  height: calc(100vh - 4rem);
 }
 
-aside .filter > *{
-  direction: ltr;
-}
 /* END FILTER STYLES*/
