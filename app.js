@@ -18,8 +18,11 @@ const CONSTANTS = {
 		'riesky': 'Riešky',
 		'strom': 'Strom',
 		'siov': 'ŠIOV',
+<<<<<<< HEAD
 		'iuventa': 'Iuventa',
 		'matfyz': 'FMFI UK',
+=======
+>>>>>>> 473d807 (fix modal)
 	},
 	contestant_types: {
 		'zs': 'ZŠ',
@@ -70,6 +73,14 @@ const CALENDAR = jsCalendar.new({
 	monthFormat: "month YYYY",
 	language : "sk"
 })
+
+const open_modal = () => {
+	document.getElementById("filter-modal").style.display = "block"
+}
+
+const close_modal = () => {
+	document.getElementById("filter-modal").style.display = "none"
+}
 
 const load_data = () => {
 	let xhr = new XMLHttpRequest()
@@ -253,6 +264,7 @@ const setup_calendar = () => {
 			let filter = icon.cloneNode()
 			filter.setAttribute("class", "calendar-filter mx-10 my-8")
 			filter.innerHTML = '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>';
+			filter.addEventListener("click", open_modal)
 			element.parentElement.getElementsByClassName("jsCalendar-title-right")[0].appendChild(filter)
 			//right arrow
 			let right_arrow = icon.cloneNode()
@@ -336,12 +348,3 @@ document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange
 
 	load_data()
 })
-
-
-const open_modal = () => {
-	document.getElementById("filter-modal").style.display = 'block'
-}
-
-const close_modal = () => {
-	document.getElementById("filter-modal").style.display = 'none'
-}
