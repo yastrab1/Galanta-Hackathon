@@ -348,3 +348,9 @@ document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange
 
 	load_data()
 })
+
+window.addEventListener("keydown", e => {
+	if(!e.isComposing && e.keyCode === 27){
+		close_modal()
+	}
+})
