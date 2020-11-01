@@ -237,12 +237,3 @@ input:checked + .slider:before {
   transform: translateX(1rem);
 }
 /* END SLIDER STYLES*/
-/* BEGIN FILTER STYLES*/
-
-@media (min-width: 768px) {
-  aside {
-    height: calc(100vh - 4rem);
-  }
-}
-
-/* END FILTER STYLES*/
