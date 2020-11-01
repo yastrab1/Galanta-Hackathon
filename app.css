@@ -239,8 +239,10 @@ input:checked + .slider:before {
 /* END SLIDER STYLES*/
 /* BEGIN FILTER STYLES*/
 
-aside {
-  height: calc(100vh - 4rem);
+@media (min-width: 768px) {
+  aside {
+    height: calc(100vh - 4rem);
+  }
 }
 
 /* END FILTER STYLES*/
