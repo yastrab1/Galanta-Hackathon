@@ -88,8 +88,8 @@
 
 .jsCalendar.kk tbody td,
 .jsCalendar.kk thead .jsCalendar-week-days th {
-  padding-left: .5rem;
-  padding-right: .5rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
   padding-top: .25rem;
   padding-bottom: .25rem;
   min-width: 2em;

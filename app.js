@@ -160,7 +160,7 @@ const fmt = {
 
 	background_color: function(event) {
 		const date_end = new Date(event.date.end || event.date.start)
-		return date_end < new Date() ? 'bg-gray-300' : ''
+		return date_end <= new Date("2020-11-2") ? 'bg-gray-300' : ''
 	},
 }
 
@@ -213,6 +213,10 @@ const render = () => {
 		event.sciences = fmt.sciences(event)
 	})
 
+	visible_events.sort(function(a,b){
+		return new Date(b.date.end || b.date.start) - new Date(a.date.end || a.date.start);
+	});
+
 	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events}, {partial : PARTIAL_TEMPLATE});
 
 	[...document.getElementsByClassName("js-event-header")].forEach(node => {
@@ -220,22 +224,26 @@ const render = () => {
 			node.parentElement.querySelector(".js-event-description").classList.toggle("hidden")
 			node.querySelector(".js-event-icons").classList.toggle("hidden")
 		})
-	})
+	}) 
 
-	const currentEventId = `event-item-${visible_events.find(event =>
-		new Date(event.date.end || event.date.start) > new Date()
-	).id}`
-	document.getElementById('scroll').scrollTo({
-		top: document.getElementById(currentEventId).getBoundingClientRect().top - 200,
-		left: 0,
-		behavior: 'smooth'
-	})
+	const event = visible_events.find(event => 
+		new Date(event.date.end || event.date.start) >= new Date("2020-11-2")
+	)
+	if (event) {
+		const currentEventId = `event-item-${event.id}`
+		document.getElementById('scroll').scrollTo({
+			top: document.getElementById(currentEventId).getBoundingClientRect().top - 200,
+			left: 0,
+			behavior: 'smooth'
+		})
+	}
 }
 
 const insert_event = (node, color) => {
 	let event_dot = document.createElement("div")
-	event_dot.setAttribute("class", "w-2 h-2 rounded-full mr-1 mb-1")
+	event_dot.setAttribute("class", "w-2 h-2 rounded-full")
 	event_dot.style.backgroundColor = color
+	event_dot.style.margin = ".1rem"
 	node.appendChild(event_dot)
 }
 
@@ -291,23 +299,31 @@ const setup_calendar = () => {
 		// Insert event container
 		let event_container = document.createElement("div")
 		event_container.setAttribute("class", "flex justify-center -mr-1 flex-wrap")
+		event_container.style.maxHeight = "20px";
 		element.appendChild(event_container)
 
 		// Load from data
 		visible_events.forEach(event => {
-			let d = event.date.end ? event.date.end : event.date.start
-			d = new Date(d.split("-").reverse().join("-"))
-			if (d.getTime() === date.getTime()) {
+			// 3 hour 
+			if (Math.abs(new Date(date.toString('YYYY-MM-DD')).getTime() - new Date(event.date.end || event.date.start).getTime()) <= 60000 * 60 * 3) {
 				insert_event(event_container, event.color)
 			}
 		});
 	});
 
 	CALENDAR.onDateClick(function(event, date){
-		// TODO: scroll to events around clicked date
-		// Test:
-		document.getElementById("scroll").scrollTo(0, 5000)
-		// maybe add smooth scroll
+		// Scroll to events around clicked date
+		const e = visible_events.find(event => 
+			Math.abs(new Date(date.toString('YYYY-MM-DD')).getTime() - new Date(event.date.end || event.date.start).getTime()) <= 60000 * 60 * 3
+		)
+		if (e) {
+			const currentEventId = `event-item-${e.id}`
+			document.getElementById('scroll').scrollTo({
+				top: document.getElementById(currentEventId).getBoundingClientRect().top - 200,
+				left: 0,
+				behavior: 'smooth'
+			})
+		}
 	});
 	CALENDAR.refresh()
 }
