@@ -160,7 +160,7 @@ const fmt = {
 
 	background_color: function(event) {
 		const date_end = new Date(event.date.end || event.date.start)
-		return date_end <= new Date("2020-11-2") ? 'bg-gray-300' : ''
+		return date_end <= new Date() ? 'bg-gray-300' : ''
 	},
 }
 
@@ -227,7 +227,7 @@ const render = () => {
 	}) 
 
 	const event = visible_events.find(event => 
-		new Date(event.date.end || event.date.start) >= new Date("2020-11-2")
+		new Date(event.date.end || event.date.start) >= new Date()
 	)
 	if (event) {
 		const currentEventId = `event-item-${event.id}`
