@@ -230,12 +230,7 @@ const render = () => {
 		new Date(event.date.end || event.date.start) >= new Date()
 	)
 	if (event) {
-		const currentEventId = `event-item-${event.id}`
-		document.getElementById('scroll').scrollTo({
-			top: document.getElementById(currentEventId).getBoundingClientRect().top - 200,
-			left: 0,
-			behavior: 'smooth'
-		})
+		scroll_to_id(`event-item-${event.id}`)
 	}
 }
 
@@ -317,15 +312,18 @@ const setup_calendar = () => {
 			Math.abs(new Date(date.toString('YYYY-MM-DD')).getTime() - new Date(event.date.end || event.date.start).getTime()) <= 60000 * 60 * 3
 		)
 		if (e) {
-			const currentEventId = `event-item-${e.id}`
-			document.getElementById('scroll').scrollTo({
-				top: document.getElementById(currentEventId).getBoundingClientRect().top - 200,
-				left: 0,
-				behavior: 'smooth'
-			})
+			scroll_to_id(`event-item-${e.id}`)			
 		}
 	});
 	CALENDAR.refresh()
+}
+
+const scroll_to_id = (id) => {
+	document.getElementById('scroll').scrollTo({
+		top: document.getElementById(id).getBoundingClientRect().top - 200 + document.getElementById('scroll').scrollTop,
+		left: 0,
+		behavior: 'smooth'
+	})
 }
 
 feather.replace()
