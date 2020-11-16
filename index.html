@@ -6,14 +6,13 @@
   <link href="tailwind/tailwind.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
   <link rel="stylesheet" href="app.css" />
-  <title>KockatýKalendár.sk</title>
+  <title>Kockatý Kalendár</title>
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
   <header class="bg-blue-500 text-white">
     <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
-      <a href="#" class="font-bold text-xl mb-1 md:mb-0">KockatýKalendár.sk</a>
+      <a href="#" class="font-bold text-xl mb-1 md:mb-0">Kockatý Kalendár</a>
 
-      <!-- <a href="#" class="font-medium px-3 py-1 bg-blue-600 rounded-lg hover:bg-blue-700 text-xs md:text-sm">Prihlásiť sa na odber noviniek</a> -->
     </nav>
   </header>
 
@@ -22,7 +21,7 @@
       <section id="calendar" class="kk flex mx-2 my-2 text-center"></section>
 
       <section class="px-6 pt-6 hidden md:block filter">
-        <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Typ školy</h2>
+        <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Ročníky</h2>
 
         <label class="flex select-none items-center my-1">
           <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="zs">
@@ -213,7 +212,7 @@
             <div class="hidden md:flex items-center md:mr-5">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2 flex-shrink-0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 
-              <a href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+              <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
             </div>
             {{/link}}
           </div>

@@ -57,7 +57,7 @@ const CONSTANTS = {
 	}
 }
 
-const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/gh-pages/2019_20.json'
+const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/gh-pages/2020_21.json'
 let DATA = []
 let FILTER = {
 	school: ['zs', 'ss'],
@@ -176,7 +176,8 @@ const render = () => {
 
 	// School filter
 	visible_events = visible_events.filter((event) => {
-		return (FILTER.school.indexOf(event.contestants.min.substr(0, 2)) !== -1 || FILTER.school.indexOf(event.contestants.max.substr(0, 2)) !== -1)
+		return FILTER.school.indexOf(event.contestants.min.substr(0, 2)) !== -1 
+			|| !event.contestants.max || FILTER.school.indexOf(event.contestants.max.substr(0, 2)) !== -1
 	})
 
 	// Sciences filter
@@ -226,7 +227,7 @@ const render = () => {
 		})
 	}) 
 
-	const event = visible_events.find(event => 
+	const event = visible_events.reverse().find(event => 
 		new Date(event.date.end || event.date.start) >= new Date()
 	)
 	if (event) {
@@ -320,7 +321,7 @@ const setup_calendar = () => {
 
 const scroll_to_id = (id) => {
 	document.getElementById('scroll').scrollTo({
-		top: document.getElementById(id).getBoundingClientRect().top - 200 + document.getElementById('scroll').scrollTop,
+		top: document.getElementById(id).getBoundingClientRect().top - window.innerHeight / 2 + document.getElementById('scroll').scrollTop,
 		left: 0,
 		behavior: 'smooth'
 	})
