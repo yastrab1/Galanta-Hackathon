@@ -167,6 +167,7 @@ const fmt = {
 const TEMPLATE = document.getElementById('template-main').innerHTML;
 const PARTIAL_TEMPLATE = document.getElementById('template-event-item').innerHTML;
 let visible_events = DATA
+let is_initial_scroll = false		// used to prevent calendar from hiding during initial scroll
 
 const render = () => {
 	let event_list = document.getElementById('event-list')
@@ -176,7 +177,7 @@ const render = () => {
 
 	// School filter
 	visible_events = visible_events.filter((event) => {
-		return FILTER.school.indexOf(event.contestants.min.substr(0, 2)) !== -1 
+		return FILTER.school.indexOf(event.contestants.min.substr(0, 2)) !== -1
 			|| !event.contestants.max || FILTER.school.indexOf(event.contestants.max.substr(0, 2)) !== -1
 	})
 
@@ -225,12 +226,13 @@ const render = () => {
 			node.parentElement.querySelector(".js-event-description").classList.toggle("hidden")
 			node.querySelector(".js-event-icons").classList.toggle("hidden")
 		})
-	}) 
+	})
 
-	const event = visible_events.reverse().find(event => 
+	const event = visible_events.reverse().find(event =>
 		new Date(event.date.end || event.date.start) >= new Date()
 	)
 	if (event) {
+		is_initial_scroll = true
 		scroll_to_id(`event-item-${event.id}`)
 	}
 }
@@ -249,6 +251,8 @@ const setup_calendar = () => {
 
 	// Render header
 	CALENDAR.onMonthRender(function(index, element, info) {
+		document.getElementById("js-calendar-placeholder-month").innerText = element.innerText
+
 		if(!rendered) {
 			rendered = true;
 			let icon = document.createElementNS("http://www.w3.org/2000/svg", "svg")
@@ -300,7 +304,7 @@ const setup_calendar = () => {
 
 		// Load from data
 		visible_events.forEach(event => {
-			// 3 hour 
+			// 3 hour
 			if (Math.abs(new Date(date.toString('YYYY-MM-DD')).getTime() - new Date(event.date.end || event.date.start).getTime()) <= 60000 * 60 * 3) {
 				insert_event(event_container, event.color)
 			}
@@ -309,11 +313,11 @@ const setup_calendar = () => {
 
 	CALENDAR.onDateClick(function(event, date){
 		// Scroll to events around clicked date
-		const e = visible_events.find(event => 
+		const e = visible_events.find(event =>
 			Math.abs(new Date(date.toString('YYYY-MM-DD')).getTime() - new Date(event.date.end || event.date.start).getTime()) <= 60000 * 60 * 3
 		)
 		if (e) {
-			scroll_to_id(`event-item-${e.id}`)			
+			scroll_to_id(`event-item-${e.id}`)
 		}
 	});
 	CALENDAR.refresh()
@@ -365,4 +369,29 @@ window.addEventListener("keydown", e => {
 	if(!e.isComposing && e.keyCode === 27){
 		close_modal()
 	}
+})
+
+
+let last_scroll = document.getElementById('scroll').scrollTop
+document.getElementById('scroll').addEventListener("scroll", e => {
+	let new_scroll = document.getElementById('scroll').scrollTop
+	if (is_initial_scroll) {
+		last_scroll = new_scroll
+		setTimeout(() => {is_initial_scroll = false}, 100)		// smooth scrolling can be still going on
+		return
+	}
+
+	last_scroll = Math.min(last_scroll, new_scroll)
+	if (new_scroll - last_scroll > 200) {
+		document.getElementById("js-calendar-placeholder").classList.remove("hidden")
+		document.getElementById("js-calendar-holder").classList.add("hidden")
+	}
+})
+
+
+document.getElementById("js-calendar-placeholder-filter").addEventListener("click", open_modal)
+document.getElementById("js-calendar-placeholder-open").addEventListener("click", () => {
+	document.getElementById("js-calendar-placeholder").classList.add("hidden")
+	document.getElementById("js-calendar-holder").classList.remove("hidden")
+	last_scroll = document.getElementById('scroll').scrollTop
 })
