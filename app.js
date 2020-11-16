@@ -160,7 +160,7 @@ const fmt = {
 
 	background_color: function(event) {
 		const date_end = new Date(event.date.end || event.date.start)
-		return date_end <= new Date() ? 'bg-gray-300' : ''
+		return date_end <= new Date() ? 'opacity-50 hover:opacity-100 transition-opacity duration-200 ease-in-out' : ''
 	},
 }
 
