@@ -377,7 +377,7 @@ document.getElementById('scroll').addEventListener("scroll", e => {
 	let new_scroll = document.getElementById('scroll').scrollTop
 	if (is_initial_scroll) {
 		last_scroll = new_scroll
-		setTimeout(() => {is_initial_scroll = false}, 100)		// smooth scrolling can be still going on
+		setTimeout(() => {is_initial_scroll = false}, 500)		// smooth scrolling can be still going on
 		return
 	}
 
