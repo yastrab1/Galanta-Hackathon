@@ -382,7 +382,7 @@ document.getElementById('scroll').addEventListener("scroll", e => {
 	}
 
 	last_scroll = Math.min(last_scroll, new_scroll)
-	if (new_scroll - last_scroll > 200) {
+	if (Math.abs(new_scroll - last_scroll) > 200) {
 		document.getElementById("js-calendar-placeholder").classList.remove("hidden")
 		document.getElementById("js-calendar-holder").classList.add("hidden")
 	}
