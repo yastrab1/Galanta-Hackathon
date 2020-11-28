@@ -237,3 +237,46 @@ input:checked + .slider:before {
   transform: translateX(1rem);
 }
 /* END SLIDER STYLES*/
+/* BEGIN TOOLTIP STYLES*/
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  background-color: white;
+  border-width: 2px;
+  border-color: #ED8936;
+  border-radius: 8px;
+  color: #ED8936;
+  font-size: 18px;
+  content: 'Táto akcia sa môže kvôli pandemickej situácii zrušiť aj na poslednú chvíľu. Najaktuálnejšie informácie nájdeš na stránke organizátora.';
+  padding: 5px 10px;
+  bottom: 0;
+  left: 100%;
+  transform: translate(-50%, calc(100% + 20px));
+}
+.tooltip:hover::after {
+  display: block;
+}
+.tooltip::before {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  border-radius: 6px;
+  background-color: #ED8936;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+  content: 'POZOR';
+  padding-inline: 5px;
+  height: 30px;
+  bottom: 0;
+  left: 37%;
+  transform: translate(-50%, calc(100% + 5px));
+}
+.tooltip:hover::before {
+    display: block;
+}
+/* END TOOLTIP STYLES*/
