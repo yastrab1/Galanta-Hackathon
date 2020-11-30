@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="sk-SK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="tailwind/tailwind.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.css" integrity="sha384-44GnAqZy9yUojzFPjdcUpP822DGm1ebORKY8pe6TkHuqJ038FANyfBYBpRvw8O9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css" />
+  <title>Termíny - Kockatý Kalendár</title>
+</head>
+<body class="antialiased max-h-screen h-screen flex flex-col">
+  <header class="bg-blue-500 text-white">
+    <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
+      <a href="#" class="font-bold text-xl mb-1 md:mb-0">Kockatý Kalendár</a>
+
+      <ul class="flex font-bold">
+        <li class="mr-3">
+          <a class="inline-block border border-white rounded py-1 px-3 bg-blue-500 text-white
+                    hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="index.html">O nás</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="flex overflow-hidden flex-col md:flex-row flex-grow">
+    <aside class="calendar-holder bg-gray-100 border-b md:border-b-0 md:border-r overflow-auto">
+      <section id="calendar" class="kk flex mx-2 my-2 text-center"></section>
+
+      <section class="px-6 pt-6 hidden md:block filter">
+        <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Ročníky</h2>
+
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="zs">
+          <span class="slider"></span>
+          Základná škola
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="ss">
+          <span class="slider"></span>
+          Stredná škola
+        </label>
+
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Vedy</h2>
+
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="mat">
+          <span class="slider mat"></span>
+          Matematika
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="fyz">
+          <span class="slider fyz"></span>
+          Fyzika
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="inf">
+          <span class="slider inf"></span>
+          Informatika
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="other">
+          <span class="slider otr"></span>
+          Ostatné
+        </label>
+
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátor</h2>
+
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="trojsten">
+          <span class="slider"></span>
+          <img class="mr-1 h-4 inline" src="logos/trojsten.svg">
+          Trojsten
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="p-mat">
+          <span class="slider"></span>
+          <img class="mr-1 h-4 inline" src="logos/p-mat.svg">
+          P-mat
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="sezam">
+          <span class="slider"></span>
+          <img class="mr-1 h-4 inline" src="logos/sezam.svg">
+          SEZAM
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="riesky">
+          <span class="slider"></span>
+          <img class="mr-1 h-4 inline" src="logos/riesky.png">
+          Riešky
+        </label>
+        <label class="flex select-none items-center my-1">
+          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="strom">
+          <span class="slider"></span>
+          <img class="mr-1 h-4 inline" src="logos/strom.svg">
+          Strom
+        </label>
+      </section>
+    </aside>
+
+    <main id="scroll" class="flex-1 overflow-y-scroll">
+      <section class="max-w-5xl mx-auto py-2 h-full divide-y divide-gray-400" id="event-list">
+        <div class="flex flex-col justify-center items-center h-full">
+          <div class="spinner ease-linear rounded-full border-gray-200 h-64 w-64"></div>
+          <div class="text-3xl mt-5">Načítavame údaje...</div>
+        </div>
+
+
+      </section>
+    </main>
+  </div>
+
+  <div class="fixed z-10 overflow-y-auto" id="filter-modal" style="display: none;">
+    <div class="fixed min-h-screen w-screen bg-black opacity-25 z-20" onclick="close_modal()"></div>
+    <div class="fixed left-0 right-0 bg-white max-w-xl mx-auto p-8 rounded-lg z-30 mt-5">
+      <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Typ školy</h2>
+
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="zs">
+        <span class="slider"></span>
+        Základná škola
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="ss">
+        <span class="slider"></span>
+        Stredná škola
+      </label>
+
+      <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Vedy</h2>
+
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="mat">
+        <span class="slider mat"></span>
+        Matematika
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="fyz">
+        <span class="slider fyz"></span>
+        Fyzika
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="inf">
+        <span class="slider inf"></span>
+        Informatika
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="sciences" value="other">
+        <span class="slider otr"></span>
+        Ostatné
+      </label>
+
+      <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátor</h2>
+
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="trojsten">
+        <span class="slider"></span>
+        <img class="mr-1 h-4 inline" src="logos/trojsten.svg">
+        Trojsten
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="p-mat">
+        <span class="slider"></span>
+        <img class="mr-1 h-4 inline" src="logos/p-mat.svg">
+        P-mat
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="sezam">
+        <span class="slider"></span>
+        <img class="mr-1 h-4 inline" src="logos/sezam.svg">
+        SEZAM
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="riesky">
+        <span class="slider"></span>
+        <img class="mr-1 h-4 inline" src="logos/riesky.png">
+        Riešky
+      </label>
+      <label class="flex select-none items-center my-1">
+        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="strom">
+        <span class="slider"></span>
+        <img class="mr-1 h-4 inline" src="logos/strom.svg">
+        Strom
+      </label>
+
+      <button class="mt-6 rounded-lg bg-blue-500 text-white font-bold px-3 py-2 hover:bg-blue-600 text-xs" onclick="close_modal()">Zobraziť výsledky</button>
+    </div>
+  </div>
+
+
+  <script id="template-event-item" type="x-tmpl-mustache">
+    <section class="py-4 px-8 {{ background_color }}" id="event-item-{{ id }}">
+      <header class="flex items-center js-event-header">
+        <div class="rounded-full w-6 h-6 flex-shrink-0 mr-3" style="background: {{ color }};"></div>
+        <div class="w-full">
+          <div class="flex flex-wrap justify-between text-gray-600 text-sm md:mr-5">
+            <div>{{ date_verbose }}</div>
+            <div>
+              {{#organizers}}
+              <img class="ml-4 h-4 inline" src="{{ logo }}" />
+              {{name}}
+              {{/organizers}}
+            </div>
+          </div>
+          <h2 class="text-2xl -mt-1">{{ name }}</h2>
+
+          {{#info}}
+          <div class="hidden md:block -mt-1 mb-2">{{ info }}</div>
+          {{/info}}
+
+          <div class="flex flex-wrap justify-between md:justify-start text-gray-600 -mt-1 w-full js-event-icons md:flex">
+            <div class="flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2 flex-shrink-0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              <span>{{ sciences }}</span>
+            </div>
+            <div class="flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-4 mr-2 flex-shrink-0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>{{ contestants }}</span>
+            </div>
+            <div class="hidden md:flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 mr-2 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>{{ places }}</span>
+            </div>
+            <div class="hidden md:flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info w-4 mr-2 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>{{ type }}</span>
+            </div>
+            {{#link}}
+            <div class="hidden md:flex items-center md:mr-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2 flex-shrink-0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+
+              <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+            </div>
+            {{/link}}
+          </div>
+        </div>
+      </header>
+
+      <div class="mt-2 js-event-description hidden md:hidden">
+        <div class="flex flex-col text-gray-600">
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <span>{{ sciences }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users w-4 mr-2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>{{ contestants }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 mr-2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>{{ places }}</span>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info w-4 mr-2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>{{ type }}</span>
+          </div>
+          {{#link}}
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+
+            <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+          </div>
+          {{/link}}
+        </div>
+
+        {{#info}}
+        <div class="mt-2">{{ info }}</div>
+        {{/info}}
+      </div>
+    </section>
+  </script>
+  <script id="template-main" type="x-tmpl-mustache">
+    {{#data}}
+    {{>partial}}
+    {{/data}}
+  </script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.lang.sk.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" integrity="sha512-6AXIWogbKpsHvoZJrJtHpIYES4wP8czSj0zk7ZfwOYS8GWYFNSykwdfapt7yQc4ikZytemBu+QyVObzBHJMwYg==" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
