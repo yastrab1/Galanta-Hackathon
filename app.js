@@ -216,8 +216,8 @@ const render = () => {
 	})
 
 	visible_events.sort(function(a,b){
-		return new Date(b.date.end || b.date.start) - new Date(a.date.end || a.date.start);
-	});
+		return new Date(a.date.end || a.date.start) - new Date(b.date.end || b.date.start)
+	})
 
 	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events}, {partial : PARTIAL_TEMPLATE});
 
@@ -228,7 +228,7 @@ const render = () => {
 		})
 	})
 
-	const event = visible_events.reverse().find(event =>
+	const event = visible_events.find(event =>
 		new Date(event.date.end || event.date.start) >= new Date()
 	)
 	if (event) {
