@@ -3,7 +3,6 @@
 		<img src="https://user-images.githubusercontent.com/11409143/100660455-561ce080-3352-11eb-8d65-ccba27274ed4.png" width="800" height="421">
 		<h1 align="center">KockatýKalendár.sk</h1>
 	</a>
-
 	<p align="center">Prehľad akcií a súťaží v oblasti matematiky, fyziky a informatiky pre základné a stredné školy. </p>
 </p>
 
