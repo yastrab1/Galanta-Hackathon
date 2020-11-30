@@ -248,13 +248,15 @@ input:checked + .slider:before {
   background-color: white;
   border-width: 2px;
   border-color: #ED8936;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #ED8936;
-  font-size: 18px;
+  font-size: 1rem;
   content: 'Táto akcia sa môže kvôli pandemickej situácii zrušiť aj na poslednú chvíľu. Najaktuálnejšie informácie nájdeš na stránke organizátora.';
   padding: 5px 10px;
+  margin: 10px;
   bottom: 0;
   left: 100%;
+  width: 200px;
   transform: translate(-50%, calc(100% + 20px));
 }
 .tooltip:hover::after {
@@ -267,10 +269,11 @@ input:checked + .slider:before {
   border-radius: 6px;
   background-color: #ED8936;
   color: white;
-  font-size: small;
+  font-size: .75rem;
   font-weight: 600;
-  content: 'POZOR';
+  content: 'Upozornenie';
   padding-inline: 5px;
+  margin: 10px;
   height: 30px;
   bottom: 0;
   left: 37%;
