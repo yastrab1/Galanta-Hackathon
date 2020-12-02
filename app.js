@@ -62,7 +62,8 @@ let DATA = []
 let FILTER = {
 	school: ['zs', 'ss'],
 	sciences: ['mat', 'fyz', 'inf', 'other'],
-	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', 'siov'],
+	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
+	default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
 }
 const CALENDAR = jsCalendar.new({
 	target: '#calendar',
@@ -124,18 +125,22 @@ const fmt = {
 
 	organizers: function(event) {
 		return event.organizers.map((x) => ({'logo': CONSTANTS.logo[x], 'name': CONSTANTS.organizers[x] || x}))
-
 	},
 
 	contestants: function (event) {
 		let min_type = event.contestants.min.substr(0, 2)
 		let min_year = event.contestants.min.substr(2)
-		let max_type = event.contestants.max.substr(0, 2)
-		let max_year = event.contestants.max.substr(2)
+
+		let max_type = ''
+		let max_year = ''
+		if (event.contestants.max) {
+			max_type = event.contestants.max.substr(0, 2)
+			max_year = event.contestants.max.substr(2)
+		}
 
 		let result = CONSTANTS.contestant_types[min_type] + ' ' + min_year
 
-		if (event.contestants.min == event.contestants.max) {
+		if (!event.contestants.max || event.contestants.min == event.contestants.max) {
 			return result
 		}
 
@@ -197,6 +202,16 @@ const render = () => {
 		for (let i = FILTER.organizers.length - 1; i >= 0; i--) {
 			if (event.organizers.indexOf(FILTER.organizers[i]) !== -1) {
 				return true
+			}
+		}
+
+		// Ostatni organizatori
+		if (FILTER.organizers.indexOf('*') !== -1) {
+			if (event.organizers.length === 0) { return true }
+			for (let i = event.organizers.length - 1; i >= 0; i--) {
+				if (FILTER.default_organizers.indexOf(event.organizers[i]) === -1) {
+					return true
+				}
 			}
 		}
 
