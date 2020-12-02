@@ -22,6 +22,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Install tailwind
+        run: cd tailwind && npm install tailwindcss@1.9.6 --no-save
+
       - name: Build 🔧
         run: cd tailwind && npx tailwindcss-cli build tailwindStyles.css -c tailwind.config.prod.js | npx clean-css-cli > tailwind.css
 
