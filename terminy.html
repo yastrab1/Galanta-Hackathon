@@ -91,31 +91,31 @@
         <label class="flex select-none items-center my-1">
           <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="trojsten">
           <span class="slider"></span>
-          <img class="mr-1 h-4 inline" src="logos/trojsten.svg">
+          <img class="mr-1 h-4 inline" alt="Trojsten" src="logos/trojsten.svg">
           Trojsten
         </label>
         <label class="flex select-none items-center my-1">
           <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="p-mat">
           <span class="slider"></span>
-          <img class="mr-1 h-4 inline" src="logos/p-mat.svg">
+          <img class="mr-1 h-4 inline" alt="P-mat" src="logos/p-mat.svg">
           P-mat
         </label>
         <label class="flex select-none items-center my-1">
           <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="sezam">
           <span class="slider"></span>
-          <img class="mr-1 h-4 inline" src="logos/sezam.svg">
+          <img class="mr-1 h-4 inline" alt="SEZAM" src="logos/sezam.svg">
           SEZAM
         </label>
         <label class="flex select-none items-center my-1">
           <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="riesky">
           <span class="slider"></span>
-          <img class="mr-1 h-4 inline" src="logos/riesky.png">
+          <img class="mr-1 h-4 inline" alt="Riešky" src="logos/riesky.png">
           Riešky
         </label>
         <label class="flex select-none items-center my-1">
           <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="strom">
           <span class="slider"></span>
-          <img class="mr-1 h-4 inline" src="logos/strom.svg">
+          <img class="mr-1 h-4 inline" alt="Strom" src="logos/strom.svg">
           Strom
         </label>
         <label class="flex select-none items-center my-1">
@@ -182,31 +182,31 @@
       <label class="flex select-none items-center my-1">
         <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="trojsten">
         <span class="slider"></span>
-        <img class="mr-1 h-4 inline" src="logos/trojsten.svg">
+        <img class="mr-1 h-4 inline" alt="Trojsten" src="logos/trojsten.svg">
         Trojsten
       </label>
       <label class="flex select-none items-center my-1">
         <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="p-mat">
         <span class="slider"></span>
-        <img class="mr-1 h-4 inline" src="logos/p-mat.svg">
+        <img class="mr-1 h-4 inline" alt="P-mat" src="logos/p-mat.svg">
         P-mat
       </label>
       <label class="flex select-none items-center my-1">
         <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="sezam">
         <span class="slider"></span>
-        <img class="mr-1 h-4 inline" src="logos/sezam.svg">
+        <img class="mr-1 h-4 inline" alt="SEZAM" src="logos/sezam.svg">
         SEZAM
       </label>
       <label class="flex select-none items-center my-1">
         <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="riesky">
         <span class="slider"></span>
-        <img class="mr-1 h-4 inline" src="logos/riesky.png">
+        <img class="mr-1 h-4 inline" alt="Riešky" src="logos/riesky.png">
         Riešky
       </label>
       <label class="flex select-none items-center my-1">
         <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="strom">
         <span class="slider"></span>
-        <img class="mr-1 h-4 inline" src="logos/strom.svg">
+        <img class="mr-1 h-4 inline" alt="Strom" src="logos/strom.svg">
         Strom
       </label>
       <label class="flex select-none items-center my-1">
@@ -229,7 +229,7 @@
             <div>{{ date_verbose }}</div>
             <div>
               {{#organizers}}
-              <img class="ml-4 h-4 inline" src="{{ logo }}" />
+              <img class="ml-4 h-4 inline" alt="{{ name }}" src="{{ logo }}" />
               {{name}}
               {{/organizers}}
             </div>
@@ -269,7 +269,7 @@
             <div class="hidden md:flex items-center md:mr-5">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2 flex-shrink-0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 
-              <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+              <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600" rel="noreferrer">Webová stránka</a>
             </div>
             {{/link}}
           </div>
@@ -298,7 +298,7 @@
           <div class="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link w-4 mr-2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
 
-            <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600">Webová stránka</a>
+            <a target="_blank" href="{{ link }}" class="text-blue-500 hover:text-blue-600" rel="noreferrer">Webová stránka</a>
           </div>
           {{/link}}
         </div>
