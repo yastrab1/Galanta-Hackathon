@@ -10,6 +10,7 @@ const CONSTANTS = {
 		'tabor': 'tábor',
 		'olympiada': 'olympiáda',
 		'prednasky': 'prednášky',
+		'other': 'iné',
 	},
 	organizers: {
 		'trojsten': 'Trojsten',
