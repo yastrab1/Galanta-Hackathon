@@ -235,7 +235,7 @@
             </div>
           </div>
 
-          <h2 class="text-2xl -mt-1 flex items-center md:mr-5">
+          <h2 class="text-2xl flex items-center md:mr-5">
             {{^cancelled}}{{#volatile}}
               <div class="tooltip relative">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EC8B14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle w-8 mr-1 flex-shrink-0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -244,14 +244,14 @@
             {{#cancelled}}
               <span class="text-white text-sm mr-2 rounded bg-red-700 px-2 font-bold tracking-wide">Zrušené</span>
             {{/cancelled}}
-            <span class="{{#cancelled}}line-through{{/cancelled}}">{{ name }}</span>
+            <span class="{{#cancelled}}line-through{{/cancelled}} leading-tight">{{ name }}</span>
           </h2>
 
           {{#info}}
-          <div class="hidden md:block -mt-1 mb-2">{{ info }}</div>
+          <div class="hidden md:block mb-2 mt-1">{{ info }}</div>
           {{/info}}
 
-          <div class="flex flex-wrap justify-between md:justify-start text-gray-600 -mt-1 w-full js-event-icons md:flex">
+          <div class="flex flex-wrap justify-between md:justify-start text-gray-600 w-full mt-1 js-event-icons md:flex">
             <div class="flex items-center md:mr-5">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book w-4 mr-2 flex-shrink-0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
               <span>{{ sciences }}</span>
