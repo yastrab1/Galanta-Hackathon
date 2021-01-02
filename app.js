@@ -21,6 +21,7 @@ const CONSTANTS = {
 		'siov': 'ŠIOV',
 		'iuventa': 'Iuventa',
 		'matfyz': 'FMFI UK',
+		'nucem': 'NÚCEM',
 	},
 	contestant_types: {
 		'zs': 'ZŠ',
