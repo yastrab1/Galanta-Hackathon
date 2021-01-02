@@ -83,6 +83,17 @@ const close_modal = () => {
 	document.getElementById("filter-modal").style.display = "none"
 }
 
+const sorting_key = (event) => {
+	if (event.date.end) {
+		return Math.min(
+			new Date(event.date.end),
+			Math.max(new Date(event.date.start), new Date())
+		)
+	}
+
+	return new Date(event.date.start)
+}
+
 const load_data = () => {
 	let xhr = new XMLHttpRequest()
 	xhr.open('GET', DATA_URL)
@@ -91,8 +102,20 @@ const load_data = () => {
 
 	xhr.onload = function() {
 		DATA = xhr.response
+
+		DATA.forEach((event, index) => {
+			for (const key in fmt) {
+				if (fmt.hasOwnProperty(key)) {
+					event[key] = fmt[key](event)
+				}
+			}
+		})
+
 		DATA.sort((a, b) => {
-			return new Date(a.date.start) - new Date(b.date.start)
+			if (a.is_active && b.is_active) {
+				return new Date(a.date.start) - new Date(b.date.start)
+			}
+			return sorting_key(a) - sorting_key(b)
 		})
 
 		render()
@@ -102,7 +125,7 @@ const load_data = () => {
 
 // Formatting utilities
 const fmt = {
-	places: function (event) {
+	pretty_places: function (event) {
 		return event.places.join(', ')
 	},
 
@@ -122,15 +145,15 @@ const fmt = {
 		return result
 	},
 
-	type: function (event) {
+	pretty_type: function (event) {
 		return CONSTANTS.types[event.type]
 	},
 
-	organizers: function(event) {
+	pretty_organizers: function(event) {
 		return event.organizers.map((x) => ({'logo': CONSTANTS.logo[x], 'name': CONSTANTS.organizers[x] || x}))
 	},
 
-	contestants: function (event) {
+	pretty_contestants: function (event) {
 		let min_type = event.contestants.min.substr(0, 2)
 		let min_year = event.contestants.min.substr(2)
 
@@ -158,7 +181,7 @@ const fmt = {
 		return result
 	},
 
-	sciences: function (event) {
+	pretty_sciences: function (event) {
 		return event.sciences.map((x) => CONSTANTS.sciences[x]).join(', ')
 	},
 
@@ -167,9 +190,21 @@ const fmt = {
 	},
 
 	background_color: function(event) {
-		const date_end = new Date(event.date.end || event.date.start)
-		return date_end <= new Date() ? 'opacity-50 hover:opacity-100 transition-opacity duration-200 ease-in-out' : ''
+		const date_end = new Date(event.date.end || event.date.start).getTime() + 86400000
+		return date_end <= new Date().getTime() ? 'opacity-50 hover:opacity-100 transition-opacity duration-200 ease-in-out' : ''
 	},
+
+	is_active: function (event) {
+		if (event.cancelled) {
+			return false
+		}
+
+		if (event.date.end) {
+			return new Date(event.date.start).getTime() <= new Date().getTime() && new Date().getTime() < new Date(event.date.end).getTime() + 86400000
+		}
+
+		return new Date(event.date.start).getTime() <= new Date().getTime() && new Date().getTime() < new Date(event.date.start).getTime() + 86400000
+	}
 }
 
 const TEMPLATE = document.getElementById('template-main').innerHTML;
@@ -223,18 +258,6 @@ const render = () => {
 
 	visible_events.forEach((event, index) => {
 		event.id = index
-		event.color = fmt.color(event)
-		event.places = fmt.places(event)
-		event.background_color = fmt.background_color(event)
-		event.date_verbose = fmt.date_verbose(event)
-		event.type = fmt.type(event)
-		event.organizers = fmt.organizers(event)
-		event.contestants = fmt.contestants(event)
-		event.sciences = fmt.sciences(event)
-	})
-
-	visible_events.sort(function(a,b){
-		return new Date(a.date.end || a.date.start) - new Date(b.date.end || b.date.start)
 	})
 
 	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events}, {partial : PARTIAL_TEMPLATE});
