@@ -125,6 +125,14 @@ const load_data = () => {
 }
 
 // Formatting utilities
+const fmt_contestant = (contestant, prev_contestant) => {
+	if (prev_contestant && prev_contestant.substr(0, 2) === contestant.substr(0, 2)) {
+		return contestant.substr(2)
+	}
+
+	return CONSTANTS.contestant_types[contestant.substr(0, 2)] + " " + contestant.substr(2)
+}
+
 const fmt = {
 	pretty_places: function (event) {
 		return event.places.join(', ')
@@ -155,31 +163,23 @@ const fmt = {
 	},
 
 	pretty_contestants: function (event) {
-		let min_type = event.contestants.min.substr(0, 2)
-		let min_year = event.contestants.min.substr(2)
-
-		let max_type = ''
-		let max_year = ''
-		if (event.contestants.max) {
-			max_type = event.contestants.max.substr(0, 2)
-			max_year = event.contestants.max.substr(2)
+		if (!event.contestants.min && !event.contestants.max) {
+			return "ktokoľvek"
 		}
 
-		let result = CONSTANTS.contestant_types[min_type] + ' ' + min_year
-
-		if (!event.contestants.max || event.contestants.min == event.contestants.max) {
-			return result
+		if (!event.contestants.min && event.contestants.max) {
+			return fmt_contestant(event.contestants.max) + " a mladší"
 		}
 
-		result += ' – '
-
-		if (min_type != max_type) {
-			result += CONSTANTS.contestant_types[max_type] + ' '
+		if (event.contestants.min && !event.contestants.max) {
+			return fmt_contestant(event.contestants.min) + " a starší"
 		}
 
-		result += max_year
+		if (event.contestants.min == event.contestants.max) {
+			return fmt_contestant(event.contestants.min)
+		}
 
-		return result
+		return fmt_contestant(event.contestants.min) + " – " + fmt_contestant(event.contestants.max, event.contestants.min)
 	},
 
 	pretty_sciences: function (event) {
