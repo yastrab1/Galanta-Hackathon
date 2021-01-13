@@ -220,9 +220,46 @@ const render = () => {
 	visible_events = DATA
 
 	// School filter
+	// adapted from https://github.com/kockatykalendar/ical/blob/22986854ae309a9b29cb6c42af18d6e256687c15/build.py#L88-L113
 	visible_events = visible_events.filter((event) => {
-		return FILTER.school.indexOf(event.contestants.min.substr(0, 2)) !== -1
-			|| !event.contestants.max || FILTER.school.indexOf(event.contestants.max.substr(0, 2)) !== -1
+		// When filtering by both school types, we will show EVERYTHING.
+		if (FILTER.school.length === 2) {
+			return true
+		}
+
+		// When both schools are disabled, we will show events without contestants limit OR without upper limit.
+		if (FILTER.school.length === 0) {
+			return event.contestants.max == null
+		}
+
+		const school = FILTER.school[0]
+
+		// Events for everyone should be always visible.
+		if (event.contestants.max == null && event.contestants.min == null) {
+			return true
+		}
+
+		// We don't have upper limit,
+		if (event.contestants.max == null) {
+			const min = event.contestants.min.substr(0, 2)
+			if (min === "zs") {
+				return true	// ZS and older (will be always visible)
+			} else {
+				return min === school
+			}
+		}
+
+		// We don't have lower limit,
+		if (event.contestants.min == null) {
+			const max = event.contestants.max.substr(0, 2)
+			if (max === "ss") {
+				return true	// ZS and younger will be always visible
+			} else {
+				return max === school
+			}
+		}
+
+		return event.contestants.min.substr(0, 2) === school || event.contestants.max.substr(0, 2) === school
 	})
 
 	// Sciences filter
