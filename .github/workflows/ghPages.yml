@@ -32,7 +32,9 @@ jobs:
           npx tailwindcss build tailwind.temp.css -c tailwind.config.prod.js | npx clean-css-cli > build.css
 
       - name: Remove dev css links
-        run: sed -i 's/<link href="tailwind\/custom.css" rel="stylesheet">//g' *.html
+        run: |
+          sed -i 's|<link href="tailwind/custom.css" rel="stylesheet">||g' *.html
+          sed -i "s|tailwind/build.css|tailwind/build.css?v=$(git log --format="%h" -n 1)|g" *.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
