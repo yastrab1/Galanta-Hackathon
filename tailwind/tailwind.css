@@ -5,9 +5,54 @@
 @tailwind utilities;
 
 
+/* ---- SLIDER INPUT ---- */
+
 .slider {
-  @apply w-10 h-6 rounded-full cursor-pointer relative mr-2;
-  background-color: #cbd5e0;
+	@apply w-10 h-6 rounded-full cursor-pointer relative mr-2 bg-gray;
+}
+
+.slider:before {
+	@apply absolute w-6 h-6 bg-white rounded-full border-gray shadow-none transition-transform duration-300 border-slider;
+	content: "";
+}
+
+input:checked + .slider {
+	@apply bg-blue;
+}
+input:checked + .slider:before {
+	@apply border-blue;
+}
+
+input:checked + .slider.inf {
+	@apply bg-green;
+}
+input:checked + .slider.inf:before {
+	@apply border-green;
+}
+
+input:checked + .slider.mat {
+	@apply bg-blue;
+}
+input:checked + .slider.mat:before {
+	@apply border-blue;
+}
+
+input:checked + .slider.fyz {
+	@apply bg-orange;
+}
+input:checked + .slider.fyz:before {
+	@apply border-orange;
+}
+
+input:checked + .slider.otr {
+	@apply bg-red;
+}
+input:checked + .slider.otr:before {
+	@apply border-red;
+}
+
+input:checked + .slider:before {
+	@apply transform-gpu translate-x-4;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

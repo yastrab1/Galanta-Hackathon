@@ -1,50 +1,5 @@
 /* KockatyKalendar.sk Styles */
 
-/* ---- SLIDER INPUT ---- */
-
-.slider:before {
-    position: absolute;
-    content: "";
-    top: .25rem;
-    left: .25rem;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: #f7fafc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-	background-color: #4299e1;
-}
-
-input:checked + .slider.inf {
-	background-color: #7CB342;
-}
-
-input:checked + .slider.mat {
-	background-color: #4299e1;
-}
-
-input:checked + .slider.fyz {
-	background-color: #ED8936;
-}
-
-input:checked + .slider.otr {
-	background-color: #E53E3E;
-}
-
-input:focus + .slider {
-	box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-	-webkit-transform: translateX(1rem);
-	-ms-transform: translateX(1rem);
-	transform: translateX(1rem);
-}
-
 /* ---- SPINNER ---- */
 .spinner {
 	border-width: 20px;
@@ -107,133 +62,133 @@ input:checked + .slider:before {
 }
 
 .tooltip:hover::before {
-    display: block;
+		display: block;
 }
 
 
 /* ---- CALENDAR ---- */
 .jsCalendar.kk {
-  margin: 0;
-  padding: 0;
-  display: flex;
+	margin: 0;
+	padding: 0;
+	display: flex;
 }
 
 .jsCalendar.kk tbody .mr-1 {
-  margin-right: .25rem !important;
+	margin-right: .25rem !important;
 }
 
 .jsCalendar.kk tbody .mb-1 {
-  margin-bottom: .25rem !important;
+	margin-bottom: .25rem !important;
 }
 
 .jsCalendar.kk table {
-  font-family: inherit;
-  display: block;
-  border-collapse: collapse;
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  width: 100%;
+	font-family: inherit;
+	display: block;
+	border-collapse: collapse;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	width: 100%;
 
-  /* Disable touch and text select */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	/* Disable touch and text select */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .jsCalendar.kk thead .jsCalendar-nav-left:after,
 .jsCalendar.kk thead .jsCalendar-nav-right:after {
-  content: "" !important;
+	content: "" !important;
 }
 
 .jsCalendar.kk thead .jsCalendar-title {
-  text-align: center;
-  width: 100%;
-  line-height: 50px;
+	text-align: center;
+	width: 100%;
+	line-height: 50px;
 }
 
 .jsCalendar.kk thead .jsCalendar-title-name {
-  padding: 0;
-  margin: 0 auto 0 auto;
-  width: auto;
-  color: rgba(74,85,104,1);
-  font-size: 1.25rem;
-  font-weight: 700;
-  display: contents;
+	padding: 0;
+	margin: 0 auto 0 auto;
+	width: auto;
+	color: rgba(74,85,104,1);
+	font-size: 1.25rem;
+	font-weight: 700;
+	display: contents;
 }
 
 .jsCalendar.kk svg {
-  color: rgba(74,85,104,1);
+	color: rgba(74,85,104,1);
 }
 
 .jsCalendar.kk tbody,
 .jsCalendar.kk thead {
-  position: relative;
-  display: block;
+	position: relative;
+	display: block;
 }
 
 .jsCalendar.kk tbody {
-  border-width: 1px;
-  border-color: rgba(203,213,224,1);
+	border-width: 1px;
+	border-color: rgba(203,213,224,1);
 }
 
 .jsCalendar.kk tbody tr,
 .jsCalendar.kk thead tr {
-  display: flex;
-  position: relative;
-  width: 100%;
+	display: flex;
+	position: relative;
+	width: 100%;
 }
 
 .jsCalendar.kk tbody td,
 .jsCalendar.kk thead .jsCalendar-week-days th {
-  padding-left: .25rem;
-  padding-right: .25rem;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
-  min-width: 2em;
-  height: 39px;
-  margin: 0;
-  border-radius: 0;
-  font-size: .75rem;
-  font-weight: 700;
-  color: rgba(74,85,104,1);
-  width: calc(100% / 7);
-  overflow-wrap: anywhere;
-  line-height: .8rem;
+	padding-left: .25rem;
+	padding-right: .25rem;
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+	min-width: 2em;
+	height: 39px;
+	margin: 0;
+	border-radius: 0;
+	font-size: .75rem;
+	font-weight: 700;
+	color: rgba(74,85,104,1);
+	width: calc(100% / 7);
+	overflow-wrap: anywhere;
+	line-height: .8rem;
 }
 
 .jsCalendar.kk thead .jsCalendar-week-days th {
-  height: auto;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
+	height: auto;
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
 }
 
 .jsCalendar thead .jsCalendar-week-days th {
-  display: table-cell;
+	display: table-cell;
 }
 
 .jsCalendar.kk tbody tr {
-  border-bottom-width: 1px;
-  border-color: rgba(203,213,224,1);
+	border-bottom-width: 1px;
+	border-color: rgba(203,213,224,1);
 }
 
 .jsCalendar.kk tbody tr:last-child {
-  border-bottom-width: 0px;
+	border-bottom-width: 0px;
 }
 
 .jsCalendar.kk tbody td:hover {
-  background-color: rgba(31, 67, 83, 0.1);
+	background-color: rgba(31, 67, 83, 0.1);
 }
 .jsCalendar.kk tbody td.jsCalendar-current {
-  background-color: rgba(82, 201, 255, 0.2);
+	background-color: rgba(82, 201, 255, 0.2);
 }
 .jsCalendar.kk tbody td.jsCalendar-next,
 .jsCalendar.kk tbody td.jsCalendar-previous {
-  color: rgba(74,85,104,0.2);
+	color: rgba(74,85,104,0.2);
 }
 
 .jsCalendar-nav-right, .jsCalendar-nav-left {
