@@ -58,3 +58,89 @@ input:checked + .slider:before {
 input[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
+
+/* ---- double-slider ---- */
+
+.double-slider {
+	@apply grid px-6 py-0 my-0 -mx-6 relative overflow-hidden gap-y-3 w-90;
+	--tw-gradient-stops: #4299e1 calc(.75rem + (var(--va))/14*18.5rem), #4299e1 calc(.75rem + (var(--vb))/14*18.5rem);
+	grid-template-rows: -webkit-max-content 1.5rem -webkit-max-content;
+	grid-template-rows: max-content 1.5rem max-content;
+}
+
+.double-slider::before, .double-slider::after {
+	@apply row-start-2 col-start-1 self-center h-6 rounded-full bg-gray transition-all duration-300;
+	--mask: red;
+	-webkit-mask: var(--mask);
+			mask: var(--mask);
+	-webkit-mask-composite: xor;
+			mask-composite: exclude;
+	content: "";
+}
+
+.double-slider::after {
+	@apply bg-gradient-to-r;
+	--mask: linear-gradient(90deg, red calc(.75rem + (var(--va))/14*18.5rem), transparent 0), linear-gradient(90deg, red calc(.75rem + (var(--vb))/14*18.5rem), transparent 0);
+}
+
+.double-slider:focus-within {
+	--tw-gradient-stops: #4299e1 calc(.75rem + (min(var(--va), var(--vb))/14*18.5rem)), #2C5282 calc(.75rem + (max(var(--va), var(--vb))/14*18.5rem));
+}
+
+.double-slider.switched:focus-within {
+	--tw-gradient-stops: #2C5282 calc(.75rem + (min(var(--va), var(--vb))/14*18.5rem)), #4299e1 calc(.75rem + (max(var(--va), var(--vb))/14*18.5rem));
+}
+
+.double-slider > input[type=range] {
+	@apply row-start-2 col-start-1 inset-0 transition duration-300 pointer-events-none cursor-grab z-10;
+	background: none;
+}
+
+.double-slider > input[type=range]:active {
+	@apply cursor-grabbing;
+}
+
+.double-slider > input[type=range]::-webkit-slider-runnable-track, .double-slider > input[type=range]::-webkit-slider-thumb, .double-slider > input[type=range] {
+	@apply appearance-none;
+}
+
+.double-slider > input[type=range]::-webkit-slider-runnable-track, .double-slider > input[type=range]::-moz-range-track {
+	@apply w-full h-full bg-none;
+}
+
+.double-slider > input[type=range]::-webkit-slider-thumb {
+	@apply box-border transition duration-300 h-6 w-6 rounded-full bg-white pointer-events-auto border-solid border-slider border-blue;
+}
+
+.double-slider > input[type=range]::-moz-range-thumb {
+	@apply box-border transition duration-300 h-6 w-6 rounded-full bg-white pointer-events-auto border-solid border-slider border-blue;
+}
+
+.double-slider > input[type=range]:focus::-webkit-slider-thumb {
+	@apply ring-4 ring-blue-800 border-blue-800;
+}
+
+.double-slider > input[type=range]:focus::-moz-range-thumb {
+	@apply ring-4 ring-blue-800 border-blue-800;
+}
+
+.double-slider > input[type=range]:focus {
+	@apply outline-none z-20;
+}
+
+.double-slider > input[type=range]:focus + output {
+	@apply z-20;
+}
+
+.double-slider > input[type=range]:focus + output > span {
+	@apply bg-blue-800;
+}
+
+.double-slider > output {
+	@apply row-start-1 col-start-1 max-w-max ml-3 transform-gpu;
+	--tw-translate-x: calc((var(--c))/14*18.5rem);
+}
+
+.double-slider > output > span {
+	@apply block rounded px-1.5 text-white transition duration-300 transform-gpu -translate-x-1/2 bg-blue;
+}
