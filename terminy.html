@@ -55,16 +55,14 @@
       <section class="px-6 pt-6 hidden md:block filter">
         <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">Ročníky</h2>
 
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="zs">
-          <span class="slider"></span>
-          Základná škola
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="ss">
-          <span class="slider"></span>
-          Stredná škola
-        </label>
+        <div class="double-slider" role="group" aria-labelledby="multi-lbl" style="--va: 0; --vb: 14;">
+          <label class="sr-only" for="v0">Začiatok intervalu</label>
+          <input class="va" type="range" id="v0" min="0" value="0" max="14"/>
+          <output for="v0" style="--c: var(--va)"><span>Mladší</span></output>
+          <label class="sr-only" for="v1">Koniec intervalu</label>
+          <input class="vb" type="range" id="v1" min="0" value="14" max="14"/>
+          <output for="v1" style="--c: var(--vb)"><span>Starší</span></output>
+        </div>
 
         <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Vedy</h2>
 
@@ -154,16 +152,14 @@
 
       <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Ročníky</h2>
 
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="zs">
-        <span class="slider"></span>
-        Základná škola
-      </label>
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="school" value="ss">
-        <span class="slider"></span>
-        Stredná škola
-      </label>
+      <div class="double-slider" role="group" aria-labelledby="multi-lbl" style="--va: 0; --vb: 14;">
+        <label class="sr-only" for="v2">Začiatok intervalu</label>
+        <input class="va" type="range" id="v2" min="0" value="0" max="14"/>
+        <output for="v2" style="--c: var(--va)"><span>Mladší</span></output>
+        <label class="sr-only" for="v3">Koniec intervalu</label>
+        <input class="vb" type="range" id="v3" min="0" value="14" max="14"/>
+        <output for="v3" style="--c: var(--vb); z-index = 99;"><span>Starší</span></output>
+      </div>
 
       <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Vedy</h2>
 
