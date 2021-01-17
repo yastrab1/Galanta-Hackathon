@@ -58,13 +58,19 @@ const CONSTANTS = {
 		'matfyz': 'logos/matfyz.svg',
 		'fykos': 'logos/fykos.svg',
 		'nucem': 'logos/nucem.svg',
-	}
+	},
+	school_years: [
+		'Mladší',
+		'ZŠ 1', 'ZŠ 2', 'ZŠ 3', 'ZŠ 4', 'ZŠ 5', 'ZŠ 6', 'ZŠ 7', 'ZŠ 8', 'ZŠ 9',
+		'SŠ 1', 'SŠ 2', 'SŠ 3', 'SŠ 4',
+		'Starší'
+	]
 }
 
 const DATA_URL = 'https://data.kockatykalendar.sk/2021_22.json'
 let DATA = []
 let FILTER = {
-	school: ['zs', 'ss'],
+	school: [0, 14],
 	sciences: ['mat', 'fyz', 'inf', 'other'],
 	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
 	default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
@@ -126,6 +132,11 @@ const sorting_key = (event) => {
 	}
 
 	return new Date(event.date.start)
+}
+
+const school_to_int = (school, min) => {
+	school ??= min? 'zs0': 'ss5';
+	return parseInt(school.slice(-1), 10) + (school.substr(0,2) === 'ss')*9;
 }
 
 const load_data = () => {
@@ -255,46 +266,8 @@ const render = () => {
 	visible_events = DATA
 
 	// School filter
-	// adapted from https://github.com/kockatykalendar/ical/blob/22986854ae309a9b29cb6c42af18d6e256687c15/build.py#L88-L113
 	visible_events = visible_events.filter((event) => {
-		// When filtering by both school types, we will show EVERYTHING.
-		if (FILTER.school.length === 2) {
-			return true
-		}
-
-		// When both schools are disabled, we will show events without contestants limit OR without upper limit.
-		if (FILTER.school.length === 0) {
-			return event.contestants.max == null
-		}
-
-		const school = FILTER.school[0]
-
-		// Events for everyone should be always visible.
-		if (event.contestants.max == null && event.contestants.min == null) {
-			return true
-		}
-
-		// We don't have upper limit,
-		if (event.contestants.max == null) {
-			const min = event.contestants.min.substr(0, 2)
-			if (min === "zs") {
-				return true	// ZS and older (will be always visible)
-			} else {
-				return min === school
-			}
-		}
-
-		// We don't have lower limit,
-		if (event.contestants.min == null) {
-			const max = event.contestants.max.substr(0, 2)
-			if (max === "ss") {
-				return true	// ZS and younger will be always visible
-			} else {
-				return max === school
-			}
-		}
-
-		return event.contestants.min.substr(0, 2) === school || event.contestants.max.substr(0, 2) === school
+		return Math.max(FILTER.school[0], FILTER.school[1]) >= school_to_int(event.contestants.min, 1) && Math.min(FILTER.school[0], FILTER.school[1]) <= school_to_int(event.contestants.max, 0);
 	})
 
 	// Sciences filter
@@ -565,3 +538,39 @@ document.getElementById("js-calendar-placeholder-open").addEventListener("click"
 	document.getElementById("js-calendar-holder").classList.remove("hidden")
 	last_scroll = document.getElementById('scroll').scrollTop
 })
+
+
+let switched = false;
+
+[...document.getElementsByClassName("double-slider")].forEach(parent => {
+	parent.addEventListener('focusin', e => {
+		if(e.target.className == "va") {
+			parent.classList.toggle("switched");
+		}
+	}, false);
+	parent.addEventListener('focusout', e => {
+		if(e.target.className == "va") {
+			parent.classList.toggle("switched");
+		}
+	}, false);
+	parent.addEventListener('input', e => {
+		document.querySelectorAll(`.${e.target.className}`).forEach( el => {
+			el.parentNode.style.setProperty(`--${e.target.className}`, +e.target.value);
+			el.value = e.target.value;
+			el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.school_years[e.target.value];
+		});
+		
+		if((parseInt(document.getElementById("v1").value) < parseInt(document.getElementById("v0").value)) && !switched) {
+			e.target.parentNode.classList.toggle("switched");
+			switched = true;
+		} else if ((parseInt(document.getElementById("v1").value) > parseInt(document.getElementById("v0").value)) && switched) {
+			e.target.parentNode.classList.toggle("switched");
+			switched = false;
+		}
+
+		if (e.target.className == "va") FILTER.school[0] = e.target.value;
+		else FILTER.school[1] = e.target.value;
+		
+		load_data()
+	}, false);
+});
