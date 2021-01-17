@@ -134,9 +134,8 @@ const sorting_key = (event) => {
 	return new Date(event.date.start)
 }
 
-const school_to_int = (school, min) => {
-	school ??= min? 'zs0': 'ss5';
-	return parseInt(school.slice(-1), 10) + (school.substr(0,2) === 'ss')*9;
+const school_to_int = (school, max) => {
+	return (parseInt(school?.slice(-1), 10) + (school?.substr(0,2) === 'ss')*9) || max*14;
 }
 
 const load_data = () => {
@@ -267,7 +266,7 @@ const render = () => {
 
 	// School filter
 	visible_events = visible_events.filter((event) => {
-		return Math.max(FILTER.school[0], FILTER.school[1]) >= school_to_int(event.contestants.min, 1) && Math.min(FILTER.school[0], FILTER.school[1]) <= school_to_int(event.contestants.max, 0);
+		return Math.max(FILTER.school[0], FILTER.school[1]) >= school_to_int(event.contestants.min, 0) && Math.min(FILTER.school[0], FILTER.school[1]) <= school_to_int(event.contestants.max, 1);
 	})
 
 	// Sciences filter
