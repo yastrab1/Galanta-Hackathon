@@ -136,6 +136,28 @@ input[type="search"]::-webkit-search-cancel-button {
 	@apply bg-blue-800;
 }
 
+@media screen and (max-width: 768px) {
+.double-slider > input[type=range]:hover::-webkit-slider-thumb {
+	@apply ring-4 ring-blue-800 border-blue-800;
+}
+
+.double-slider > input[type=range]:hover::-moz-range-thumb {
+	@apply ring-4 ring-blue-800 border-blue-800;
+}
+
+.double-slider > input[type=range]:hover {
+	@apply outline-none z-20;
+}
+
+.double-slider > input[type=range]:hover + output {
+	@apply z-20;
+}
+
+.double-slider > input[type=range]:hover + output > span {
+	@apply bg-blue-800;
+}
+}
+
 .double-slider > output {
 	@apply row-start-1 col-start-1 max-w-max ml-3 transform-gpu;
 	--tw-translate-x: calc((var(--c))/14*17.25rem);
