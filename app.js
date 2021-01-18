@@ -575,6 +575,6 @@ document.querySelectorAll('.double-slider').forEach(parent => {
 		slider_timer = setTimeout(() => {
 			render();
 			CALENDAR.refresh();
-		}, 700);
+		}, 300);
 	}, false);
 });
