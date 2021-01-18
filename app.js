@@ -541,7 +541,7 @@ document.getElementById('js-calendar-placeholder-open').addEventListener('click'
 
 
 let switched = false;
-
+let slider_timer = 0;
 document.querySelectorAll('.double-slider').forEach(parent => {
 	parent.addEventListener('focusin', e => {
 		if(e.target.className == 'va') {
@@ -571,7 +571,10 @@ document.querySelectorAll('.double-slider').forEach(parent => {
 		if (e.target.className == 'va') FILTER.school[0] = e.target.value;
 		else FILTER.school[1] = e.target.value;
 		
-		render()
-		CALENDAR.refresh()
+		clearTimeout(slider_timer);
+		slider_timer = setTimeout(() => {
+			render();
+			CALENDAR.refresh();
+		}, 700);
 	}, false);
 });
