@@ -266,7 +266,7 @@ const render = () => {
 
 	// School filter
 	visible_events = visible_events.filter((event) => {
-		return Math.max(FILTER.school[0], FILTER.school[1]) >= school_to_int(event.contestants.min, 0) && Math.min(FILTER.school[0], FILTER.school[1]) <= school_to_int(event.contestants.max, 1);
+		return Math.max(FILTER.school[0], FILTER.school[1]) >= Math.min(school_to_int(event.contestants.min, 0), school_to_int(event.contestants.max, 1)) && Math.min(FILTER.school[0], FILTER.school[1]) <= Math.max(school_to_int(event.contestants.max, 1), school_to_int(event.contestants.min, 0));
 	})
 
 	// Sciences filter
