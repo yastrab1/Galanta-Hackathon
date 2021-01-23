@@ -143,6 +143,7 @@ module.exports = {
       spacing: {
         '18': '4.5rem',
         '87': '21.75rem',
+        '90': '23rem',
       },
       cursor: {
         grab: 'grab',
