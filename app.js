@@ -404,6 +404,15 @@ const setup_calendar = () => {
 }
 
 const scroll_to_id = (id) => {
+	document.getElementById(id).animate([{
+		'backgroundColor': 'rgb(254, 235, 200)',
+		'boxShadow': 'inset 0 0 0 3px rgb(237, 137, 54)',
+		offset: 0.5
+		}], {
+		duration: 1500,
+		easing: 'cubic-bezier(.25, .75, .75, .25)',
+		iterations: 2
+	});
 	document.getElementById('scroll').scrollTo({
 		top: document.getElementById(id).getBoundingClientRect().top - window.innerHeight / 2 + document.getElementById('scroll').scrollTop,
 		left: 0,
