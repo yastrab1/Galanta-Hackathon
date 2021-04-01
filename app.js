@@ -69,11 +69,14 @@ const CONSTANTS = {
 
 const DATA_URL = 'https://data.kockatykalendar.sk/2021_22.json'
 let DATA = []
-let FILTER = {
-	school: [0, 14],
-	sciences: ['mat', 'fyz', 'inf', 'other'],
-	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
-	default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
+let FILTER = JSON.parse(localStorage.getItem('filter'));
+if (!FILTER) {
+	FILTER = {
+		school: [0, 14],
+		sciences: ['mat', 'fyz', 'inf', 'other'],
+		organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
+		default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
+	}
 }
 const CALENDAR = jsCalendar.new({
 	target: '#calendar',
@@ -458,11 +461,13 @@ document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange
 
 	if (checked && FILTER[filter_type].indexOf(value) === -1) {
 		FILTER[filter_type].push(value)
+		localStorage.setItem('filter', JSON.stringify(FILTER));
 		filter_update_checked()
 	}
 
 	if (!checked && FILTER[filter_type].indexOf(value) !== -1) {
 		FILTER[filter_type] = FILTER[filter_type].filter((x) => x != value)
+		localStorage.setItem('filter', JSON.stringify(FILTER));
 		filter_update_checked()
 	}
 
@@ -570,11 +575,24 @@ document.querySelectorAll('.double-slider').forEach(parent => {
 
 		if (e.target.className == 'va') FILTER.school[0] = e.target.value;
 		else FILTER.school[1] = e.target.value;
-		
+		localStorage.setItem('filter', JSON.stringify(FILTER));
+
 		clearTimeout(slider_timer);
 		slider_timer = setTimeout(() => {
 			render();
 			CALENDAR.refresh();
 		}, 300);
 	}, false);
+});
+
+document.querySelectorAll('.va').forEach( el => {
+	el.parentNode.style.setProperty('--va', FILTER.school[0]);
+	el.value = FILTER.school[0];
+	el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.school_years[FILTER.school[0]];
+});
+
+document.querySelectorAll('.vb').forEach( el => {
+	el.parentNode.style.setProperty('--vb', FILTER.school[1]);
+	el.value = FILTER.school[1];
+	el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.school_years[FILTER.school[1]];
 });
