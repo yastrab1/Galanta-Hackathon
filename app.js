@@ -69,14 +69,11 @@ const CONSTANTS = {
 
 const DATA_URL = 'https://data.kockatykalendar.sk/2021_22.json'
 let DATA = []
-let FILTER = JSON.parse(localStorage.getItem('filter'));
-if (!FILTER) {
-	FILTER = {
-		school: [0, 14],
-		sciences: ['mat', 'fyz', 'inf', 'other'],
-		organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
-		default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
-	}
+let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
+	school: [0, 14],
+	sciences: ['mat', 'fyz', 'inf', 'other'],
+	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
+	default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
 }
 const CALENDAR = jsCalendar.new({
 	target: '#calendar',
