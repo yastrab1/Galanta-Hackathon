@@ -17,7 +17,7 @@
     <meta property="og:title" content="KockatýKalendár.sk" />
     <meta property="og:description" content="Všetky súťaže a akcie v oblasti matematiky, fyziky a informatiky na jednom mieste." />
 </head>
-<body class="antialiased">
+<body class="antialiased max-h-screen h-screen flex flex-col">
     <header class="bg-blue-500 text-white">
         <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
             <a href="index.html" class="font-bold text-xl mb-1 md:mb-0">KockatýKalendár.sk</a>
@@ -33,174 +33,174 @@
             </ul>
         </nav>
     </header>
-
-    <div class="bg-blue-400 bg-cover bg-center" style="background-image: url('img/header.jpg');">
-        <div class="container mx-auto px-8 py-24 text-center">
-            <h1 class="font-bold text-3xl md:text-5xl">KockatýKalendár.sk</h1>
-            <p class="text-xl md:-mt-1 mb-4">
-                Prehľad akcií a súťaží v oblasti matematiky, fyziky a informatiky pre základné a stredné školy.
-            </p>
-            <a class="rounded bg-blue-600 hover:bg-blue-700 text-white text-2xl py-2 px-6 font-bold inline-flex items-center shadow-xl" href="terminy.html">
-                Prejsť na akcie <i data-feather="arrow-right-circle" class="ml-3"></i>
-            </a>
-        </div>
-    </div>
-
-    <div class="container mx-auto p-8">
-        <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Čo je Kockatý Kalendár?</h2>
-        <div class="mx-auto max-w-2xl text-center">
-            <p class="mb-2">
-                Na Slovensku existuje množstvo organizácií ponúkajúcich súťaže a akcie pre
-                základoškolákov alebo stredoškolákov v oblasti matematiky, fyziky a informatiky.
-                Súťaží a akcií je tak veľa, že môže byť zložité vyznať sa vo všetkých.
-            </p>
-            <p class="mb-2">
-                Kockatý Kalendár je spoločná iniciatíva týchto organizácií, ktorá ponúka jednoduchý,
-                jasný a pochopiteľný prehľad organizovaných súťaží.
-            </p>
-            <p class="mb-2 font-bold">
-                Jediné miesto, kde sa dozvieš všetky termíny súťaží a akcií v oblasti M/F/I na Slovensku.
-            </p>
-            <p>
-                Uvádzame termíny súťaží a akcií organizácií, ktoré sa na tvorbe kalendára podieľajú.
-                Akcie sú dlhodobé aj jednodňové, pre žiakov od 4. ročníka základnej školy až po koniec strednej školy.
-            </p>
-        </div>
-
-
-        <h2 class="font-bold mt-12 mb-6 text-center text-3xl">Pre koho je?</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="text-center border shadow rounded-lg p-8">
-                <i class="w-20 h-20 mx-auto mb-1" data-feather="book"></i>
-                <div class="text-2xl font-bold mb-2">Žiak</div>
-                <p>
-                    Maj prehľad o súťažiach pre tvoj ročník,
-                    pozri si všetky termíny na jednom mieste a
-                    objav nové možnosti rozvoja.
+    <main class="overflow-y-scroll">
+        <div class="bg-blue-400 bg-cover bg-center" style="background-image: url('img/header.jpg');">
+            <div class="container mx-auto px-8 py-24 text-center">
+                <h1 class="font-bold text-3xl md:text-5xl">KockatýKalendár.sk</h1>
+                <p class="text-xl md:-mt-1 mb-4">
+                    Prehľad akcií a súťaží v oblasti matematiky, fyziky a informatiky pre základné a stredné školy.
                 </p>
-            </div>
-            <div class="text-center border shadow rounded-lg p-8">
-                <i class="w-20 h-20 mx-auto mb-1" data-feather="help-circle"></i>
-                <div class="text-2xl font-bold mb-2">Učiteľ</div>
-                <p>
-                    Nájdi aktivity pre šikovných žiakov,
-                    informuj sa o tých, ktoré už robia a
-                    udržuj si prehľad z jedného miesta.
-                </p>
-            </div>
-            <div class="text-center border shadow rounded-lg p-8">
-                <i class="w-20 h-20 mx-auto mb-1" data-feather="coffee"></i>
-                <div class="text-2xl font-bold mb-2">Rodič</div>
-                <p>
-                    Nájdi tú správnu súťaž pre tvoje dieťa,
-                    pochop tej, ktorú už robí a maj
-                    prehľad o termínoch, ktoré má dodržať.
-                </p>
-            </div>
-        </div>
-
-        <div class="text-center mt-8 mb-4">
-            <a class="rounded bg-blue-500 hover:bg-blue-600 text-white text-2xl py-2 px-6 font-bold inline-flex items-center" href="terminy.html">
-                Prejsť na akcie <i data-feather="arrow-right-circle" class="ml-2"></i>
-            </a>
-        </div>
-
-
-        <div class="mx-auto max-w-2xl mt-8 border border-blue-500 rounded-md py-4 px-6 bg-blue-100 text-blue-800">
-            <p><b>Novinka!</b> Kockatý Kalendár už aj v tvojom kalendári!</p>
-            <p>
-                Ak si chceš pridať akcie z Kockatého Kalendára do svojho Google / Outlook kalendára alebo do mobilu, pripravili sme si pre teba
-                <a href="./ical.html" class="underline text-blue-900">kalendár vo formáte .ics</a>!
-            </p>
-        </div>
-
-
-        <h2 class="font-bold mt-12 mb-6 text-center text-3xl">Kto je za tým?</h2>
-
-        <p class="mx-auto max-w-2xl text-center mb-12">
-            KockatýKalendár.sk je spoločná iniciatíva viacerých organizátorov vzdelávacích akcii pre deti a mládež pod vedením P-mat n.o.
-            Cielom projektu je prehľadne zobraziť všetky nadchádzajúce súťaže súvisiace z matematikou, fyzikou a informatikou.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
-            <div class="border rounded-lg p-8 text-center shadow border-blue-600">
-                <a href="https://trojsten.sk" target="_blank" rel="noreferrer">
-                    <img src="logos/trojsten.svg" alt="Trojsten" class="h-24 mx-auto mb-4">
+                <a class="rounded bg-blue-600 hover:bg-blue-700 text-white text-2xl py-2 px-6 font-bold inline-flex items-center shadow-xl" href="terminy.html">
+                    Prejsť na akcie <i data-feather="arrow-right-circle" class="ml-3"></i>
                 </a>
-                <h2 class="mb-2 font-bold text-2xl">Trojsten</h2>
-                <p>
-                    Trojsten je občianske združenie, ktoré na Slovensku organizuje aktivity v matematike, fyzike a informatike pre študentov základných, no najmä stredných škôl. Časť aktivít, súťaže Náboj sa podarilo úspešne expandovať za hranice Slovenska do ďalších jedenástich krajín a v súčastnosti sa ich zúčastňuje každý rok niekoľko tisíc účastníkov.
-                </p>
-            </div>
-            <div class="border rounded-lg p-8 text-center shadow border-orange-500">
-                <a href="https://p-mat.sk" target="_blank" rel="noreferrer">
-                    <img src="logos/p-mat.svg" alt="P-mat" class="h-24 mx-auto mb-4">
-                </a>
-                <h2 class="mb-2 font-bold text-2xl">P-mat</h2>
-                <p>
-                    Nezisková organizácia P-Mat prostredníctvom matematiky, fyziky, hier a netradičných zážitkov vytvára dostupné, priateľské a podnetné prostredie pre zvedavé deti a rozvíja tak ich logické a kritické myslenie, schopnosť riešiť problémy, sociálne zručnosti a morálne cítenie. Okrem korešpondenčnej časti a sústredení organizuje aj pobytové víkendové akcie, jednodňové súťaže nie len offline, ale aj online najmä pre základné školy a príslušné ročníky gymnázií.
-                </p>
-            </div>
-            <div class="border rounded-lg p-8 text-center shadow border-black">
-                <a href="https://riesky.sk" target="_blank" rel="noreferrer">
-                    <img src="logos/riesky.svg" alt="Riešky" class="h-24 mx-auto mb-4">
-                </a>
-                <h2 class="mb-2 font-bold text-2xl">Riešky</h2>
-                <p>
-                    Riešky sú korešpondenčný seminár pre žiakov 5. - 9. ročníka základných škôl a príslušných ročníkov gymnázií. Naujúspešnejších riešiteľov čaká týždňové sústredenie plné zaujímavej matematiky, netradičných hier a množstvom zábavy. Okrem toho organizujú aj denný tábor v Bratislave, ktorý je ochutnávkou toho, čo na sústredení môžete zažiť.
-                </p>
-            </div>
-            <div class="border rounded-lg p-8 text-center shadow border-blue-300">
-                <a href="https://sezam.sk" target="_blank" rel="noreferrer">
-                    <img src="logos/sezam.svg" alt="SEZAM" class="h-24 mx-auto mb-4">
-                </a>
-                <h2 class="mb-2 font-bold text-2xl">SEZAM</h2>
-                <p>
-                    SEZAM sa venuje organizácii korešpondenčných seminárov SEZAM a SEZAMKO pre žiakov od 5. po 9. ročník základných škôl a príslušných ročníkov gymnázií. Pre najúspešnejších riešiteľov organizuje stretnutia v zime aj v lete. Na týchto stretnutiach sa venujú matematike, športu, rôznym hrám, hlavolamom a iným zaujímavým aktivitám.
-                </p>
-            </div>
-            <div class="border rounded-lg p-8 text-center shadow border-black">
-                <a href="https://strom.sk" target="_blank" rel="noreferrer">
-                    <img src="logos/strom.svg" alt="STROM" class="h-24 mx-auto mb-4">
-                </a>
-                <h2 class="mb-2 font-bold text-2xl">STROM</h2>
-                <p>
-                    Združenie STROM sa už dlhé roky úspešne venuje tomu, aby sa v mysliach mladých ľudí otázka: “Na čo mi to bude?” neobjavovala ako súčasť výhovoriek, prečo sa počítaniu úloh alebo logickým úvahám nevenovať, ale ako podnet k tomu, aby sa pokúsili vedieť viac a posúvali ďalej svoje možnosti. Okrem korešpondenčnej časti a sústredení sa venuje organizácii školských minisústredení, výletov a jednodňových súťaží v Košiciach.
-                </p>
             </div>
         </div>
 
+        <div class="container mx-auto p-8">
+            <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Čo je Kockatý Kalendár?</h2>
+            <div class="mx-auto max-w-2xl text-center">
+                <p class="mb-2">
+                    Na Slovensku existuje množstvo organizácií ponúkajúcich súťaže a akcie pre
+                    základoškolákov alebo stredoškolákov v oblasti matematiky, fyziky a informatiky.
+                    Súťaží a akcií je tak veľa, že môže byť zložité vyznať sa vo všetkých.
+                </p>
+                <p class="mb-2">
+                    Kockatý Kalendár je spoločná iniciatíva týchto organizácií, ktorá ponúka jednoduchý,
+                    jasný a pochopiteľný prehľad organizovaných súťaží.
+                </p>
+                <p class="mb-2 font-bold">
+                    Jediné miesto, kde sa dozvieš všetky termíny súťaží a akcií v oblasti M/F/I na Slovensku.
+                </p>
+                <p>
+                    Uvádzame termíny súťaží a akcií organizácií, ktoré sa na tvorbe kalendára podieľajú.
+                    Akcie sú dlhodobé aj jednodňové, pre žiakov od 4. ročníka základnej školy až po koniec strednej školy.
+                </p>
+            </div>
 
-        <h2 class="font-bold mt-16 mb-6 text-center text-3xl">Chcem pomôcť, opraviť chybu alebo mám otázku</h2>
 
-        <div class="flex justify-center items-center text-gray-600 mb-8">
-            <a href="mailto:kockaty.kalendar@p-mat.sk">
-                <i data-feather="mail" class="w-16 h-16 mx-4 hover:text-blue-500"></i>
-            </a>
-            <a href="https://github.com/kockatykalendar">
-                <i data-feather="github" class="w-16 h-16 mx-4 hover:text-blue-500"></i>
-            </a>
+            <h2 class="font-bold mt-12 mb-6 text-center text-3xl">Pre koho je?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center border shadow rounded-lg p-8">
+                    <i class="w-20 h-20 mx-auto mb-1" data-feather="book"></i>
+                    <div class="text-2xl font-bold mb-2">Žiak</div>
+                    <p>
+                        Maj prehľad o súťažiach pre tvoj ročník,
+                        pozri si všetky termíny na jednom mieste a
+                        objav nové možnosti rozvoja.
+                    </p>
+                </div>
+                <div class="text-center border shadow rounded-lg p-8">
+                    <i class="w-20 h-20 mx-auto mb-1" data-feather="help-circle"></i>
+                    <div class="text-2xl font-bold mb-2">Učiteľ</div>
+                    <p>
+                        Nájdi aktivity pre šikovných žiakov,
+                        informuj sa o tých, ktoré už robia a
+                        udržuj si prehľad z jedného miesta.
+                    </p>
+                </div>
+                <div class="text-center border shadow rounded-lg p-8">
+                    <i class="w-20 h-20 mx-auto mb-1" data-feather="coffee"></i>
+                    <div class="text-2xl font-bold mb-2">Rodič</div>
+                    <p>
+                        Nájdi tú správnu súťaž pre tvoje dieťa,
+                        pochop tej, ktorú už robí a maj
+                        prehľad o termínoch, ktoré má dodržať.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 mb-4">
+                <a class="rounded bg-blue-500 hover:bg-blue-600 text-white text-2xl py-2 px-6 font-bold inline-flex items-center" href="terminy.html">
+                    Prejsť na akcie <i data-feather="arrow-right-circle" class="ml-2"></i>
+                </a>
+            </div>
+
+
+            <div class="mx-auto max-w-2xl mt-8 border border-blue-500 rounded-md py-4 px-6 bg-blue-100 text-blue-800">
+                <p><b>Novinka!</b> Kockatý Kalendár už aj v tvojom kalendári!</p>
+                <p>
+                    Ak si chceš pridať akcie z Kockatého Kalendára do svojho Google / Outlook kalendára alebo do mobilu, pripravili sme si pre teba
+                    <a href="./ical.html" class="underline text-blue-900">kalendár vo formáte .ics</a>!
+                </p>
+            </div>
+
+
+            <h2 class="font-bold mt-12 mb-6 text-center text-3xl">Kto je za tým?</h2>
+
+            <p class="mx-auto max-w-2xl text-center mb-12">
+                KockatýKalendár.sk je spoločná iniciatíva viacerých organizátorov vzdelávacích akcii pre deti a mládež pod vedením P-mat n.o.
+                Cielom projektu je prehľadne zobraziť všetky nadchádzajúce súťaže súvisiace z matematikou, fyzikou a informatikou.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
+                <div class="border rounded-lg p-8 text-center shadow border-blue-600">
+                    <a href="https://trojsten.sk" target="_blank" rel="noreferrer">
+                        <img src="logos/trojsten.svg" alt="Trojsten" class="h-24 mx-auto mb-4">
+                    </a>
+                    <h2 class="mb-2 font-bold text-2xl">Trojsten</h2>
+                    <p>
+                        Trojsten je občianske združenie, ktoré na Slovensku organizuje aktivity v matematike, fyzike a informatike pre študentov základných, no najmä stredných škôl. Časť aktivít, súťaže Náboj sa podarilo úspešne expandovať za hranice Slovenska do ďalších jedenástich krajín a v súčastnosti sa ich zúčastňuje každý rok niekoľko tisíc účastníkov.
+                    </p>
+                </div>
+                <div class="border rounded-lg p-8 text-center shadow border-orange-500">
+                    <a href="https://p-mat.sk" target="_blank" rel="noreferrer">
+                        <img src="logos/p-mat.svg" alt="P-mat" class="h-24 mx-auto mb-4">
+                    </a>
+                    <h2 class="mb-2 font-bold text-2xl">P-mat</h2>
+                    <p>
+                        Nezisková organizácia P-Mat prostredníctvom matematiky, fyziky, hier a netradičných zážitkov vytvára dostupné, priateľské a podnetné prostredie pre zvedavé deti a rozvíja tak ich logické a kritické myslenie, schopnosť riešiť problémy, sociálne zručnosti a morálne cítenie. Okrem korešpondenčnej časti a sústredení organizuje aj pobytové víkendové akcie, jednodňové súťaže nie len offline, ale aj online najmä pre základné školy a príslušné ročníky gymnázií.
+                    </p>
+                </div>
+                <div class="border rounded-lg p-8 text-center shadow border-black">
+                    <a href="https://riesky.sk" target="_blank" rel="noreferrer">
+                        <img src="logos/riesky.svg" alt="Riešky" class="h-24 mx-auto mb-4">
+                    </a>
+                    <h2 class="mb-2 font-bold text-2xl">Riešky</h2>
+                    <p>
+                        Riešky sú korešpondenčný seminár pre žiakov 5. - 9. ročníka základných škôl a príslušných ročníkov gymnázií. Naujúspešnejších riešiteľov čaká týždňové sústredenie plné zaujímavej matematiky, netradičných hier a množstvom zábavy. Okrem toho organizujú aj denný tábor v Bratislave, ktorý je ochutnávkou toho, čo na sústredení môžete zažiť.
+                    </p>
+                </div>
+                <div class="border rounded-lg p-8 text-center shadow border-blue-300">
+                    <a href="https://sezam.sk" target="_blank" rel="noreferrer">
+                        <img src="logos/sezam.svg" alt="SEZAM" class="h-24 mx-auto mb-4">
+                    </a>
+                    <h2 class="mb-2 font-bold text-2xl">SEZAM</h2>
+                    <p>
+                        SEZAM sa venuje organizácii korešpondenčných seminárov SEZAM a SEZAMKO pre žiakov od 5. po 9. ročník základných škôl a príslušných ročníkov gymnázií. Pre najúspešnejších riešiteľov organizuje stretnutia v zime aj v lete. Na týchto stretnutiach sa venujú matematike, športu, rôznym hrám, hlavolamom a iným zaujímavým aktivitám.
+                    </p>
+                </div>
+                <div class="border rounded-lg p-8 text-center shadow border-black">
+                    <a href="https://strom.sk" target="_blank" rel="noreferrer">
+                        <img src="logos/strom.svg" alt="STROM" class="h-24 mx-auto mb-4">
+                    </a>
+                    <h2 class="mb-2 font-bold text-2xl">STROM</h2>
+                    <p>
+                        Združenie STROM sa už dlhé roky úspešne venuje tomu, aby sa v mysliach mladých ľudí otázka: “Na čo mi to bude?” neobjavovala ako súčasť výhovoriek, prečo sa počítaniu úloh alebo logickým úvahám nevenovať, ale ako podnet k tomu, aby sa pokúsili vedieť viac a posúvali ďalej svoje možnosti. Okrem korešpondenčnej časti a sústredení sa venuje organizácii školských minisústredení, výletov a jednodňových súťaží v Košiciach.
+                    </p>
+                </div>
+            </div>
+
+
+            <h2 class="font-bold mt-16 mb-6 text-center text-3xl">Chcem pomôcť, opraviť chybu alebo mám otázku</h2>
+
+            <div class="flex justify-center items-center text-gray-600 mb-8">
+                <a href="mailto:kockaty.kalendar@p-mat.sk">
+                    <i data-feather="mail" class="w-16 h-16 mx-4 hover:text-blue-500"></i>
+                </a>
+                <a href="https://github.com/kockatykalendar">
+                    <i data-feather="github" class="w-16 h-16 mx-4 hover:text-blue-500"></i>
+                </a>
+            </div>
+
+            <div class="mx-auto max-w-2xl text-center mb-12">
+                <p class="mb-2">
+                    <b>Ak si našiel/-la chybu</b> môžeš nám napísať na
+                    <a class="text-blue-500" href="mailto:kockaty.kalendar@p-mat.sk">kockaty.kalendar@p-mat.sk</a> a my sa ju pokúsime opraviť.
+                    Ak si programátor/-ka, môžeš nám pomôcť aj na GitHub-e:
+                </p>
+                <p class="mb-2">
+                    <b>Pomôcť</b> sa dá aj na GitHub-e. Celý <a class="text-blue-500" href="https://github.com/kockatykalendar">kód Kockatého Kalendára</a>
+                    je open-source, stačí si niektorý z repozitárov forknúť a poslať nám PR.
+                </p>
+                <p>
+                    <b>Ak máš inú otázku</b> napíš nám na <a class="text-blue-500" href="mailto:kockaty.kalendar@p-mat.sk">kockaty.kalendar@p-mat.sk</a>
+                    a my sa ti ozveme.
+                </p>
+            </div>
+
         </div>
-
-        <div class="mx-auto max-w-2xl text-center mb-12">
-            <p class="mb-2">
-                <b>Ak si našiel/-la chybu</b> môžeš nám napísať na
-                <a class="text-blue-500" href="mailto:kockaty.kalendar@p-mat.sk">kockaty.kalendar@p-mat.sk</a> a my sa ju pokúsime opraviť.
-                Ak si programátor/-ka, môžeš nám pomôcť aj na GitHub-e:
-            </p>
-            <p class="mb-2">
-                <b>Pomôcť</b> sa dá aj na GitHub-e. Celý <a class="text-blue-500" href="https://github.com/kockatykalendar">kód Kockatého Kalendára</a>
-                je open-source, stačí si niektorý z repozitárov forknúť a poslať nám PR.
-            </p>
-            <p>
-                <b>Ak máš inú otázku</b> napíš nám na <a class="text-blue-500" href="mailto:kockaty.kalendar@p-mat.sk">kockaty.kalendar@p-mat.sk</a>
-                a my sa ti ozveme.
-            </p>
-        </div>
-
-
-    </div>
+    </main>
 
     <script src="https://unpkg.com/feather-icons"></script>
     <script>

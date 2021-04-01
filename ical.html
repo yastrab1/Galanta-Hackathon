@@ -34,100 +34,101 @@
             </ul>
         </nav>
     </header>
+    <main class="overflow-y-scroll">
 
-    <div class="mx-auto max-w-4xl p-8">
-        <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Kockatý Kalendár v tvojom kalendári</h2>
-        <div class="mx-auto max-w-2xl text-center">
-            <p>
-                Kockatý Kalendár okrem webového rozhrania ponúka aj možnosť si pridať udalosti do tvojho Google Kalendára,
-                Outlooku a pod. Môžeš si vybrať, ktoré akcie chceš vo svojom kalendári mať.
+        <div class="mx-auto max-w-4xl p-8">
+            <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Kockatý Kalendár v tvojom kalendári</h2>
+            <div class="mx-auto max-w-2xl text-center">
+                <p>
+                    Kockatý Kalendár okrem webového rozhrania ponúka aj možnosť si pridať udalosti do tvojho Google Kalendára,
+                    Outlooku a pod. Môžeš si vybrať, ktoré akcie chceš vo svojom kalendári mať.
+                </p>
+            </div>
+
+
+            <h2 class="font-bold mt-12 text-center text-2xl">Predvoľby kalendára</h2>
+            <div x-data="{ school: 'any', science: 'any' }">
+                <h3 class="font-bold mt-8 mb-4 text-lg uppercase text-gray-700 tracking-wide">Ročník</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-lg font-bold">
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'any' }" @click="school = 'any'">
+                        Všetky
+                    </div>
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'zs' }" @click="school = 'zs'">
+                        Základná škola
+                    </div>
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'ss' }" @click="school = 'ss'">
+                        Stredná škola
+                    </div>
+                </div>
+
+                <h3 class="font-bold mt-8 mb-4 text-lg uppercase text-gray-700 tracking-wide">Veda</h3>
+
+                <div class="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-5 gap-3 text-center text-md font-bold">
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'any' }" @click="science = 'any'">
+                        Všetky
+                    </div>
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'mat' }" @click="science = 'mat'">
+                        Matematika
+                    </div>
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'fyz' }" @click="science = 'fyz'">
+                        Fyzika
+                    </div>
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'inf' }" @click="science = 'inf'">
+                        Informatika
+                    </div>
+                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'other' }" @click="science = 'other'">
+                        Ostatné
+                    </div>
+                </div>
+
+                <h2 class="font-bold mt-12 mb-6 text-center text-2xl">Adresa zvoleného kalendára</h2>
+
+                <div class="bg-gray-400 px-4 py-3 rounded-lg text-2xl font-mono">https://ical.kockatykalendar.sk/<span x-text="school"></span>/<span x-text="science"></span>.ics</div>
+                <p class="text-sm text-gray-700 mt-2">Ak chceš v kalendári viacero vied / ročníkov, pridaj každý zvlášť.</p>
+            </div>
+
+            <h2 class="font-bold mt-12 text-center text-3xl">Ako na to?</h2>
+            <p class="mx-auto max-w-2xl text-center mt-6">
+                Kockatý Kalendár si môžeš jednoducho pridať do svojho kalendára. Nevieš, ako na to? Nevadí! Pripravili sme si pre teba
+                krátke návody.
             </p>
         </div>
 
-
-        <h2 class="font-bold mt-12 text-center text-2xl">Predvoľby kalendára</h2>
-        <div x-data="{ school: 'any', science: 'any' }">
-            <h3 class="font-bold mt-8 mb-4 text-lg uppercase text-gray-700 tracking-wide">Ročník</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-lg font-bold">
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'any' }" @click="school = 'any'">
-                    Všetky
+        <div class="mx-auto container p-8 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
+                <div class="border rounded-lg p-8 shadow">
+                    <h2 class="mb-2 font-bold text-2xl">Google Calendar</h2>
+                    <ol class="list-decimal ml-6 space-y-1">
+                        <li>Otvoríš <a href="https://calendar.google.com" class="underline text-blue-600" rel="noopener" target="_blank">calendar.google.com</a></li>
+                        <li>Na ľavej strane v zozname kalendárov klikni na "+"</li>
+                        <li>Zvol možnosť pridania podľa URL adresy</li>
+                        <li>Nakopíruj vyššie uvedenú adresu</li>
+                        <li>Pridaj kalendár</li>
+                        <li class="font-bold text-green-500">Hotovo.</li>
+                    </ol>
                 </div>
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'zs' }" @click="school = 'zs'">
-                    Základná škola
+                <div class="border rounded-lg p-8 shadow">
+                    <h2 class="mb-2 font-bold text-2xl">Outlook</h2>
+                    <ol class="list-decimal ml-6 space-y-1">
+                        <li>Otvoríš si <a href="https://outlook.office.com/calendar/" class="underline text-blue-600" rel="noopener" target="_blank">Outlook Kalendár</a></li>
+                        <li>Na ľavej strane klikni na "Pridať kalendár"</li>
+                        <li>Zvol možnosť "Prihlásiť sa na odber z webu"</li>
+                        <li>Nakopíruj vyššie uvedenú adresu</li>
+                        <li>Zvoľ si farbu a názov kalendára</li>
+                        <li>Stlač importovať</li>
+                        <li class="font-bold text-green-500">Hotovo.</li>
+                    </ol>
                 </div>
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'ss' }" @click="school = 'ss'">
-                    Stredná škola
+                <div class="border rounded-lg p-8 shadow text-gray-600">
+                    <h2 class="mb-2 font-bold text-2xl">Niečo iné?</h2>
+                    <p>
+                        Ak používaš niečo iné, čo by sme sem mali doplniť, <a href="mailto:kockaty.kalendar@p-mat.sk" class="underline text-blue-400">daj nám vedieť!</a>
+                    </p>
                 </div>
-            </div>
-
-            <h3 class="font-bold mt-8 mb-4 text-lg uppercase text-gray-700 tracking-wide">Veda</h3>
-
-            <div class="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-5 gap-3 text-center text-md font-bold">
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'any' }" @click="science = 'any'">
-                    Všetky
-                </div>
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'mat' }" @click="science = 'mat'">
-                    Matematika
-                </div>
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'fyz' }" @click="science = 'fyz'">
-                    Fyzika
-                </div>
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'inf' }" @click="science = 'inf'">
-                    Informatika
-                </div>
-                <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'other' }" @click="science = 'other'">
-                    Ostatné
-                </div>
-            </div>
-
-            <h2 class="font-bold mt-12 mb-6 text-center text-2xl">Adresa zvoleného kalendára</h2>
-
-            <div class="bg-gray-400 px-4 py-3 rounded-lg text-2xl font-mono">https://ical.kockatykalendar.sk/<span x-text="school"></span>/<span x-text="science"></span>.ics</div>
-            <p class="text-sm text-gray-700 mt-2">Ak chceš v kalendári viacero vied / ročníkov, pridaj každý zvlášť.</p>
-        </div>
-
-        <h2 class="font-bold mt-12 text-center text-3xl">Ako na to?</h2>
-        <p class="mx-auto max-w-2xl text-center mt-6">
-            Kockatý Kalendár si môžeš jednoducho pridať do svojho kalendára. Nevieš, ako na to? Nevadí! Pripravili sme si pre teba
-            krátke návody.
-        </p>
-    </div>
-
-    <div class="mx-auto container p-8 mb-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
-            <div class="border rounded-lg p-8 shadow">
-                <h2 class="mb-2 font-bold text-2xl">Google Calendar</h2>
-                <ol class="list-decimal ml-6 space-y-1">
-                    <li>Otvoríš <a href="https://calendar.google.com" class="underline text-blue-600" rel="noopener" target="_blank">calendar.google.com</a></li>
-                    <li>Na ľavej strane v zozname kalendárov klikni na "+"</li>
-                    <li>Zvol možnosť pridania podľa URL adresy</li>
-                    <li>Nakopíruj vyššie uvedenú adresu</li>
-                    <li>Pridaj kalendár</li>
-                    <li class="font-bold text-green-500">Hotovo.</li>
-                </ol>
-            </div>
-            <div class="border rounded-lg p-8 shadow">
-                <h2 class="mb-2 font-bold text-2xl">Outlook</h2>
-                <ol class="list-decimal ml-6 space-y-1">
-                    <li>Otvoríš si <a href="https://outlook.office.com/calendar/" class="underline text-blue-600" rel="noopener" target="_blank">Outlook Kalendár</a></li>
-                    <li>Na ľavej strane klikni na "Pridať kalendár"</li>
-                    <li>Zvol možnosť "Prihlásiť sa na odber z webu"</li>
-                    <li>Nakopíruj vyššie uvedenú adresu</li>
-                    <li>Zvoľ si farbu a názov kalendára</li>
-                    <li>Stlač importovať</li>
-                    <li class="font-bold text-green-500">Hotovo.</li>
-                </ol>
-            </div>
-            <div class="border rounded-lg p-8 shadow text-gray-600">
-                <h2 class="mb-2 font-bold text-2xl">Niečo iné?</h2>
-                <p>
-                    Ak používaš niečo iné, čo by sme sem mali doplniť, <a href="mailto:kockaty.kalendar@p-mat.sk" class="underline text-blue-400">daj nám vedieť!</a>
-                </p>
             </div>
         </div>
-    </div>
-
+    </main>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"></script>
     <script async defer data-website-id="e76c1f53-9376-4047-8c8e-45cc01532075" src="https://stats.p-mat.sk/umami.js"></script>
 </body>
