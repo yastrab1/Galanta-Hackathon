@@ -1,6 +1,6 @@
 ## Install requirements
 
-`npm install tailwindcss@1.9.6 --no-save`
+`npm install tailwindcss@2.1.2 --no-save`
 
 
 ## Generate developer Tailwindcss build:
