@@ -212,6 +212,8 @@ const TEMPLATE = document.getElementById('template-main').innerHTML;
 const PARTIAL_TEMPLATE = document.getElementById('template-event-item').innerHTML;
 let visible_events = DATA
 let is_initial_scroll = false		// used to prevent calendar from hiding during initial scroll
+let first_id = 0
+let last_id = 0
 
 const render = () => {
 	let event_list = document.getElementById('event-list')
@@ -298,7 +300,14 @@ const render = () => {
 		event.id = index
 	})
 
-	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events}, {partial : PARTIAL_TEMPLATE});
+	const event = visible_events.find(event =>
+		new Date(event.date.end || event.date.start) >= new Date()
+	) ?? visible_events[visible_events.length - 1]
+	
+	first_id = Math.max(parseInt(event.id, 10) - 5, 0)
+	last_id = Math.min(parseInt(event.id, 10) + 20, visible_events.length)
+
+	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, last_id)}, {partial : PARTIAL_TEMPLATE});
 
 	[...document.getElementsByClassName("js-event-header")].forEach(node => {
 		node.addEventListener("click", () => {
@@ -307,9 +316,6 @@ const render = () => {
 		})
 	})
 
-	const event = visible_events.find(event =>
-		new Date(event.date.end || event.date.start) >= new Date()
-	)
 	if (event) {
 		is_initial_scroll = true
 		scroll_to_id(`event-item-${event.id}`)
@@ -461,18 +467,41 @@ window.addEventListener("keydown", e => {
 
 
 let last_scroll = document.getElementById('scroll').scrollTop
-document.getElementById('scroll').addEventListener("scroll", e => {
-	let new_scroll = document.getElementById('scroll').scrollTop
+document.getElementById('scroll').addEventListener('scroll', e => {
+	const { scrollTop, scrollHeight, clientHeight } = document.getElementById('scroll')
+
 	if (is_initial_scroll) {
-		last_scroll = new_scroll
-		setTimeout(() => {is_initial_scroll = false}, 500)		// smooth scrolling can be still going on
+		last_scroll = scrollTop
+		setTimeout(() => {
+			is_initial_scroll = false		// smooth scrolling can be still going on
+			setInterval(() => {
+				let scroll = document.getElementById('scroll')
+				if(scroll.scrollTop == 0) scroll.scroll(0,2)
+			}, 100)
+		}, 500)
 		return
 	}
 
-	last_scroll = Math.min(last_scroll, new_scroll)
-	if (Math.abs(new_scroll - last_scroll) > 200) {
-		document.getElementById("js-calendar-placeholder").classList.remove("hidden")
-		document.getElementById("js-calendar-holder").classList.add("hidden")
+	last_scroll = Math.min(last_scroll, scrollTop)
+	if (Math.abs(scrollTop - last_scroll) > 200) {
+		document.getElementById('js-calendar-placeholder').classList.remove('hidden')
+		document.getElementById('js-calendar-holder').classList.add('hidden')
+	}
+	
+	let event_list = document.getElementById('event-list')
+	
+	if(clientHeight + scrollTop >= scrollHeight - 100) {
+		
+		let old_last_id = last_id;
+		last_id = Math.min(last_id + 3, visible_events.length)
+		event_list.insertAdjacentHTML('beforeend', Mustache.render(TEMPLATE, {data: visible_events.slice(old_last_id, last_id)}, {partial : PARTIAL_TEMPLATE}));
+	}
+	
+	if(scrollTop < 100) {
+		let event_list = document.getElementById('event-list')
+		let old_first_id = first_id;
+		first_id = Math.max(first_id - 3, 0)
+		event_list.insertAdjacentHTML('afterbegin', Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, old_first_id)}, {partial : PARTIAL_TEMPLATE}));
 	}
 })
 
