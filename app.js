@@ -84,6 +84,39 @@ const close_modal = () => {
 	document.getElementById("filter-modal").style.display = "none"
 }
 
+const open_search = () => {
+	const anim = document.getElementById('search-modal').animate(
+		[{transform: "translateY(5rem)"}],
+		{ duration: 1000, fill: 'both', easing: 'ease' },
+	);
+	anim.addEventListener('finish', () => {
+		anim.commitStyles();
+		anim.cancel();
+	});
+	let search_input = document.getElementById('search-input');
+	search_input.focus();
+	search_input.value = localStorage.getItem('search');
+	render();
+	CALENDAR.refresh();
+}
+
+const close_search = () => {
+	const anim = document.getElementById('search-modal').animate(
+		[{transform: "translateY(0)"}],
+		{ duration: 1000, fill: 'both', easing: 'ease' },
+	);
+	anim.addEventListener('finish', () => {
+		anim.commitStyles();
+		anim.cancel();
+	});
+	let search_input = document.getElementById('search-input');
+	localStorage.setItem('search', search_input.value);
+	document.getElementById('mobile-search-input').value = "";
+	search_input.value = "";
+	render();
+	CALENDAR.refresh();
+}
+
 const sorting_key = (event) => {
 	if (event.date.end) {
 		return Math.min(
@@ -296,6 +329,11 @@ const render = () => {
 		return false
 	})
 
+	//filter search
+	visible_events = visible_events.filter(x => JSON.stringify(x).includes(document.getElementById('search-input').value))
+	//filter search mobile
+	visible_events = visible_events.filter(x => JSON.stringify(x).includes(document.getElementById('mobile-search-input').value))
+
 	visible_events.forEach((event, index) => {
 		event.id = index
 	})
@@ -461,10 +499,25 @@ document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange
 
 window.addEventListener("keydown", e => {
 	if(!e.isComposing && e.keyCode === 27){
-		close_modal()
+		close_modal();
+		close_search();
+	}
+	if (e.keyCode === 114 || ((e.ctrlKey || e.metaKey) && e.keyCode === 70)) { 
+		e.preventDefault();
+		open_search();
 	}
 })
 
+let search_timer = 0;
+document.querySelectorAll('[type=search]').forEach( parent => {
+	parent.addEventListener('input', e => {
+		clearTimeout(search_timer);
+		search_timer = setTimeout(() => {
+			render();
+			CALENDAR.refresh();
+		}, 300);
+	})
+})
 
 let last_scroll = document.getElementById('scroll').scrollTop
 document.getElementById('scroll').addEventListener('scroll', e => {

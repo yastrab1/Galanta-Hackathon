@@ -9,3 +9,7 @@
   @apply w-10 h-6 rounded-full cursor-pointer relative mr-2;
   background-color: #cbd5e0;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
