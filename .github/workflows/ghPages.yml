@@ -29,7 +29,7 @@ jobs:
         run: |
           cd tailwind
           cat tailwind.css custom.css > tailwind.temp.css
-          npx tailwindcss-cli build tailwind.temp.css -c tailwind.config.prod.js -o build.css
+          npx tailwindcss build tailwind.temp.css -c tailwind.config.prod.js -o build.css
           npx clean-css-cli build.css -o build.min.css
 
       - name: Remove dev css links
