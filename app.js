@@ -61,7 +61,7 @@ const CONSTANTS = {
 	}
 }
 
-const DATA_URL = 'https://raw.githubusercontent.com/kockatykalendar/data/gh-pages/2020_21.json'
+const DATA_URL = 'https://data.kockatykalendar.sk/2021_22.json'
 let DATA = []
 let FILTER = {
 	school: ['zs', 'ss'],
