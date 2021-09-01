@@ -55,7 +55,7 @@ const CONSTANTS = {
 		'strom': 'logos/strom.svg',
 		'siov': 'logos/siov.svg',
 		'iuventa': 'logos/iuventa.svg',
-		'matfyz': 'logos/matfyz.png',
+		'matfyz': 'logos/matfyz.svg',
 		'fykos': 'logos/fykos.svg',
 		'nucem': 'logos/nucem.svg',
 	}
