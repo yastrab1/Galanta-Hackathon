@@ -304,8 +304,8 @@ const render = () => {
 		new Date(event.date.end || event.date.start) >= new Date()
 	) ?? visible_events[visible_events.length - 1]
 	
-	first_id = Math.max(parseInt(event.id, 10) - 5, 0)
-	last_id = Math.min(parseInt(event.id, 10) + 20, visible_events.length)
+	first_id = Math.max(parseInt(event?.id, 10) - 10, 0)
+	last_id = Math.min(parseInt(event?.id, 10) + 20, visible_events.length)
 
 	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, last_id)}, {partial : PARTIAL_TEMPLATE});
 
