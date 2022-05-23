@@ -23,19 +23,18 @@ jobs:
           persist-credentials: false
 
       - name: Install tailwind
-        run: cd tailwind && npm install tailwindcss@2.1.2 autoprefixer@10.2.5 --no-save
+        run: cd tailwind && npm install tailwindcss@3.0.24 --no-save
 
       - name: Build 🔧
         run: |
           cd tailwind
           cat tailwind.css custom.css > tailwind.temp.css
           npx tailwindcss build tailwind.temp.css -c tailwind.config.prod.js -o build.css
-          npx clean-css-cli build.css -o build.min.css
 
       - name: Remove dev css links
         run: |
           sed -i 's|<link href="tailwind/custom.css" rel="stylesheet">||g' *.html
-          sed -i "s|tailwind/build.css|tailwind/build.min.css?v=$(git log --format="%h" -n 1)|g" *.html
+          sed -i "s|tailwind/build.css|tailwind/build.css?v=$(git log --format="%h" -n 1)|g" *.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1

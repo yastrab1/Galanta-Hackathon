@@ -1,14 +1,7 @@
 // tailwind.config.js
 module.exports = {
-  purge:
-    {
-      enabled: true,
-      content: [
-        '../*.html',
-        '../*.js',
-      ]
-    },
-theme: {
+  content: ["../**/*.{html,js}"],
+  theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
