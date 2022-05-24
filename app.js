@@ -67,6 +67,7 @@ const CONSTANTS = {
 	]
 }
 
+const DATA_INDEX_URL = 'https://data.kockatykalendar.sk/index.json'
 const DATA_URL = 'https://data.kockatykalendar.sk/2021_22.json'
 let DATA = []
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
@@ -138,33 +139,36 @@ const school_to_int = (school, max) => {
 	return (parseInt(school?.slice(-1), 10) + (school?.substr(0,2) === 'ss')*9) || max*14;
 }
 
-const load_data = () => {
-	let xhr = new XMLHttpRequest()
-	xhr.open('GET', DATA_URL)
-	xhr.responseType = 'json'
-	xhr.send()
-
-	xhr.onload = function() {
-		DATA = xhr.response
-
-		DATA.forEach((event, index) => {
-			for (const key in fmt) {
-				if (fmt.hasOwnProperty(key)) {
-					event[key] = fmt[key](event)
-				}
-			}
-		})
-
-		DATA.sort((a, b) => {
-			if (a.is_active && b.is_active) {
-				return new Date(a.date.start) - new Date(b.date.start)
-			}
-			return sorting_key(a) - sorting_key(b)
-		})
-
-		render()
-		CALENDAR.refresh()
+const load_json = async (url) => {
+	const response = await fetch(url);
+	if (response.ok) {
+		const jsonValue = await response.json();
+		return Promise.resolve(jsonValue);
+	} else {
+		return Promise.reject('*** JSON file not found');
 	}
+}
+
+const load_data = async () => {
+	DATA = await load_json(DATA_URL)
+
+	DATA.forEach((event, index) => {
+		for (const key in fmt) {
+			if (fmt.hasOwnProperty(key)) {
+				event[key] = fmt[key](event)
+			}
+		}
+	})
+
+	DATA.sort((a, b) => {
+		if (a.is_active && b.is_active) {
+			return new Date(a.date.start) - new Date(b.date.start)
+		}
+		return sorting_key(a) - sorting_key(b)
+	})
+
+	render()
+	CALENDAR.refresh()
 }
 
 // Formatting utilities
