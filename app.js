@@ -87,7 +87,7 @@ const close_modal = () => {
 const open_search = () => {
 	const anim = document.getElementById('search-modal').animate(
 		[{transform: "translateY(5rem)"}],
-		{ duration: 1000, fill: 'both', easing: 'ease' },
+		{ duration: 200, fill: 'both', easing: 'ease' },
 	);
 	anim.addEventListener('finish', () => {
 		anim.commitStyles();
@@ -103,7 +103,7 @@ const open_search = () => {
 const close_search = () => {
 	const anim = document.getElementById('search-modal').animate(
 		[{transform: "translateY(0)"}],
-		{ duration: 1000, fill: 'both', easing: 'ease' },
+		{ duration: 200, fill: 'both', easing: 'ease' },
 	);
 	anim.addEventListener('finish', () => {
 		anim.commitStyles();
