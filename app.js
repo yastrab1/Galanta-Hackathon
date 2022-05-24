@@ -68,7 +68,7 @@ const CONSTANTS = {
 }
 
 const DATA_INDEX_URL = 'https://data.kockatykalendar.sk/index.json'
-const DATA_URL = 'https://data.kockatykalendar.sk/2021_22.json'
+const DATA_URL_PREFIX = 'https://data.kockatykalendar.sk/'
 let DATA = []
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
 	school: [0, 14],
@@ -150,7 +150,10 @@ const load_json = async (url) => {
 }
 
 const load_data = async () => {
-	DATA = await load_json(DATA_URL)
+	const DATA_INDEX = await load_json(DATA_INDEX_URL)
+	const actual_year = DATA_INDEX.find((year) => year.start_year == new Date().getFullYear() - (new Date().getMonth() < 8))
+
+	DATA = await load_json(DATA_URL_PREFIX+actual_year.filename)
 
 	DATA.forEach((event, index) => {
 		for (const key in fmt) {
