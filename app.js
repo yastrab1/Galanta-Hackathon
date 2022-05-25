@@ -70,6 +70,10 @@ const CONSTANTS = {
 const DATA_INDEX_URL = 'https://data.kockatykalendar.sk/index.json'
 const DATA_URL_PREFIX = 'https://data.kockatykalendar.sk/'
 let DATA = []
+let DATA_INDEX = []
+let min_loaded_year = 0;
+let max_loaded_year = 0;
+
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
 	school: [0, 14],
 	sciences: ['mat', 'fyz', 'inf', 'other'],
@@ -145,17 +149,22 @@ const load_json = async (url) => {
 		const jsonValue = await response.json();
 		return Promise.resolve(jsonValue);
 	} else {
-		return Promise.reject('*** JSON file not found');
+		return [];
 	}
 }
 
 const load_data = async () => {
-	const DATA_INDEX = await load_json(DATA_INDEX_URL)
-	const actual_year = DATA_INDEX.find((year) => year.start_year == new Date().getFullYear() - (new Date().getMonth() < 8))
+	DATA_INDEX = await load_json(DATA_INDEX_URL)
+	min_loaded_year = new Date().getFullYear() - (new Date().getMonth() < 8)
+	max_loaded_year = min_loaded_year
+	DATA = await load_events(min_loaded_year)
+	render()
+	CALENDAR.refresh()
+}
 
-	DATA = await load_json(DATA_URL_PREFIX+actual_year.filename)
-
-	DATA.forEach((event, index) => {
+const load_events = async year => {
+	let ret = await load_json(DATA_URL_PREFIX+DATA_INDEX.find((data) => data.start_year == year)?.filename)
+	ret.forEach((event, index) => {
 		for (const key in fmt) {
 			if (fmt.hasOwnProperty(key)) {
 				event[key] = fmt[key](event)
@@ -163,15 +172,13 @@ const load_data = async () => {
 		}
 	})
 
-	DATA.sort((a, b) => {
+	ret.sort((a, b) => {
 		if (a.is_active && b.is_active) {
 			return new Date(a.date.start) - new Date(b.date.start)
 		}
 		return sorting_key(a) - sorting_key(b)
 	})
-
-	render()
-	CALENDAR.refresh()
+	return ret;
 }
 
 // Formatting utilities
@@ -200,6 +207,8 @@ const fmt = {
 			let date_end = new Date(event.date.end)
 			result += ' – ' + date_end.getDate() + '. ' + CONSTANTS.months[date_end.getMonth()]
 		}
+
+		if (date_start.getFullYear() != new Date().getFullYear()) result += ' ' + date_start.getFullYear()
 
 		return result
 	},
@@ -265,7 +274,7 @@ let is_initial_scroll = false		// used to prevent calendar from hiding during in
 let first_id = 0
 let last_id = 0
 
-const render = () => {
+const render = (move_focus = true) => {
 	let event_list = document.getElementById('event-list')
 	event_list.innerHTML = ''
 
@@ -316,26 +325,30 @@ const render = () => {
 	visible_events.forEach((event, index) => {
 		event.id = index
 	})
-
+	
 	const event = visible_events.find(event =>
 		new Date(event.date.end || event.date.start) >= new Date()
 	) ?? visible_events[visible_events.length - 1]
-	
-	first_id = Math.max(parseInt(event?.id, 10) - 10, 0)
-	last_id = Math.min(parseInt(event?.id, 10) + 20, visible_events.length)
 
-	event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, last_id)}, {partial : PARTIAL_TEMPLATE});
+	if (move_focus) {
+		first_id = Math.max(parseInt(event?.id, 10) - 10, 0)
+		last_id = Math.min(parseInt(event?.id, 10) + 20, visible_events.length)
+	}
 
-	[...document.getElementsByClassName("js-event-header")].forEach(node => {
-		node.addEventListener("click", () => {
-			node.parentElement.querySelector(".js-event-description").classList.toggle("hidden")
-			node.querySelector(".js-event-icons").classList.toggle("hidden")
+		event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, last_id)}, {partial : PARTIAL_TEMPLATE});
+
+		[...document.getElementsByClassName("js-event-header")].forEach(node => {
+			node.addEventListener("click", () => {
+				node.parentElement.querySelector(".js-event-description").classList.toggle("hidden")
+				node.querySelector(".js-event-icons").classList.toggle("hidden")
+			})
 		})
-	})
 
-	if (event) {
-		is_initial_scroll = true
-		scroll_to_id(`event-item-${event.id}`)
+	if (move_focus) {
+		if (event) {
+			is_initial_scroll = true
+			scroll_to_id(`event-item-${event.id}`)
+		}
 	}
 }
 
@@ -502,7 +515,8 @@ document.querySelectorAll('[type=search]').forEach( parent => {
 })
 
 let last_scroll = document.getElementById('scroll').scrollTop
-document.getElementById('scroll').addEventListener('scroll', e => {
+
+const scroll_listener = async e => {
 	const { scrollTop, scrollHeight, clientHeight } = document.getElementById('scroll')
 
 	if (is_initial_scroll) {
@@ -528,17 +542,36 @@ document.getElementById('scroll').addEventListener('scroll', e => {
 	if(clientHeight + scrollTop >= scrollHeight - 100) {
 		
 		let old_last_id = last_id;
-		last_id = Math.min(last_id + 3, visible_events.length)
+		if (last_id > visible_events.length-10) {
+			document.getElementById('scroll').removeEventListener('scroll', scroll_listener)
+			max_loaded_year++
+			DATA = DATA.concat(await load_events(max_loaded_year))
+			render(false)
+			document.getElementById('scroll').addEventListener('scroll', scroll_listener)
+		}
+		last_id = Math.min(last_id + 5, visible_events.length)
 		event_list.insertAdjacentHTML('beforeend', Mustache.render(TEMPLATE, {data: visible_events.slice(old_last_id, last_id)}, {partial : PARTIAL_TEMPLATE}));
 	}
 	
 	if(scrollTop < 100) {
 		let event_list = document.getElementById('event-list')
 		let old_first_id = first_id;
-		first_id = Math.max(first_id - 3, 0)
+		if (first_id < 10) {
+			document.getElementById('scroll').removeEventListener('scroll', scroll_listener)
+			min_loaded_year--
+			let new_data = await load_events(min_loaded_year)
+			first_id += new_data.length
+			old_first_id += new_data.length
+			last_id += new_data.length
+			DATA = new_data.concat(DATA)
+			render(false)
+			document.getElementById('scroll').addEventListener('scroll', scroll_listener)
+		}
+		first_id = Math.max(first_id - 5, 0)
 		event_list.insertAdjacentHTML('afterbegin', Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, old_first_id)}, {partial : PARTIAL_TEMPLATE}));
 	}
-})
+}
+document.getElementById('scroll').addEventListener('scroll', scroll_listener)
 
 
 document.getElementById('js-calendar-placeholder-filter').addEventListener('click', open_modal)
