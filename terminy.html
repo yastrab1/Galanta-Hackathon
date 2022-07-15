@@ -87,43 +87,7 @@
           Ostatné
         </label>
 
-        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátori</h2>
-
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="trojsten">
-          <span class="slider"></span>
-          <img class="mr-1 h-4 inline" alt="Trojsten" src="logos/trojsten.svg">
-          Trojsten
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="p-mat">
-          <span class="slider"></span>
-          <img class="mr-1 h-4 inline" alt="P-mat" src="logos/p-mat.svg">
-          P-mat
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="sezam">
-          <span class="slider"></span>
-          <img class="mr-1 h-4 inline" alt="SEZAM" src="logos/sezam.svg">
-          SEZAM
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="riesky">
-          <span class="slider"></span>
-          <img class="mr-1 h-4 inline" alt="Riešky" src="logos/riesky.png">
-          Riešky
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="strom">
-          <span class="slider"></span>
-          <img class="mr-1 h-4 inline" alt="Strom" src="logos/strom.svg">
-          Strom
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="*">
-          <span class="slider"></span>
-          Ostatní
-        </label>
+        <h2 id="org-filter-aside" class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátori</h2>
       </section>
     </aside>
 
@@ -184,43 +148,7 @@
         Ostatné
       </label>
 
-      <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátori</h2>
-
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="trojsten">
-        <span class="slider"></span>
-        <img class="mr-1 h-4 inline" alt="Trojsten" src="logos/trojsten.svg">
-        Trojsten
-      </label>
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="p-mat">
-        <span class="slider"></span>
-        <img class="mr-1 h-4 inline" alt="P-mat" src="logos/p-mat.svg">
-        P-mat
-      </label>
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="sezam">
-        <span class="slider"></span>
-        <img class="mr-1 h-4 inline" alt="SEZAM" src="logos/sezam.svg">
-        SEZAM
-      </label>
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="riesky">
-        <span class="slider"></span>
-        <img class="mr-1 h-4 inline" alt="Riešky" src="logos/riesky.png">
-        Riešky
-      </label>
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="strom">
-        <span class="slider"></span>
-        <img class="mr-1 h-4 inline" alt="Strom" src="logos/strom.svg">
-        Strom
-      </label>
-      <label class="flex select-none items-center my-1">
-        <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="*">
-        <span class="slider"></span>
-        Ostatní
-      </label>
+      <h2 id="org-filter-modal" class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátori</h2>
 
       <button class="mt-6 rounded-lg bg-blue-500 text-white font-bold px-3 py-2 hover:bg-blue-600 text-xs" onclick="close_modal()">Zobraziť výsledky</button>
     </div>
@@ -335,6 +263,16 @@
     {{#data}}
     {{>partial}}
     {{/data}}
+  </script>
+  <script id="template-filter-organization" type="x-tmpl-mustache">
+    <label class="flex select-none items-center my-1">
+      <input class="js-filter-checkbox hidden" type="checkbox" data-filter="organizers" value="{{key}}">
+      <span class="slider"></span>
+      {{#logo}}
+      <img class="mr-1 h-4 inline" alt="{{name}}" src="{{logo}}">
+      {{/logo}}
+      {{name}}
+    </label>
   </script>
   <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.min.js" integrity="sha384-0LaRLH/U5g8eCAwewLGQRyC/O+g0kXh8P+5pWpzijxwYczD3nKETIqUyhuA8B/UB" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/simple-jscalendar@1.4.4/source/jsCalendar.lang.sk.js"></script>

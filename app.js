@@ -12,17 +12,6 @@ const CONSTANTS = {
 		'prednasky': 'prednášky',
 		'other': 'iné',
 	},
-	organizers: {
-		'trojsten': 'Trojsten',
-		'p-mat': 'P-mat',
-		'sezam': 'SEZAM',
-		'riesky': 'Riešky',
-		'strom': 'Strom',
-		'siov': 'ŠIOV',
-		'iuventa': 'Iuventa',
-		'matfyz': 'FMFI UK',
-		'nucem': 'NÚCEM',
-	},
 	contestant_types: {
 		'zs': 'ZŠ',
 		'ss': 'SŠ',
@@ -47,38 +36,29 @@ const CONSTANTS = {
 		'inf': 'green',
 		'other': 'red',
 	},
-	logo: {
-		'trojsten': 'logos/trojsten.svg',
-		'p-mat': 'logos/p-mat.svg',
-		'sezam': 'logos/sezam.svg',
-		'riesky': 'logos/riesky.png',
-		'strom': 'logos/strom.svg',
-		'siov': 'logos/siov.svg',
-		'iuventa': 'logos/iuventa.svg',
-		'matfyz': 'logos/matfyz.svg',
-		'fykos': 'logos/fykos.svg',
-		'nucem': 'logos/nucem.svg',
-	},
-	school_years: [
-		'Mladší',
-		'ZŠ 1', 'ZŠ 2', 'ZŠ 3', 'ZŠ 4', 'ZŠ 5', 'ZŠ 6', 'ZŠ 7', 'ZŠ 8', 'ZŠ 9',
-		'SŠ 1', 'SŠ 2', 'SŠ 3', 'SŠ 4',
-		'Starší'
-	]
 }
 
-const DATA_INDEX_URL = 'https://data.kockatykalendar.sk/index.json'
+CONSTANTS.school_years = [
+	'Mladší',
+	...Array(9).fill().map( (x, i) => `${CONSTANTS.contestant_types['zs']} ${i+1}`),
+	...Array(4).fill().map( (x, i) => `${CONSTANTS.contestant_types['ss']} ${i+1}`),
+	'Starší'
+]
+
+
 const DATA_URL_PREFIX = 'https://data.kockatykalendar.sk/'
+let ORGANIZERS = []
+let DEFAULT_ORGANIZERS = ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky']
 let DATA = []
 let DATA_INDEX = []
 let min_loaded_year = 0;
 let max_loaded_year = 0;
 
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
-	school: [0, 14],
-	sciences: ['mat', 'fyz', 'inf', 'other'],
-	organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky', '*'],
-	default_organizers: ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky'],
+	school: [0, CONSTANTS.school_years.length-1],
+	sciences: Object.keys(CONSTANTS.sciences),
+	organizers: [...DEFAULT_ORGANIZERS, '*'],
+	default_organizers: DEFAULT_ORGANIZERS,
 }
 const CALENDAR = jsCalendar.new({
 	target: '#calendar',
@@ -153,12 +133,18 @@ const load_json = async (url) => {
 	}
 }
 
+const load_organizers = async () => {
+	ORGANIZERS = await load_json(DATA_URL_PREFIX+"organizers.json")
+}
+
 const load_data = async () => {
-	DATA_INDEX = await load_json(DATA_INDEX_URL)
+	await load_organizers()
+	await render_filter()
+	DATA_INDEX = await load_json(DATA_URL_PREFIX+"index.json")
 	min_loaded_year = new Date().getFullYear() - (new Date().getMonth() < 8)
 	max_loaded_year = min_loaded_year
 	DATA = await load_events(min_loaded_year)
-	render()
+	await render()
 	CALENDAR.refresh()
 }
 
@@ -179,6 +165,36 @@ const load_events = async year => {
 		return sorting_key(a) - sorting_key(b)
 	})
 	return ret;
+}
+
+const FILTER_TEMPLATE = document.getElementById('template-filter-organization').innerHTML;
+const render_filter = async () => {
+	let html = DEFAULT_ORGANIZERS.reduce((html, org) => html + Mustache.render(FILTER_TEMPLATE, {key: org, name: ORGANIZERS[org].name, logo: DATA_URL_PREFIX+ORGANIZERS[org].icon}), '')
+	html += Mustache.render(FILTER_TEMPLATE, {key: "*", name: "Ostatní"})
+	document.getElementById('org-filter-aside').insertAdjacentHTML('afterend', html)
+	document.getElementById('org-filter-modal').insertAdjacentHTML('afterend', html)
+	
+	filter_update_checked()
+	document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange = (event) => {
+		const filter_type = event.currentTarget.dataset.filter
+		const value = event.currentTarget.value
+		const checked = event.currentTarget.checked
+
+		if (checked && FILTER[filter_type].indexOf(value) === -1) {
+			FILTER[filter_type].push(value)
+			localStorage.setItem('filter', JSON.stringify(FILTER));
+			filter_update_checked()
+		}
+
+		if (!checked && FILTER[filter_type].indexOf(value) !== -1) {
+			FILTER[filter_type] = FILTER[filter_type].filter((x) => x != value)
+			localStorage.setItem('filter', JSON.stringify(FILTER));
+			filter_update_checked()
+		}
+
+		render()
+		CALENDAR.refresh()
+	})
 }
 
 // Formatting utilities
@@ -218,7 +234,7 @@ const fmt = {
 	},
 
 	pretty_organizers: function(event) {
-		return event.organizers.map((x) => ({'logo': CONSTANTS.logo[x], 'name': CONSTANTS.organizers[x] || x}))
+		return event.organizers.map((x) => ({'logo': DATA_URL_PREFIX+ORGANIZERS[x].icon, 'name': ORGANIZERS[x].name || x}))
 	},
 
 	pretty_contestants: function (event) {
@@ -267,8 +283,8 @@ const fmt = {
 	}
 }
 
-const TEMPLATE = document.getElementById('template-main').innerHTML;
-const PARTIAL_TEMPLATE = document.getElementById('template-event-item').innerHTML;
+const EVENT_TEMPLATE = document.getElementById('template-main').innerHTML;
+const PARTIAL_EVENT_TEMPLATE = document.getElementById('template-event-item').innerHTML;
 let visible_events = DATA
 let is_initial_scroll = false		// used to prevent calendar from hiding during initial scroll
 let first_id = 0
@@ -335,7 +351,7 @@ const render = (move_focus = true) => {
 		last_id = Math.min(parseInt(event?.id, 10) + 20, visible_events.length)
 	}
 
-		event_list.innerHTML = Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, last_id)}, {partial : PARTIAL_TEMPLATE});
+		event_list.innerHTML = Mustache.render(EVENT_TEMPLATE, {data: visible_events.slice(first_id, last_id)}, {partial : PARTIAL_EVENT_TEMPLATE});
 
 		[...document.getElementsByClassName("js-event-header")].forEach(node => {
 			node.addEventListener("click", () => {
@@ -469,28 +485,6 @@ const filter_update_checked = () => {
 		}
 	})
 }
-filter_update_checked()
-
-document.querySelectorAll('.js-filter-checkbox').forEach((elem) => elem.onchange = (event) => {
-	const filter_type = event.currentTarget.dataset.filter
-	const value = event.currentTarget.value
-	const checked = event.currentTarget.checked
-
-	if (checked && FILTER[filter_type].indexOf(value) === -1) {
-		FILTER[filter_type].push(value)
-		localStorage.setItem('filter', JSON.stringify(FILTER));
-		filter_update_checked()
-	}
-
-	if (!checked && FILTER[filter_type].indexOf(value) !== -1) {
-		FILTER[filter_type] = FILTER[filter_type].filter((x) => x != value)
-		localStorage.setItem('filter', JSON.stringify(FILTER));
-		filter_update_checked()
-	}
-
-	render()
-	CALENDAR.refresh()
-})
 
 window.addEventListener('keydown', e => {
 	if(!e.isComposing && e.keyCode === 27){
@@ -550,7 +544,7 @@ const scroll_listener = async e => {
 			document.getElementById('scroll').addEventListener('scroll', scroll_listener)
 		}
 		last_id = Math.min(last_id + 5, visible_events.length)
-		event_list.insertAdjacentHTML('beforeend', Mustache.render(TEMPLATE, {data: visible_events.slice(old_last_id, last_id)}, {partial : PARTIAL_TEMPLATE}));
+		event_list.insertAdjacentHTML('beforeend', Mustache.render(EVENT_TEMPLATE, {data: visible_events.slice(old_last_id, last_id)}, {partial : PARTIAL_EVENT_TEMPLATE}));
 	}
 	
 	if(scrollTop < 100) {
@@ -568,7 +562,7 @@ const scroll_listener = async e => {
 			document.getElementById('scroll').addEventListener('scroll', scroll_listener)
 		}
 		first_id = Math.max(first_id - 5, 0)
-		event_list.insertAdjacentHTML('afterbegin', Mustache.render(TEMPLATE, {data: visible_events.slice(first_id, old_first_id)}, {partial : PARTIAL_TEMPLATE}));
+		event_list.insertAdjacentHTML('afterbegin', Mustache.render(EVENT_TEMPLATE, {data: visible_events.slice(first_id, old_first_id)}, {partial : PARTIAL_EVENT_TEMPLATE}));
 	}
 }
 document.getElementById('scroll').addEventListener('scroll', scroll_listener)
