@@ -21,6 +21,7 @@ const CONSTANTS = {
 		'fyz': 'FYZ',
 		'inf': 'INF',
 		'other': 'iné',
+		'any': 'všetky',
 	},
 	colors: {
 		'red': '#E53E3E',
@@ -35,6 +36,7 @@ const CONSTANTS = {
 		'fyz': 'orange',
 		'inf': 'green',
 		'other': 'red',
+		'any': 'red',
 	},
 }
 
