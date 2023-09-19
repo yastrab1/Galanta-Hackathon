@@ -35,13 +35,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Install tailwind
-        run: npm install tailwindcss@experimental --no-save
+      - name: Install bun
+        run: curl -fsSL https://bun.sh/install | bash
 
       - name: Build 🔧
         run: |
           cat tailwind.css custom.css > tailwind.temp.css
-          npx tailwindcss -i tailwind.temp.css -o build.css -m
+          bunx tailwindcss@experimental -i tailwind.temp.css -o build.css -m
 
       - name: Remove dev css links
         run: |
