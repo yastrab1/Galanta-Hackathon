@@ -39,7 +39,7 @@ jobs:
         run: |
           cat tailwind.css custom.css > tailwind.temp.css
           curl -fsSL https://bun.sh/install | bash
-          .bun/bin/bun x tailwindcss@experimental -i tailwind.temp.css -o build.css -m
+          ~/.bun/bin/bun x tailwindcss@experimental -i tailwind.temp.css -o build.css -m
 
       - name: Remove dev css links
         run: |
