@@ -36,7 +36,9 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Install bun
-        run: curl -fsSL https://bun.sh/install | bash
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          source /home/runner/.bashrc
 
       - name: Build 🔧
         run: |
