@@ -17,3 +17,5 @@ Kockatý Kalendár je spoločná iniciatíva týchto organizácií, ktorá ponú
 ## Kontakt
 
 Ak si našiel/-la chybu alebo máš otázku, napíš nám na kockaty.kalendar@p-mat.sk a my sa ti ozveme.
+
+
