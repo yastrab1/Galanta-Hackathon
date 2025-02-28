@@ -48,7 +48,7 @@ CONSTANTS.school_years = [
 ]
 
 
-const DATA_URL_PREFIX = 'https://data.kockatykalendar.sk/'
+const DATA_URL_PREFIX = 'https://raw.githubusercontent.com/yastrab1/Galanta-Hackathon/refs/heads/master/'
 let ORGANIZERS = []
 let DEFAULT_ORGANIZERS = ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky']
 let DATA = []
