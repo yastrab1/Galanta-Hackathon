@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Galantský kultúrny večer",
+    "sciences": ["kulturalne"],
+    "type": "festival",
+    "date": {
+      "start": "2025-06-15"
+    },
+    "organizers": ["mesto Galanta"],
+    "link": "https://galanta.sk/kultura",
+    "places": ["Galanta - Námestie slobody"],
+    "short-info": "Hudobné vystúpenia, divadlo a ochutnávky regionálnych jedál.",
+    "color": "#ff5733",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "IT Workshop pre mladých",
+    "sciences": ["vzdelavacie"],
+    "type": "workshop",
+    "date": {
+      "start": "2025-03-10"
+    },
+    "organizers": ["Univerzita sv. Cyrila a Metoda"],
+    "link": "https://itworkshop.sk/",
+    "places": ["Galanta - Mestská knižnica"],
+    "short-info": "Praktické cvičenia v oblasti programovania a umelej inteligencie.",
+    "color": "#4287f5",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Beh zdravia Galanta",
+    "sciences": ["sportove"],
+    "type": "sutaz",
+    "date": {
+      "start": "2025-05-01"
+    },
+    "organizers": ["Galanta Sport Club"],
+    "link": "https://behzdravia.sk/",
+    "places": ["Galanta - mestský park"],
+    "short-info": "5 km beh pre všetky vekové kategórie s medailami pre účastníkov.",
+    "color": "#34a853",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Debata kandidátov na primátora",
+    "sciences": ["politicke"],
+    "type": "debata",
+    "date": {
+      "start": "2025-09-20"
+    },
+    "organizers": ["Galantská televízia"],
+    "link": "https://galantadebata.sk/",
+    "places": ["Galanta - Kultúrne centrum"],
+    "short-info": "Diskusia medzi kandidátmi na primátora mesta Galanta.",
+    "color": "#ffcc00",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Wellness deň v kúpeľoch",
+    "sciences": ["rekreacne"],
+    "type": "relax",
+    "date": {
+      "start": "2025-04-08"
+    },
+    "organizers": ["Relax Galanta"],
+    "link": "https://wellnessgalanta.sk/",
+    "places": ["Galanta - Termálne kúpele"],
+    "short-info": "Celodenný vstup do kúpeľov so špeciálnymi procedúrami.",
+    "color": "#6a0dad",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Narodeninová oslava Petra",
+    "sciences": ["sukromne"],
+    "type": "party",
+    "date": {
+      "start": "2025-07-12"
+    },
+    "organizers": ["Peter Novák"],
+    "link": "",
+    "places": ["Galanta - súkromný pozemok"],
+    "short-info": "Súkromná oslava s rodinou a priateľmi.",
+    "color": "#ff6666",
+    "volatile": false,
+    "cancelled": false
+  }
+]
