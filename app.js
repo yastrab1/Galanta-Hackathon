@@ -20,6 +20,8 @@ const CONSTANTS = {
 		'kult': 'Kultúra',
 		'sport': 'Šport',
 		'vzd': 'Vzdelávanie',
+		'pol': 'Politické',
+		'rek': 'Rekreačné',
 		'other': 'Iné',
 		'any': 'Všetky',
 	},
@@ -236,9 +238,7 @@ const fmt = {
 	},
 
 	pretty_organizers: function(event) {
-		console.log(ORGANIZERS)
 		return event.organizers.map((x) => {
-			console.log(x)
 			return {'logo': DATA_URL_PREFIX+ORGANIZERS[x].icon, 'name': ORGANIZERS[x].name || x}
 
 		})
@@ -373,6 +373,8 @@ const render = (move_focus = true) => {
 			scroll_to_id(`event-item-${event.id}`)
 		}
 	}
+
+	console.log(visible_events)
 }
 
 const insert_event = (node, color) => {
