@@ -6,7 +6,7 @@
     <link href="build.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
 
-    <title>iCalendar - KockatýKalendár.sk</title>
+    <title>iCalendar - Galendár</title>
 
     <meta name="theme-color" content="#4299e1">
     <meta name="description" content="Pridajte si mat/fyz/inf akcie priamo do vášho kalendára.">
@@ -14,22 +14,22 @@
     <meta property="og:image" content="img/social.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:title" content="KockatýKalendár.sk" />
+    <meta property="og:title" content="Galendár" />
     <meta property="og:description" content="Pridajte si mat/fyz/inf akcie priamo do vášho kalendára." />
-  <meta property="og:site_name" content="KockatýKalendár.sk" />
+  <meta property="og:site_name" content="Galendár" />
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
-    <header class="bg-blue-500 text-white">
+    <header class="bg-red-500 text-white">
         <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
-            <a href="index.html" class="font-bold text-xl mb-1 md:mb-0">KockatýKalendár.sk</a>
+            <a href="index.html" class="font-bold text-xl mb-1 md:mb-0">Galendár</a>
 
             <ul class="flex font-bold">
                 <li class="mr-3">
-                    <a class="inline-block border border-white rounded py-1 px-3 bg-blue-500 text-white
+                    <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white
                         hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="index.html">O nás</a>
-                    <a class="inline-block border border-white rounded py-1 px-3 bg-blue-500 text-white
+                    <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white
                         hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="terminy.html">Akcie</a>
-                    <a class="inline-block border border-blue-700 rounded py-1 px-3 bg-blue-700 text-white" href="ical.html">Export</a>
+                    <a class="inline-block border border-blue-700 rounded py-1 px-3 bg-red-700 text-white" href="ical.html">Export</a>
                 </li>
             </ul>
         </nav>
@@ -37,60 +37,11 @@
     <main class="overflow-y-scroll">
 
         <div class="mx-auto max-w-4xl p-8">
-            <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Kockatý Kalendár v tvojom kalendári</h2>
-            <div class="mx-auto max-w-2xl text-center">
-                <p>
-                    Kockatý Kalendár okrem webového rozhrania ponúka aj možnosť si pridať udalosti do tvojho Google Kalendára,
-                    Outlooku a pod. Môžeš si vybrať, ktoré akcie chceš vo svojom kalendári mať.
-                </p>
-            </div>
-
-
-            <h2 class="font-bold mt-12 text-center text-2xl">Predvoľby kalendára</h2>
-            <div x-data="{ school: 'any', science: 'any' }">
-                <h3 class="font-bold mt-8 mb-4 text-lg uppercase text-gray-700 tracking-wide">Ročník</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-center text-lg font-bold">
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'any' }" @click="school = 'any'">
-                        Všetky
-                    </div>
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'zs' }" @click="school = 'zs'">
-                        Základná škola
-                    </div>
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': school === 'ss' }" @click="school = 'ss'">
-                        Stredná škola
-                    </div>
-                </div>
-
-                <h3 class="font-bold mt-8 mb-4 text-lg uppercase text-gray-700 tracking-wide">Veda</h3>
-
-                <div class="mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-5 gap-3 text-center text-md font-bold">
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'any' }" @click="science = 'any'">
-                        Všetky
-                    </div>
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'mat' }" @click="science = 'mat'">
-                        Matematika
-                    </div>
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'fyz' }" @click="science = 'fyz'">
-                        Fyzika
-                    </div>
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'inf' }" @click="science = 'inf'">
-                        Informatika
-                    </div>
-                    <div class="shadow border rounded-full px-2 py-4 cursor-pointer" :class="{ 'bg-blue-500 text-white': science === 'other' }" @click="science = 'other'">
-                        Ostatné
-                    </div>
-                </div>
-
-                <h2 class="font-bold mt-12 mb-6 text-center text-2xl">Adresa zvoleného kalendára</h2>
-
-                <div class="bg-gray-400 px-4 py-3 rounded-lg text-2xl font-mono">https://ical.kockatykalendar.sk/<span x-text="school"></span>/<span x-text="science"></span>.ics</div>
-                <p class="text-sm text-gray-700 mt-2">Ak chceš v kalendári viacero vied / ročníkov, pridaj každý zvlášť.</p>
-            </div>
+                <div class="bg-gray-400 px-4 py-3 rounded-lg text-2xl font-mono">https://galendar.netlify.app/2024_25.ics</div>
 
             <h2 class="font-bold mt-12 text-center text-3xl">Ako na to?</h2>
             <p class="mx-auto max-w-2xl text-center mt-6">
-                Kockatý Kalendár si môžeš jednoducho pridať do svojho kalendára. Nevieš, ako na to? Nevadí! Pripravili sme si pre teba
+                Galendár si môžeš jednoducho pridať do svojho kalendára. Nevieš, ako na to? Nevadí! Pripravili sme si pre teba
                 krátke návody.
             </p>
         </div>
