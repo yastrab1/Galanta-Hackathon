@@ -1,7 +1,7 @@
 [
   {
     "name": "Galantský kultúrny večer",
-    "sciences":["kult"],
+    "event_type":["kult"],
     "type":"sutaz",
     "date": {
       "start": "2025-06-15"
@@ -17,7 +17,7 @@
   },
   {
     "name": "IT Workshop pre mladých",
-    "sciences":["vzd"],
+    "event_type":["vzd"],
     "type":"sutaz",
     "date": {
       "start": "2025-03-10"
@@ -33,7 +33,7 @@
   },
   {
     "name": "Beh zdravia Galanta",
-    "sciences":["sport"],
+    "event_type":["sport"],
     "type":"sutaz",
     "date": {
       "start": "2025-05-01"
@@ -49,7 +49,7 @@
   },
   {
     "name": "Debata kandidátov na primátora",
-    "sciences":["pol"],
+    "event_type":["pol"],
     "type":"sutaz",
     "date": {
       "start": "2025-09-20"
@@ -65,7 +65,7 @@
   },
   {
     "name": "Wellness deň v kúpeľoch",
-    "sciences":["rek"],
+    "event_type":["rek"],
     "type":"sutaz",
     "date": {
       "start": "2025-04-08"
@@ -81,7 +81,7 @@
   },
   {
     "name": "Narodeninová oslava Petra",
-    "sciences":["kult"],
+    "event_type":["kult"],
     "type":"sutaz",
     "date": {
       "start": "2025-07-12"
