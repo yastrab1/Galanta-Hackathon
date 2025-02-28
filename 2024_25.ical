@@ -1,56 +1,112 @@
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//KockatyKalendar.sk//v0.1//
-BEGIN:VEVENT
-SUMMARY:Galantský kultúrny večer
-DTSTART;VALUE=DATE:20250615
-DTSTAMP;VALUE=DATE-TIME:20250614T220000Z
-UID:6325666e7397bb3d6ee170f24ac17b9ed180a42b@kockatykalendar.sk
-DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://g
- alanta.sk/kultura
-URL:https://galanta.sk/kultura
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:IT Workshop pre mladých
-DTSTART;VALUE=DATE:20250310
-DTSTAMP;VALUE=DATE-TIME:20250309T230000Z
-UID:9fbef81803e23c103e558d230a935df2ee9ea337@kockatykalendar.sk
-DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://i
- tworkshop.sk/
-URL:https://itworkshop.sk/
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Beh zdravia Galanta
-DTSTART;VALUE=DATE:20250501
-DTSTAMP;VALUE=DATE-TIME:20250430T220000Z
-UID:3dad26749af34b74f5f176c77fe439341d3f6c00@kockatykalendar.sk
-DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://b
- ehzdravia.sk/
-URL:https://behzdravia.sk/
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Debata kandidátov na primátora
-DTSTART;VALUE=DATE:20250920
-DTSTAMP;VALUE=DATE-TIME:20250919T220000Z
-UID:72f7ad9e475791224c309303d8414259e422cb4c@kockatykalendar.sk
-DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://g
- alantadebata.sk/
-URL:https://galantadebata.sk/
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Wellness deň v kúpeľoch
-DTSTART;VALUE=DATE:20250408
-DTSTAMP;VALUE=DATE-TIME:20250407T220000Z
-UID:a9d3a4145a043978cdfa38d9e680831ee9182459@kockatykalendar.sk
-DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://w
- ellnessgalanta.sk/
-URL:https://wellnessgalanta.sk/
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:Narodeninová oslava Petra
-DTSTART;VALUE=DATE:20250712
-DTSTAMP;VALUE=DATE-TIME:20250711T220000Z
-UID:f2a2cb5d78c57540d9dd06f04ef57f7536c063a1@kockatykalendar.sk
-DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten
-END:VEVENT
-END:VCALENDAR
+BEGIN:VCALENDAR
+
+VERSION:2.0
+
+PRODID:-//KockatyKalendar.sk//v0.1//
+
+BEGIN:VEVENT
+
+SUMMARY:Galantský kultúrny večer
+
+DTSTART;VALUE=DATE:20250615
+
+DTSTAMP;VALUE=DATE-TIME:20250614T220000Z
+
+UID:6325666e7397bb3d6ee170f24ac17b9ed180a42b@kockatykalendar.sk
+
+DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://g
+
+ alanta.sk/kultura
+
+URL:https://galanta.sk/kultura
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+SUMMARY:IT Workshop pre mladých
+
+DTSTART;VALUE=DATE:20250310
+
+DTSTAMP;VALUE=DATE-TIME:20250309T230000Z
+
+UID:9fbef81803e23c103e558d230a935df2ee9ea337@kockatykalendar.sk
+
+DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://i
+
+ tworkshop.sk/
+
+URL:https://itworkshop.sk/
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+SUMMARY:Beh zdravia Galanta
+
+DTSTART;VALUE=DATE:20250501
+
+DTSTAMP;VALUE=DATE-TIME:20250430T220000Z
+
+UID:3dad26749af34b74f5f176c77fe439341d3f6c00@kockatykalendar.sk
+
+DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://b
+
+ ehzdravia.sk/
+
+URL:https://behzdravia.sk/
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+SUMMARY:Debata kandidátov na primátora
+
+DTSTART;VALUE=DATE:20250920
+
+DTSTAMP;VALUE=DATE-TIME:20250919T220000Z
+
+UID:72f7ad9e475791224c309303d8414259e422cb4c@kockatykalendar.sk
+
+DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://g
+
+ alantadebata.sk/
+
+URL:https://galantadebata.sk/
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+SUMMARY:Wellness deň v kúpeľoch
+
+DTSTART;VALUE=DATE:20250408
+
+DTSTAMP;VALUE=DATE-TIME:20250407T220000Z
+
+UID:a9d3a4145a043978cdfa38d9e680831ee9182459@kockatykalendar.sk
+
+DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten\nhttps://w
+
+ ellnessgalanta.sk/
+
+URL:https://wellnessgalanta.sk/
+
+END:VEVENT
+
+BEGIN:VEVENT
+
+SUMMARY:Narodeninová oslava Petra
+
+DTSTART;VALUE=DATE:20250712
+
+DTSTAMP;VALUE=DATE-TIME:20250711T220000Z
+
+UID:f2a2cb5d78c57540d9dd06f04ef57f7536c063a1@kockatykalendar.sk
+
+DESCRIPTION:súťaž | MAT | ZŠ 4\n\nOrganizátor(i): Trojsten
+
+END:VEVENT
+
+END:VCALENDAR
+
