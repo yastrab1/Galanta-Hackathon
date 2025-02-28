@@ -17,11 +17,11 @@ const CONSTANTS = {
 		'ss': 'SŠ',
 	},
 	sciences: {
-		'mat': 'MAT',
-		'fyz': 'FYZ',
-		'inf': 'INF',
-		'other': 'iné',
-		'any': 'všetky',
+		'kult': 'Kultúra',
+		'sport': 'Šport',
+		'vzd': 'Vzdelávanie',
+		'other': 'Iné',
+		'any': 'Všetky',
 	},
 	colors: {
 		'red': '#E53E3E',
