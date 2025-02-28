@@ -201,11 +201,11 @@ const render_filter = async () => {
 
 // Formatting utilities
 const fmt_contestant = (contestant, prev_contestant) => {
-	if (prev_contestant && prev_contestant.substr(0, 2) === contestant.substr(0, 2)) {
-		return contestant.substr(2)
-	}
+	// if (prev_contestant && prev_contestant.substr(0, 2) === contestant.substr(0, 2)) {
+	// 	return contestant.substr(2)
+	// }
 
-	return CONSTANTS.contestant_types[contestant.substr(0, 2)] + ' ' + contestant.substr(2)
+	return contestant
 }
 
 const fmt = {
