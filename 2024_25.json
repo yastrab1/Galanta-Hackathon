@@ -1,7 +1,7 @@
 [
   {
     "name": "Galantský kultúrny večer",
-    "event_type":["kult"],
+    "event_type":["kult", "rek"],
     "type":"sutaz",
     "date": {
       "start": "2025-06-15"
