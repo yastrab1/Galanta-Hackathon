@@ -1,97 +1,3865 @@
 [
   {
-    "name": "Galantský kultúrny večer",
-    "sciences": ["kulturalne"],
-    "type": "festival",
-    "date": {
-      "start": "2025-06-15"
-    },
-    "organizers": ["trojsten"],
-    "link": "https://galanta.sk/kultura",
-    "places": ["Galanta - Námestie slobody"],
-    "contestants": {"min": "ss1", "max": "ss2"},
-    "short-info": "Hudobné vystúpenia, divadlo a ochutnávky regionálnych jedál.",
-    "color": "#ff5733",
-    "volatile": false,
-    "cancelled": false
-  },
-  {
-    "name": "IT Workshop pre mladých",
-    "sciences": ["vzdelavacie"],
-    "type": "workshop",
-    "date": {
-      "start": "2025-03-10"
-    },
-    "organizers": ["trojsten"],
-    "link": "https://itworkshop.sk/",
-    "places": ["Galanta - Mestská knižnica"],
-    "contestants": {"min": "ss1", "max": "ss2"},
-    "short-info": "Praktické cvičenia v oblasti programovania a umelej inteligencie.",
-    "color": "#4287f5",
-    "volatile": false,
-    "cancelled": false
-  },
-  {
-    "name": "Beh zdravia Galanta",
-    "sciences": ["sportove"],
+    "name": "Kasiopea - Finále",
+    "sciences": [
+      "inf"
+    ],
     "type": "sutaz",
     "date": {
-      "start": "2025-05-01"
+      "start": "2025-02-13"
     },
-    "organizers": ["trojsten"],
-    "link": "https://behzdravia.sk/",
-    "places": ["Galanta - mestský park"],
-    "contestants": {"min": "ss1", "max": "ss2"},
-    "short-info": "5 km beh pre všetky vekové kategórie s medailami pre účastníkov.",
-    "color": "#34a853",
+    "organizers": [
+      "kasiopea"
+    ],
+    "link": "https://kasiopea.matfyz.cz/",
+    "places": [
+      "Praha"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "short-info": "Na finále kasiopey sa počas 256 minút popasujete s ôsmimi úlohami a zabojujete o hodnotné ceny. Ale na finále sú všetci víťazi - čaká vás tam kopa pizze a iného jedla.",
+    "color": "#331c47",
     "volatile": false,
     "cancelled": false
   },
   {
-    "name": "Debata kandidátov na primátora",
-    "sciences": ["politicke"],
-    "type": "debata",
+    "name": "Kasiopea - domáce kolo",
+    "sciences": [
+      "inf"
+    ],
+    "type": "sutaz",
     "date": {
-      "start": "2025-09-20"
+      "start": "2024-11-23",
+      "end": "2024-12-08"
     },
-    "organizers": ["trojsten"],
-    "link": "https://galantadebata.sk/",
-    "places": ["Galanta - Kultúrne centrum"],
-    "contestants": {"min": "ss1", "max": "ss2"},
-    "short-info": "Diskusia medzi kandidátmi na primátora mesta Galanta.",
-    "color": "#ffcc00",
+    "organizers": [
+      "kasiopea"
+    ],
+    "link": "https://kasiopea.matfyz.cz/",
+    "places": [
+      "Online"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "short-info": "Kasiopea je súťaž v programovaní vhodná pre úplných začiatočníkov aj najskúsenejších kóderov. V domácom kole sa stretnete s deviatimi úlohami rôznej náročnosti a zabojujete o postup na finálne v Prahe.",
+    "color": "#331c47",
     "volatile": false,
     "cancelled": false
   },
   {
-    "name": "Wellness deň v kúpeľoch",
-    "sciences": ["rekreacne"],
-    "type": "relax",
+    "name": "Náboj Junior",
+    "type": "sutaz",
+    "sciences": [
+      "fyz",
+      "mat"
+    ],
     "date": {
-      "start": "2025-04-08"
+      "start": "2024-11-22"
     },
-    "organizers": ["trojsten"],
-    "link": "https://wellnessgalanta.sk/",
-    "places": ["Galanta - Termálne kúpele"],
-    "contestants": {"min": "ss1", "max": "ss2"},
-    "short-info": "Celodenný vstup do kúpeľov so špeciálnymi procedúrami.",
-    "color": "#6a0dad",
+    "contestants": {
+      "min": "zs8",
+      "max": "zs9"
+    },
+    "color": "red",
+    "info": "Náboj Junior je medzinárodná súťaž v matematike a fyzike určená pre 4-členné tímy. Každý tím začína so sadou šiestich úloh, po každom odovzdaní správne vyriešenej úlohy dostane ďalšiu. Vyhráva tím, ktorý ich za dve hodiny vyrieši najviac.",
+    "places": [
+      "Bánovce nad Bebravou",
+      "Banská Bystrica",
+      "Bratislava",
+      "Brezno",
+      "Košice",
+      "Levice",
+      "Liptovský Mikuláš",
+      "Lučenec",
+      "Michalovce",
+      "Námestovo",
+      "Nitra",
+      "Partizánske",
+      "Piešťany",
+      "Poprad",
+      "Prešov",
+      "Prievidza",
+      "Púchov",
+      "Šahy",
+      "Sučany",
+      "Šurany",
+      "Trenčín",
+      "Trnava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://junior.naboj.org/sk/sk",
     "volatile": false,
     "cancelled": false
   },
   {
-    "name": "Narodeninová oslava Petra",
-    "sciences": ["sukromne"],
-    "type": "party",
+    "name": "Robocup junior Slovensko",
+    "type": "sutaz",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-03-14"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "color": "red",
+    "info": "",
+    "places": [
+      "SPŠE Zochova, Bratislava"
+    ],
+    "organizers": [
+      "SSE"
+    ],
+    "link": "https://robocup.skse.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Fyzikálny Náboj",
+    "type": "sutaz",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2024-11-15"
+    },
+    "info": "Fyzikálny Náboj je medzinárodná súťaž päťčlenných tímov v rýchlostnom riešení fyzikálnych úloh. Každý tím začína so sadou ôsmich úloh, po každom odovzdaní správne vyriešenej úlohy dostane ďalšiu. Vyhráva tím, ktorý ich za dve hodiny vyrieši najviac.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava",
+      "Košice"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://physics.naboj.org/sk/sk",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matematický náboj",
+    "type": "sutaz",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-03-14"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "info": "Matematický náboj je medzinárodná súťaž v matematike určená pre 4 alebo 5-členné tímy. Každý tím začína so sadou šiestich úloh, po každom odovzdaní správne vyriešenej úlohy dostane ďalšiu. Vyhráva tím, ktorý ich za dve hodiny vyrieši najviac.",
+    "places": [
+      "Bratislava",
+      "Košice"
+    ],
+    "organizers": [
+      "trojsten",
+      "strom"
+    ],
+    "link": "https://math.naboj.org/sk/sk",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Attoved",
+    "type": "sutaz",
+    "sciences": [
+      "mat",
+      "fyz",
+      "other"
+    ],
+    "date": {
+      "start": "2024-09-24"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "p-mat"
+    ],
+    "info": "Attoved je individuálna súťaž z prírodných vied. Na súťažiacich čakajú vedomostné a experimentálne úlohy z biológie, fyziky a chémie. Okrem tých sa stretnú aj s takzvaným Vedeckým mixom. Ten preverí ich vedomosti a logické myslenie zo súvisiacich vied.",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matboj",
+    "type": "sutaz",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-04-04"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs7"
+    },
+    "places": [
+      "UPeCe Bratislava"
+    ],
+    "organizers": [
+      "p-mat"
+    ],
+    "info": "Matematická súťaž pre 4-členné tímy. Prepája riešenie úloh s hraním strategickej hry.",
+    "link": "https://akcie.p-mat.sk/matboj/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikopretek",
+    "type": "sutaz",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-05-16"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "Železná studienka, Bratislava"
+    ],
+    "organizers": [
+      "p-mat"
+    ],
+    "info": "Športovo-logická súťaž v exteriéri. Tímy prechádzajú po trase, kde plnia pohybové a logické úlohy na stanoviskách.",
+    "link": "https://akcie.p-mat.sk/pikopretek/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Attomat",
+    "type": "sutaz",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-09-17"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "p-mat"
+    ],
+    "info": "Attomat je online individuálna matematická súťaž. Súťaž je určená hlavne pre žiakov 7.-9. ročníka ZŠ, resp. sekundu až kvartu OG. Môžete sa zapojiť aj v kategórii OPEN, ktorá je určená pre každého, kto rád rieši zaujímavé matematické úlohy.",
+    "link": "https://akcie.p-mat.sk/attomat/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zenit krajské kolo - programovanie",
+    "type": "sutaz",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-22"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "krajské mestá"
+    ],
+    "organizers": [
+      "siov"
+    ],
+    "info": "Zenit v programovaní je postupová súťaž v programovaní algoritmických úloh. Každé kolo trvá 4 hodiny a má približne 10 úloh od úplne lahkých až po ťažké. Riešenie pozostáva z funkčného programu, ktorý sa ihneď automaticky testuje.",
+    "link": "https://zenit.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zenit školské kolo - web developer",
+    "type": "sutaz",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-10-18"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "celé Slovensko"
+    ],
+    "organizers": [
+      "siov"
+    ],
+    "info": "Zenit web developer je postupová súťaž v tvorbe webových stránok. Každé kolo trvá 4 hodiny a má približne 10 úloh od úplne lahkých až po ťažké. Riešenie pozostáva z HTML súboru, ktorý sa ihneď automaticky testuje.",
+    "link": "https://webdeveloper.zenit.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zenit celoštátne kolo",
+    "type": "sutaz",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-03-17",
+      "end": "2025-03-20"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Kysucké Nové Mesto"
+    ],
+    "organizers": [
+      "siov"
+    ],
+    "link": "https://zenit.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zenit školské kolo - programovanie",
+    "type": "sutaz",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-10-17"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "celé Slovensko"
+    ],
+    "organizers": [
+      "siov"
+    ],
+    "info": "Zenit v programovaní je postupová súťaž v programovaní algoritmických úloh. Každé kolo trvá 4 hodiny a má približne 10 úloh od úplne lahkých až po ťažké. Riešenie pozostáva z funkčného programu, ktorý sa ihneď automaticky testuje.",
+    "link": "https://zenit.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zenit krajské kolo - web developer",
+    "type": "sutaz",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-21"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "krajské mestá"
+    ],
+    "organizers": [
+      "siov"
+    ],
+    "link": "https://zenit-web.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Klub Trojstenu",
+    "type": "vikendovka",
+    "sciences": [
+      "mat",
+      "fyz",
+      "inf"
+    ],
+    "date": {
+      "start": "2024-12-13",
+      "end": "2024-12-14"
+    },
+    "info": "Klub je poloformálna, polooficálna akcia, koná sa po väčších akciách Trojstenu, snažíme sa utužiť kolektív riešiteľov a popri tom pribrať nových ľudí do našej partie. Neváhaj a pripoj sa k nám (agitačné reči – „Come to the dark side - we have cookies!“).",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://klub.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Noc Vedy",
+    "type": "other",
+    "sciences": [
+      "mat",
+      "fyz",
+      "inf"
+    ],
+    "color": "red",
+    "info": "Každoročne Ťa čaká celý deň plný prednášok a stánkov s rôznymi experimentmi a ukážkami z oblasti vedy a techniky. Vstup je voľný a každý si príde na svoje. V Bratislave sa môžte tešiť na stánky od vašich obľúbených organizácii Trojsten, Riešky, či P-mat.",
+    "date": {
+      "start": "2024-09-27"
+    },
+    "contestants": {
+      "min": null,
+      "max": null
+    },
+    "places": [
+      "Bratislava",
+      "Banská Bystrica",
+      "Žilina",
+      "Poprad",
+      "Košice"
+    ],
+    "organizers": [
+      "sovva"
+    ],
+    "link": "https://nocvedy.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "p-mat roadtrip",
+    "type": "prednasky",
+    "sciences": [
+      "mat",
+      "fyz",
+      "other"
+    ],
+    "date": {
+      "start": "2024-09-09",
+      "end": "2024-09-20"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "Slovensko"
+    ],
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://akcie.p-mat.sk/2024/08/p-mat-roadtrip-2024/",
+    "info": "Pôjdeme do škôl predašať zaujímavé hodiny z matematiky a prírodných vied. Okrem toho si budete môcť zahrať v svojom meste hru, akú robievame na našich sústredeniach a dozvedieť sa niečo viac o P-mate.",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Klub Trojstenu",
+    "type": "vikendovka",
+    "sciences": [
+      "mat",
+      "fyz",
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-15",
+      "end": "2024-11-16"
+    },
+    "info": "Klub je poloformálna, polooficálna akcia, koná sa po väčších akciách Trojstenu, snažíme sa utužiť kolektív riešiteľov a popri tom pribrať nových ľudí do našej partie. Neváhaj a pripoj sa k nám (agitačné reči – „Come to the dark side - we have cookies!“).",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://forms.gle/sWm5snGCwu3MGw1X9",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Akadémia Trojstenu",
+    "type": "prednasky",
+    "sciences": [
+      "mat",
+      "fyz",
+      "inf"
+    ],
+    "color": "red",
+    "info": "Každoročne Ťa čaká 6 prednášok, v ktorých populárnym a pochopiteľným spôsobom naši prednášajúci priblížia zaujímavé oblasti zo svojich vedných disciplín. Akadémia je určená všetkým vzdelania a zábavy chtivým poslucháčom.",
+    "date": {
+      "start": "2024-12-13"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://akademia.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letná škola programovania",
+    "type": "prednasky",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-07-07",
+      "end": "2025-07-18"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://leto.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letná škola fyziky",
+    "type": "prednasky",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2025-07-21",
+      "end": "2025-08-01"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://leto.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letná škola matematiky",
+    "type": "prednasky",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-07-14",
+      "end": "2025-07-25"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://leto.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikomat 2.séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-03-31"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Terabio 2.séria",
+    "sciences": [
+      "other"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-05-12"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://terabio.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Terabio 2.séria",
+    "sciences": [
+      "other"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-11-25"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://terabio.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikomat 1.séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-02-24"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikomat 3.séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-05-05"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Terabio 1.séria",
+    "sciences": [
+      "other"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-04-07"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://terabio.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikofyz 2.séria",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-10-28"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zimné sústredenie Pikomatu mladších",
+    "type": "sustredenie",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-02-10",
+      "end": "2025-02-15"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs6"
+    },
+    "places": [
+      "Lazy pod Makytou"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk/",
+    "volatile": false
+  },
+  {
+    "name": "Letné sústredenie Pikofyzu",
+    "type": "sustredenie",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2025-07-06",
+      "end": "2025-07-13"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "places": [
+      "TBD"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk/",
+    "volatile": false
+  },
+  {
+    "name": "Pikofyz 1.séria",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-09-30"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikofyz 1.séria",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-02-24"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikomat 1.séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-09-30"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikofyz 3.séria",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-12-02"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Kockatý víkend",
+    "sciences": [
+      "mat",
+      "fyz"
+    ],
+    "type": "vikendovka",
+    "date": {
+      "start": "2024-10-18",
+      "end": "2024-10-20"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://akcie.p-mat.sk/kockaty-vikend/",
+    "places": [
+      "ŠvP Lazy pod Makytou"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Pikofyz 3.séria",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-05-05"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letné sústredenie Pikomatu mladší",
+    "type": "sustredenie",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-07-06",
+      "end": "2025-07-11"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs6"
+    },
+    "places": [
+      "TBD"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk/",
+    "volatile": false
+  },
+  {
+    "name": "Pikomat 3.séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-12-02"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letné sústredenie Pikomatu starší",
+    "type": "sustredenie",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-06-29",
+      "end": "2025-07-06"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "places": [
+      "TBD"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk//",
+    "volatile": false
+  },
+  {
+    "name": "Kockatý víkend",
+    "sciences": [
+      "mat",
+      "fyz"
+    ],
+    "type": "vikendovka",
+    "date": {
+      "start": "2025-04-25",
+      "end": "2025-04-27"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://akcie.p-mat.sk/kockaty-vikend/",
+    "places": [
+      "tbd"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Terabio 1.séria",
+    "sciences": [
+      "other"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-10-14"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://terabio.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zimné sústredenie Pikomatu starších",
+    "type": "sustredenie",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-02-03",
+      "end": "2025-02-08"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "places": [
+      "Zliechov"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk/",
+    "volatile": false
+  },
+  {
+    "name": "Pikofyz 2.séria",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-03-31"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zimné sústredenie Pikofyzu",
+    "type": "sustredenie",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2025-02-10",
+      "end": "2025-02-15"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "places": [
+      "Zliechov"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikofyz.sk/",
+    "volatile": false
+  },
+  {
+    "name": "Pikomat 2.séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-10-28"
+    },
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://pikomat.sk",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Jarné sústredenie Terabio",
+    "type": "sustredenie",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-03-10",
+      "end": "2025-03-15"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "Zliechov"
+    ],
+    "cancelled": false,
+    "organizers": [
+      "p-mat"
+    ],
+    "link": "https://terabio.sk/",
+    "volatile": false
+  },
+  {
+    "name": "Letný tábor Trojstenu",
+    "type": "tabor",
+    "sciences": [
+      "mat",
+      "fyz",
+      "inf"
+    ],
+    "date": {
+      "start": "2025-08-11",
+      "end": "2025-08-20"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "???"
+    ],
+    "info": "Na LTT ťa čaká odborný i neodborný program, športové aktivity, voľný čas strávený s novými (alebo starými) kamarátmi a málo spánku :) Ak sa cez leto nudíš a niečo z toho ťa oslovilo, prihlás sa a zaži neopakovateľné momenty s partiou uletených ľudí.",
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://ltt.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "PRASK – 2. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-03-17"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "ss1"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "PRASK je súťaž určená pre všetkých základoškolákov, ktorých zaujíma matematika, informatika, chceli by sa naučiť programovať, alebo len radi rozmýšľajú a prijímajú výzvy.",
+    "link": "https://prask.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "PRASK sústredenie",
+    "type": "sustredenie",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-05-10",
+      "end": "2025-05-16"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "ss1"
+    },
+    "info": "je určené pre 36 najúspešnejších riešiteľov Semináru PRASK. Na sústredení spoznáš kopec skvelých ľudí s podobnými záujmami, vedúcich, ktorí opravovali tvoje riešenia, naučíš sa kopec algoritmov a zažiješ množstvo skvelých hier.",
+    "places": [
+      "Floriho chata, Mníchovsky potok"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://prask.ksp.sk/akcie/sustredenia/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "PRASK – 2. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-04"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "ss1"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "PRASK je súťaž určená pre všetkých základoškolákov, ktorých zaujíma matematika, informatika, chceli by sa naučiť programovať, alebo len radi rozmýšľajú a prijímajú výzvy.",
+    "link": "https://prask.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "PRASK – 1. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-10-21"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "ss1"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "PRASK je súťaž určená pre všetkých základoškolákov, ktorých zaujíma matematika, informatika, chceli by sa naučiť programovať, alebo len radi rozmýšľajú a prijímajú výzvy.",
+    "link": "https://prask.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "PRASK – 1. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-02-17"
+    },
+    "contestants": {
+      "min": "zs7",
+      "max": "ss1"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "PRASK je súťaž určená pre všetkých základoškolákov, ktorých zaujíma matematika, informatika, chceli by sa naučiť programovať, alebo len radi rozmýšľajú a prijímajú výzvy.",
+    "link": "https://prask.ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "PRASK sústredenie",
+    "type": "sustredenie",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-23",
+      "end": "2024-11-30"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "ss1"
+    },
+    "info": "je určené pre 36 najúspešnejších riešiteľov Semináru PRASK. Na sústredení spoznáš kopec skvelých ľudí s podobnými záujmami, vedúcich, ktorí opravovali tvoje riešenia, naučíš sa kopec algoritmov a zažiješ množstvo skvelých hier.",
+    "places": [
+      "???"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://prask.ksp.sk/akcie/sustredenia/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie veľkej nápovedy 3. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-12-02"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Dva týždne pred koncom kola sa na stránke zverejní aj druhá sada \"veľkých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 5 bodov až do skončenia kola.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie malej nápovedy 3. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-11-18"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Štyri týždne pred koncom kola sa na stránke zverejní malá nápoveda spoločná pre všetky šifry objavného kola. Po tomto termíne môžeš riešenia šifier odovzdávať za 7 bodov až do zverejnenia veľkých nápovied.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie malej nápovedy 3. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-04-07"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Štyri týždne pred koncom kola sa na stránke zverejní malá nápoveda spoločná pre všetky šifry objavného kola. Po tomto termíne môžeš riešenia šifier odovzdávať za 7 bodov až do zverejnenia veľkých nápovied.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie 1. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-09-01"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Koniec 1. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-11-11"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie veľkej nápovedy 1. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-10-28"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Dva týždne pred koncom kola sa na stránke zverejní aj druhá sada \"veľkých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 5 bodov až do skončenia kola.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie veľkej nápovedy 3. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-04-21"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Dva týždne pred koncom kola sa na stránke zverejní aj druhá sada \"veľkých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 5 bodov až do skončenia kola.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie malej nápovedy 2. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-03-24"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Štyri týždne pred koncom kola sa na stránke zverejní prvá sada \"malých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 7 bodov až do zverejnenia veľkých nápovied.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Prázninová šifrovačka Trojstenu",
+    "type": "sutaz",
+    "sciences": [
+      "other"
+    ],
     "date": {
       "start": "2025-07-12"
     },
-    "organizers": ["trojsten"],
-    "link": "",
-    "places": ["Galanta - súkromný pozemok"],
-    "contestants": {"min": "ss1", "max": "ss2"},
-    "short-info": "Súkromná oslava s rodinou a priateľmi.",
-    "color": "#ff6666",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Bratislava"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Piaty ročník PŠT, ktorá je súčasťou voľnočasového programu Letnej školy Trojstenu. Je zameraná hlavne na stredoškolákov, aj začiatočníkov, no na svoje si vedia prísť aj skúsenejšie, nie nutne stredoškolské tímy.",
+    "link": "https://susi.trojsten.sk/pst/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie 3. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-03-10"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie veľkej nápovedy 2. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-11-11"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Dva týždne pred koncom kola sa na stránke zverejní aj druhá sada \"veľkých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 5 bodov až do skončenia kola.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Koniec 2. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-11-25"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie 2. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-09-30"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie 1. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-02-10"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Koniec 3. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-05-05"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Koniec 3. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-12-16"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Koniec 2. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-04-21"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Koniec 1. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-04-07"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie malej nápovedy 2. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-10-28"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Štyri týždne pred koncom kola sa na stránke zverejní prvá sada \"malých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 7 bodov až do zverejnenia veľkých nápovied.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie malej nápovedy 1. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-10-14"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Štyri týždne pred koncom kola sa na stránke zverejní prvá sada \"malých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 7 bodov až do zverejnenia veľkých nápovied.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie 2. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-02-24"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie 3. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-10-21"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Na rozdiel od tradičných šifrovačiek je Súťaž v Šifrovaní určená jednotlivcom. Podľa skúseností riešiš šifry v jednej z piatich kategórií. Riešenia až piatich šifier odovzdáš na stránku, ktorá ti automaticky overí ich správnosť.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie veľkej nápovedy 2. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-04-07"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Dva týždne pred koncom kola sa na stránke zverejní aj druhá sada \"veľkých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 5 bodov až do skončenia kola.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie malej nápovedy 1. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-03-10"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Štyri týždne pred koncom kola sa na stránke zverejní prvá sada \"malých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 7 bodov až do zverejnenia veľkých nápovied.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši sústredenie",
+    "type": "sustredenie",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-02-08",
+      "end": "2025-02-12"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "RZ Euromesto, Častá - Píla"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://susi.trojsten.sk/akcie/sustredenia/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši – Zverejnenie veľkej nápovedy 1. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-03-24"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": null
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Dva týždne pred koncom kola sa na stránke zverejní aj druhá sada \"veľkých\" nápovied k jednotlivým šifrám. Po tomto termíne môžeš riešenia šifier odovzdávať za 5 bodov až do skončenia kola.",
+    "link": "https://susi.trojsten.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Suši sústredenie",
+    "type": "sustredenie",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2025-06-08",
+      "end": "2025-06-13"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "Kysak"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://susi.trojsten.sk/akcie/sustredenia/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS – 2. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2025-04-21"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Fyzikálny korešpondenčný seminár je súťaž v riešení netradičných fyzikálnych problémov. Pomocou zaujímavých experimentov a situácií z bežného života sa snažíme ukázať, že fyzika nie je taká nudná, ba dokonca ani taká ťažká, ako sa občas zdá.",
+    "link": "https://fks.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS – 3. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2025-05-19"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Fyzikálny korešpondenčný seminár je súťaž v riešení netradičných fyzikálnych problémov. Pomocou zaujímavých experimentov a situácií z bežného života sa snažíme ukázať, že fyzika nie je taká nudná, ba dokonca ani taká ťažká, ako sa občas zdá.",
+    "link": "https://fks.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS sústredenie",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-06-22",
+      "end": "2025-06-29"
+    },
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://fks.sk/akcie/sustredenia/",
+    "places": [
+      "???"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS – 3. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2024-12-09"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Fyzikálny korešpondenčný seminár je súťaž v riešení netradičných fyzikálnych problémov. Pomocou zaujímavých experimentov a situácií z bežného života sa snažíme ukázať, že fyzika nie je taká nudná, ba dokonca ani taká ťažká, ako sa občas zdá.",
+    "link": "https://fks.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS – 2. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2024-11-11"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Fyzikálny korešpondenčný seminár je súťaž v riešení netradičných fyzikálnych problémov. Pomocou zaujímavých experimentov a situácií z bežného života sa snažíme ukázať, že fyzika nie je taká nudná, ba dokonca ani taká ťažká, ako sa občas zdá.",
+    "link": "https://fks.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS – 1. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2024-10-14"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Fyzikálny korešpondenčný seminár je súťaž v riešení netradičných fyzikálnych problémov. Pomocou zaujímavých experimentov a situácií z bežného života sa snažíme ukázať, že fyzika nie je taká nudná, ba dokonca ani taká ťažká, ako sa občas zdá.",
+    "link": "https://fks.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS sústredenie",
+    "sciences": [
+      "fyz"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-02-01",
+      "end": "2025-02-08"
+    },
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://fks.sk/akcie/sustredenia/",
+    "places": [
+      "???"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "FKS – 1. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "fyz"
+    ],
+    "date": {
+      "start": "2025-03-24"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Fyzikálny korešpondenčný seminár je súťaž v riešení netradičných fyzikálnych problémov. Pomocou zaujímavých experimentov a situácií z bežného života sa snažíme ukázať, že fyzika nie je taká nudná, ba dokonca ani taká ťažká, ako sa občas zdá.",
+    "link": "https://fks.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – 2. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-05-26"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Korešpondenčný seminár z programovania je súťaž v riešení algoritmických úloh. Riešiš 5 z 8 úloh podľa tvojho levelu skúseností. Riešenie obvykle pozostáva z funkčného programu, ktorý stránka automaticky otestuje a textového popisu, čo program robí.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – Doprogramovanie 2. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-06-09"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Po riadnom termíne nastáva fáza doprogramovávania. Počas tejto fázy sa nedajú odovzdávať slovné popisy, stále sa však dajú získať body za program. Navyše zverejníme aj vzorové riešenia, ktoré Vám vedia pomôcť úlohu vyriešiť a úspešne naprogramovať.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – 2. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-12-16"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Korešpondenčný seminár z programovania je súťaž v riešení algoritmických úloh. Riešiš 5 z 8 úloh podľa tvojho levelu skúseností. Riešenie obvykle pozostáva z funkčného programu, ktorý stránka automaticky otestuje a textového popisu, čo program robí.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – 1. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-10-21"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Korešpondenčný seminár z programovania je súťaž v riešení algoritmických úloh. Riešiš 5 z 8 úloh podľa tvojho levelu skúseností. Riešenie obvykle pozostáva z funkčného programu, ktorý stránka automaticky otestuje a textového popisu, čo program robí.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – 1. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-03-17"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Korešpondenčný seminár z programovania je súťaž v riešení algoritmických úloh. Riešiš 5 z 8 úloh podľa tvojho levelu skúseností. Riešenie obvykle pozostáva z funkčného programu, ktorý stránka automaticky otestuje a textového popisu, čo program robí.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – Doprogramovanie 1. kola letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-03-31"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Po riadnom termíne nastáva fáza doprogramovávania. Počas tejto fázy sa nedajú odovzdávať slovné popisy, stále sa však dajú získať body za program. Navyše zverejníme aj vzorové riešenia, ktoré Vám vedia pomôcť úlohu vyriešiť a úspešne naprogramovať.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP sústredenie",
+    "type": "sustredenie",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-30",
+      "end": "2024-12-07"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "info": "je určené pre najúspešnejších riešiteľov Korešpondenčného Seminára z Programovania. Na sústredení spoznáš kopec skvelých ľudí s podobnými záujmami, vedúcich, ktorí opravovali tvoje riešenia, naučíš sa kopec algoritmov a zažiješ množstvo skvelých hier.",
+    "places": [
+      "???"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://ksp.sk/akcie/sustredenia/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – Doprogramovanie 2. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-12-30"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Po riadnom termíne nastáva fáza doprogramovávania. Počas tejto fázy sa nedajú odovzdávať slovné popisy, stále sa však dajú získať body za program. Navyše zverejníme aj vzorové riešenia, ktoré Vám vedia pomôcť úlohu vyriešiť a úspešne naprogramovať.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP – Doprogramovanie 1. kola zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-04"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Po riadnom termíne nastáva fáza doprogramovávania. Počas tejto fázy sa nedajú odovzdávať slovné popisy, stále sa však dajú získať body za program. Navyše zverejníme aj vzorové riešenia, ktoré Vám vedia pomôcť úlohu vyriešiť a úspešne naprogramovať.",
+    "link": "https://ksp.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP sústredenie",
+    "type": "sustredenie",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2025-04-05",
+      "end": "2025-04-12"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "info": "je určené pre najúspešnejších riešiteľov Korešpondenčného Seminára z Programovania. Na sústredení spoznáš kopec skvelých ľudí s podobnými záujmami, vedúcich, ktorí opravovali tvoje riešenia, naučíš sa kopec algoritmov a zažiješ množstvo skvelých hier.",
+    "places": [
+      "???"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://ksp.sk/akcie/sustredenia/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS spojené sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-06-14",
+      "end": "2025-06-21"
+    },
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://kms.sk/akcie/sustredenia/",
+    "places": [
+      "ŠvP Kysak"
+    ],
+    "contestants": {
+      "min": "ss2",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS – 2. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-03-17"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Baví ťa matematika? Tak neváhaj a zapoj sa do Korešpondenčného Matematického Semináru! Ide o individuálnu súťaž pozostávajúcu z 10 úloh, pričom stačí vyriešiť 5. Vyriešiť úlohu neznamená len nájsť výsledok. Treba aj ukázať, že nájdený výsledok je správny.",
+    "link": "https://kms.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS – 3. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-04-14"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Baví ťa matematika? Tak neváhaj a zapoj sa do Korešpondenčného Matematického Semináru! Ide o individuálnu súťaž pozostávajúcu z 10 úloh, pričom stačí vyriešiť 5. Vyriešiť úlohu neznamená len nájsť výsledok. Treba aj ukázať, že nájdený výsledok je správny.",
+    "link": "https://kms.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS – 3. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-12-02"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Baví ťa matematika? Tak neváhaj a zapoj sa do Korešpondenčného Matematického Semináru! Ide o individuálnu súťaž pozostávajúcu z 10 úloh, pričom stačí vyriešiť 5. Vyriešiť úlohu neznamená len nájsť výsledok. Treba aj ukázať, že nájdený výsledok je správny.",
+    "link": "https://kms.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS – 2. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-11-04"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Baví ťa matematika? Tak neváhaj a zapoj sa do Korešpondenčného Matematického Semináru! Ide o individuálnu súťaž pozostávajúcu z 10 úloh, pričom stačí vyriešiť 5. Vyriešiť úlohu neznamená len nájsť výsledok. Treba aj ukázať, že nájdený výsledok je správny.",
+    "link": "https://kms.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS spojené sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-01-24",
+      "end": "2025-01-31"
+    },
+    "organizers": [
+      "trojsten"
+    ],
+    "link": "https://kms.sk/akcie/sustredenia/",
+    "places": [
+      "ŠvP Kysak"
+    ],
+    "contestants": {
+      "min": "ss2",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS – 1. kolo zimnej časti",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-10-07"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Baví ťa matematika? Tak neváhaj a zapoj sa do Korešpondenčného Matematického Semináru! Ide o individuálnu súťaž pozostávajúcu z 10 úloh, pričom stačí vyriešiť 5. Vyriešiť úlohu neznamená len nájsť výsledok. Treba aj ukázať, že nájdený výsledok je správny.",
+    "link": "https://kms.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KMS – 1. kolo letnej časti",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-02-17"
+    },
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "trojsten"
+    ],
+    "info": "Baví ťa matematika? Tak neváhaj a zapoj sa do Korešpondenčného Matematického Semináru! Ide o individuálnu súťaž pozostávajúcu z 10 úloh, pričom stačí vyriešiť 5. Vyriešiť úlohu neznamená len nájsť výsledok. Treba aj ukázať, že nájdený výsledok je správny.",
+    "link": "https://kms.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "MaK - Stretnutie Matematického Klubu",
+    "sciences": [
+      "mat"
+    ],
+    "type": "vikendovka",
+    "date": {
+      "start": "2025-01-25",
+      "end": "2025-01-26"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam - letný tábor",
+    "sciences": [
+      "mat"
+    ],
+    "type": "tabor",
+    "date": {
+      "start": "2025-08-01",
+      "end": "2025-08-10"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezamko - stretnutie riešiteľov",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2024-12-07"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam 1. kolo, Sezamko 1.kolo, letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-02-05"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam 3. kolo, letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-05-05"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam 2. kolo, Sezamko 2. kolo, zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-11-11"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam 1. kolo, Sezmko 1. kolo, zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-09-30"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "MaK - Stretnutie Matematického Klubu",
+    "sciences": [
+      "mat"
+    ],
+    "type": "vikendovka",
+    "date": {
+      "start": "2025-03-29",
+      "end": "2025-03-30"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam 2. kolo, Sezamko 2. kolo, letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-03-17"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "MaK - Stretnutie Matematického Klubu",
+    "sciences": [
+      "mat"
+    ],
+    "type": "vikendovka",
+    "date": {
+      "start": "2025-05-24",
+      "end": "2025-05-25"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam - zimné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-03-20",
+      "end": "2025-03-23"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "MaK - Stretnutie Matematického Klubu",
+    "sciences": [
+      "mat"
+    ],
+    "type": "vikendovka",
+    "date": {
+      "start": "2024-12-07",
+      "end": "2024-12-08"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezamko - letné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-05-22",
+      "end": "2025-05-24"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "Žilina"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Sezam 1. kolo, zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-01-08"
+    },
+    "organizers": [
+      "sezam"
+    ],
+    "link": "https://sezam.sk/",
+    "places": [
+      "online"
+    ],
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP - Z1 - Deadline odovzdávania praktických úloh za tretinu bodov",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-10-27"
+    },
+    "contestants": {
+      "min": null,
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "ksp-praha"
+    ],
+    "info": "Kategória Z je určená začiatočníkom, ktorí sa chcú naučiť programovať. Počas roka prebieha 5 sérií - každá obsahuje zvyčajne tri praktické a jednu teoretickú úlohu. Termín odovzdávania úloh je tradične 32:00 (8:00 ráno ďalšieho dňa).",
+    "link": "https://ksp.mff.cuni.cz/z/ulohy/37/zadani1.html",
+    "color": "#000",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP - H1 - Deadline odovzdávania série",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-11-03"
+    },
+    "contestants": {
+      "min": "zs9",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "ksp-praha"
+    ],
+    "info": "Kategória H je určená pokročilým programátorom, súťaží sa o účasť na jesennom sústredení, prijatie na MFF UK bez prijímačiek a zaujímavé ceny. Série zvykne sprevádzať seriál. Termín odovzdávania úloh je tradične 32:00 (8:00 ráno ďalšieho dňa).",
+    "link": "https://ksp.mff.cuni.cz/h/ulohy/37/zadani1.html",
+    "color": "#000",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "KSP - Z1 - Deadline odovzdávania série",
+    "type": "seminar",
+    "sciences": [
+      "inf"
+    ],
+    "date": {
+      "start": "2024-10-20"
+    },
+    "contestants": {
+      "min": null,
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "ksp-praha"
+    ],
+    "info": "Kategória Z je určená začiatočníkom, ktorí sa chcú naučiť programovať. Počas roka prebieha 5 sérií - každá obsahuje zvyčajne tri praktické a jednu teoretickú úlohu. Termín odovzdávania úloh je tradične 32:00 (8:00 ráno ďalšieho dňa).",
+    "link": "https://ksp.mff.cuni.cz/z/ulohy/37/zadani1.html",
+    "color": "#000",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "STROM - 2. letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-04-28"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Seminár STROM sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "TMM - Tábor mladých matematikov",
+    "type": "tabor",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-07-20",
+      "end": "2025-07-27"
+    },
+    "contestants": {
+      "min": "zs6",
+      "max": "ss1"
+    },
+    "places": [
+      "Chata Hámor pri Kokave nad Rimavicou"
+    ],
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/tmm",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Malynár - 1. letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-03-17"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Malynár sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matik - 1. zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-10-21"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Matik sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Mamut",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sutaz",
+    "date": {
+      "start": "2025-05-30"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/mamut/",
+    "places": [
+      "Košice",
+      "Poprad"
+    ],
+    "info": "Na Mamute si zasúťažíte v päťčlenných tímoch, kde budete mať 120 minút na vyriešenie čo najviac zo 60 matematických úloh. Súťaž prebieha štafetovo, teda za správne vyriešený príklad alebo splnenie pripravenej športovej aktivity získate zadanie ďalšieho.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matik - 2. letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-04-14"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Matik sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Máš problém?!",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sutaz",
+    "date": {
+      "start": "2024-11-29"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://masproblem.strom.sk/",
+    "places": [
+      "online"
+    ],
+    "info": "V online súťaži Máš problém?! budete mať 60 minút na to, aby ste zdolali 6 úrovní matematických úloh, pričom na odomknutie novej úrovne je vždy potrebné vyriešiť istý počet úloh z tej aktuálnej. Následne je možné riešiť všetky dostupné úlohy.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Lomihlav",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sutaz",
+    "date": {
+      "start": "2024-12-06"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/lomihlav/",
+    "places": [
+      "Gymnázium, Alejová 1, Košice"
+    ],
+    "info": "Na Lomihlave si zasúťažíte v štvorčlenných tímoch, kde budete mať 99 minút na vyriešenie čo najviac zo 40 matematických úloh, 4 hlavolamov a 4 hádaniek. Súťaž prebieha štafetovo, teda za správne vyriešený príklad získate zadanie ďalšieho.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Košický Matboj",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sutaz",
+    "date": {
+      "start": "2024-10-25"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/matboj/",
+    "places": [
+      "Gymnázium, Alejová 1, Košice"
+    ],
+    "info": "Na Matboji si zasúťažíte v  štvorčlenných tímoch v troch 30-minútových kolách. V každom kole obdržíte 12 úloh a odpoveďový hárok, ktorý sa po ukončení kola pozbiera a následne oboduje, teda k úlohám z predchádzajúcich kôl sa vrátiť nedá.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "STROM - zimné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-02-02",
+      "end": "2025-02-07"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/prispevky/",
+    "places": [
+      "Juskova Voľa"
+    ],
+    "info": "Pre najlepších riešiteľov našich seminárov sú odmenou niekoľkodňové pobytové sústredenia.  Čakajú vás na ňom prednášky na témy z matematiky, s ktorými sa v škole len tak nestretnete, netradičné športy a hry, ale hlavne kopa zábavy a nových kamarátov.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Malynár - letné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-06-13",
+      "end": "2025-06-19"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/prispevky/",
+    "places": [
+      "TBA"
+    ],
+    "info": "Pre najlepších riešiteľov našich seminárov sú odmenou niekoľkodňové pobytové sústredenia.  Čakajú vás na ňom prednášky na témy z matematiky, s ktorými sa v škole len tak nestretnete, netradičné športy a hry, ale hlavne kopa zábavy a nových kamarátov.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "STROM - jesenné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2024-09-08",
+      "end": "2024-09-14"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/prispevky/",
+    "places": [
+      "Chata Radzim, Vyšná Slaná"
+    ],
+    "info": "Pre najlepších riešiteľov našich seminárov sú odmenou niekoľkodňové pobytové sústredenia.  Čakajú vás na ňom prednášky na témy z matematiky, s ktorými sa v škole len tak nestretnete, netradičné športy a hry, ale hlavne kopa zábavy a nových kamarátov.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matik - zimné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-02-09",
+      "end": "2025-02-14"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/prispevky/",
+    "places": [
+      "Juskova Voľa"
+    ],
+    "info": "Pre najlepších riešiteľov našich seminárov sú odmenou niekoľkodňové pobytové sústredenia.  Čakajú vás na ňom prednášky na témy z matematiky, s ktorými sa v škole len tak nestretnete, netradičné športy a hry, ale hlavne kopa zábavy a nových kamarátov.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Kôš - Košická šifrovačka",
+    "type": "sutaz",
+    "sciences": [
+      "other"
+    ],
+    "date": {
+      "start": "2024-09-28"
+    },
+    "contestants": {
+      "min": "zs1",
+      "max": "ss4"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "strom"
+    ],
+    "info": "Do Košickej šifrovačky sa môžete zapojiť v najviac päťčlenných tímoch, a to buď v teréne alebo online. V oboch verziách sú 2 kategórie - začiatočníci a pokročilí. Hra je lineárna, teda s tímom budete postupne prechádzať 10 šiframi v čase od 9:00 do 20:30.",
+    "link": "https://kos.strom.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matik - letné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-06-19",
+      "end": "2025-06-25"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/prispevky/",
+    "places": [
+      "TBA"
+    ],
+    "info": "Pre najlepších riešiteľov našich seminárov sú odmenou niekoľkodňové pobytové sústredenia.  Čakajú vás na ňom prednášky na témy z matematiky, s ktorými sa v škole len tak nestretnete, netradičné športy a hry, ale hlavne kopa zábavy a nových kamarátov.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "STROM - 1. letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-03-31"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Seminár STROM sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matik - 1. letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-03-17"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Matik sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Máš problém?!",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sutaz",
+    "date": {
+      "start": "2025-05-23"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://masproblem.strom.sk/",
+    "places": [
+      "online"
+    ],
+    "info": "V online súťaži Máš problém?! budete mať 60 minút na to, aby ste zdolali 6 úrovní matematických úloh, pričom na odomknutie novej úrovne je vždy potrebné vyriešiť istý počet úloh z tej aktuálnej. Následne je možné riešiť všetky dostupné úlohy.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "STROM - 1. zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-10-28"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Seminár STROM sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Malynár - 1. zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-10-21"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Malynár sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Malynár - 2. letná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2025-04-14"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Malynár sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Malynár - zimné sústredenie",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-01-26",
+      "end": "2025-01-31"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/prispevky/",
+    "places": [
+      "Juskova Voľa"
+    ],
+    "info": "Pre najlepších riešiteľov našich seminárov sú odmenou niekoľkodňové pobytové sústredenia.  Čakajú vás na ňom prednášky na témy z matematiky, s ktorými sa v škole len tak nestretnete, netradičné športy a hry, ale hlavne kopa zábavy a nových kamarátov.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "STROM - 2. zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-11-25"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://seminar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Seminár STROM sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "ss1",
+      "max": "ss4"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Malynár - 2. zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-11-18"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://malynar.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Malynár sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs4",
+      "max": "zs6"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Matik - 2. zimná séria",
+    "sciences": [
+      "mat"
+    ],
+    "type": "seminar",
+    "date": {
+      "start": "2024-11-18"
+    },
+    "organizers": [
+      "strom"
+    ],
+    "link": "https://matik.strom.sk/sk/prispevky/",
+    "places": [
+      "online"
+    ],
+    "info": "Matik sa skladá z 2 semestrov, kde vás v každom čakajú 2 série po 6 úloh. Ku každému vášmu odovzdanému riešeniu úlohy vám napíšeme spätnú väzbu aj s bodmi. Na našej stránke a v časopisoch nájdete vzorové riešenia všetkých úloh.",
+    "contestants": {
+      "min": "zs7",
+      "max": "zs9"
+    },
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Riešky 2. kolo, letná séria",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-03-20"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "riesky"
+    ],
+    "info": "Riešky sú individuálna dlhodobá súťaž v riešení netradičných úloh. Pri riešeniach nás zaujíma hlavne postup a myšlienky, ktoré doviedli riešiteľa k výsledku a napíšeme k nim spätnú väzbu. Odmenou pre najúspešnejších riešiteľov je sústredenie.",
+    "link": "https://riesky.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Riešky 3. kolo, letná séria",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-04-17"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "riesky"
+    ],
+    "info": "Riešky sú individuálna dlhodobá súťaž v riešení netradičných úloh. Pri riešeniach nás zaujíma hlavne postup a myšlienky, ktoré doviedli riešiteľa k výsledku a napíšeme k nim spätnú väzbu. Odmenou pre najúspešnejších riešiteľov je sústredenie.",
+    "link": "https://riesky.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Riešky 3. kolo, zimná séria",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-12-05"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "riesky"
+    ],
+    "info": "Riešky sú individuálna dlhodobá súťaž v riešení netradičných úloh. Pri riešeniach nás zaujíma hlavne postup a myšlienky, ktoré doviedli riešiteľa k výsledku a napíšeme k nim spätnú väzbu. Odmenou pre najúspešnejších riešiteľov je sústredenie.",
+    "link": "https://riesky.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Riešky 2. kolo, zimná séria",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-11-07"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "riesky"
+    ],
+    "info": "Riešky sú individuálna dlhodobá súťaž v riešení netradičných úloh. Pri riešeniach nás zaujíma hlavne postup a myšlienky, ktoré doviedli riešiteľa k výsledku a napíšeme k nim spätnú väzbu. Odmenou pre najúspešnejších riešiteľov je sústredenie.",
+    "link": "https://riesky.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Riešky 1. kolo, zimná séria",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2024-10-10"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "riesky"
+    ],
+    "info": "Riešky sú individuálna dlhodobá súťaž v riešení netradičných úloh. Pri riešeniach nás zaujíma hlavne postup a myšlienky, ktoré doviedli riešiteľa k výsledku a napíšeme k nim spätnú väzbu. Odmenou pre najúspešnejších riešiteľov je sústredenie.",
+    "link": "https://riesky.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Riešky 1. kolo, letná séria",
+    "type": "seminar",
+    "sciences": [
+      "mat"
+    ],
+    "date": {
+      "start": "2025-02-20"
+    },
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "places": [
+      "online"
+    ],
+    "organizers": [
+      "riesky"
+    ],
+    "info": "Riešky sú individuálna dlhodobá súťaž v riešení netradičných úloh. Pri riešeniach nás zaujíma hlavne postup a myšlienky, ktoré doviedli riešiteľa k výsledku a napíšeme k nim spätnú väzbu. Odmenou pre najúspešnejších riešiteľov je sústredenie.",
+    "link": "https://riesky.sk/",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letné sústredenie Riešok",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-06-01",
+      "end": "2025-06-06"
+    },
+    "organizers": [
+      "riesky"
+    ],
+    "link": "https://riesky.sk/novinky/",
+    "places": [
+      "TO DO"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "info": "Sústredenie Riešok je 6-dňový pobyt podobný Škole v prírode pre najúspešnejších riešiteľov Riešok. Súčasťou sústredenia je odborný aj neodborný program vo forme matematických prednášok a hier.",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Zimné sústredenie Riešok",
+    "sciences": [
+      "mat"
+    ],
+    "type": "sustredenie",
+    "date": {
+      "start": "2025-01-12",
+      "end": "2025-01-17"
+    },
+    "organizers": [
+      "riesky"
+    ],
+    "link": "https://riesky.sk/novinky/",
+    "places": [
+      "TO DO"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "zs9"
+    },
+    "info": "Sústredenie Riešok je 6-dňový pobyt podobný Škole v prírode pre najúspešnejších riešiteľov Riešok. Súčasťou sústredenia je odborný aj neodborný program vo forme matematických prednášok a hier.",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letný tábor Riešok",
+    "sciences": [
+      "mat"
+    ],
+    "type": "tabor",
+    "date": {
+      "start": "2025-08-21",
+      "end": "2025-08-30"
+    },
+    "organizers": [
+      "riesky"
+    ],
+    "link": "https://riesky.sk/novinky/",
+    "places": [
+      "TO DO"
+    ],
+    "contestants": {
+      "min": "zs5",
+      "max": "ss1"
+    },
+    "info": "Letný tábor Riešok je určený pre každého, koho baví matematika, a teda nie len pre riešiteľov semináru. Ide o 10 dňový pobyt v blízkosti prírody, ktorého súčasťou je odborný aj neodborný program vo forme prednášok, netradičných hier a športov.",
     "volatile": false,
     "cancelled": false
   }
