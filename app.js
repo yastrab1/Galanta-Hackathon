@@ -487,6 +487,7 @@ setup_calendar()
 // FILTERS
 const filter_update_checked = () => {
 	document.querySelectorAll('.js-filter-checkbox').forEach((elem) => {
+		console.log(elem.dataset.filter, elem.value, FILTER)
 		if (FILTER[elem.dataset.filter].indexOf(elem.value) !== -1) {
 			elem.checked = true
 		} else {
