@@ -6,7 +6,7 @@
     "date": {
       "start": "2025-06-15"
     },
-    "organizers": ["mesto Galanta"],
+    "organizers": ["trojsten"],
     "link": "https://galanta.sk/kultura",
     "places": ["Galanta - Námestie slobody"],
     "short-info": "Hudobné vystúpenia, divadlo a ochutnávky regionálnych jedál.",
@@ -21,7 +21,7 @@
     "date": {
       "start": "2025-03-10"
     },
-    "organizers": ["Univerzita sv. Cyrila a Metoda"],
+    "organizers": ["trojsten"],
     "link": "https://itworkshop.sk/",
     "places": ["Galanta - Mestská knižnica"],
     "short-info": "Praktické cvičenia v oblasti programovania a umelej inteligencie.",
@@ -36,7 +36,7 @@
     "date": {
       "start": "2025-05-01"
     },
-    "organizers": ["Galanta Sport Club"],
+    "organizers": ["trojsten",
     "link": "https://behzdravia.sk/",
     "places": ["Galanta - mestský park"],
     "short-info": "5 km beh pre všetky vekové kategórie s medailami pre účastníkov.",
@@ -51,7 +51,7 @@
     "date": {
       "start": "2025-09-20"
     },
-    "organizers": ["Galantská televízia"],
+    "organizers": ["trojsten"],
     "link": "https://galantadebata.sk/",
     "places": ["Galanta - Kultúrne centrum"],
     "short-info": "Diskusia medzi kandidátmi na primátora mesta Galanta.",
@@ -66,7 +66,7 @@
     "date": {
       "start": "2025-04-08"
     },
-    "organizers": ["Relax Galanta"],
+    "organizers": ["trojsten"],
     "link": "https://wellnessgalanta.sk/",
     "places": ["Galanta - Termálne kúpele"],
     "short-info": "Celodenný vstup do kúpeľov so špeciálnymi procedúrami.",
@@ -81,7 +81,7 @@
     "date": {
       "start": "2025-07-12"
     },
-    "organizers": ["Peter Novák"],
+    "organizers": ["trojsten"],
     "link": "",
     "places": ["Galanta - súkromný pozemok"],
     "short-info": "Súkromná oslava s rodinou a priateľmi.",

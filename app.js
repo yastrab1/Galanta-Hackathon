@@ -236,7 +236,12 @@ const fmt = {
 	},
 
 	pretty_organizers: function(event) {
-		return event.organizers.map((x) => ({'logo': DATA_URL_PREFIX+ORGANIZERS[x].icon, 'name': ORGANIZERS[x].name || x}))
+		console.log(ORGANIZERS)
+		return event.organizers.map((x) => {
+			console.log(x)
+			return {'logo': DATA_URL_PREFIX+ORGANIZERS[x].icon, 'name': ORGANIZERS[x].name || x}
+
+		})
 	},
 
 	pretty_contestants: function (event) {
