@@ -16,7 +16,7 @@ const CONSTANTS = {
 		'zs': 'ZŠ',
 		'ss': 'SŠ',
 	},
-	sciences: {
+	event_type: {
 		'kult': 'Kultúra',
 		'sport': 'Šport',
 		'vzd': 'Vzdelávanie',
@@ -60,7 +60,7 @@ let max_loaded_year = 0;
 
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
 	school: [0, CONSTANTS.school_years.length-1],
-	sciences: Object.keys(CONSTANTS.sciences),
+	event_type: Object.keys(CONSTANTS.event_type),
 	organizers: [...DEFAULT_ORGANIZERS, '*'],
 	default_organizers: DEFAULT_ORGANIZERS,
 }
@@ -264,12 +264,12 @@ const fmt = {
 		return fmt_contestant(event.contestants.min) + ' – ' + fmt_contestant(event.contestants.max, event.contestants.min)
 	},
 
-	pretty_sciences: function (event) {
-		return event.sciences.map((x) => CONSTANTS.sciences[x]).join(', ')
+	pretty_event_type: function (event) {
+		return event.event_type.map((x) => CONSTANTS.event_type[x]).join(', ')
 	},
 
 	color: function (event) {
-		return CONSTANTS.colors?.[event.color] ?? event.color ?? CONSTANTS.colors[CONSTANTS.science_color[event.sciences[0]]]
+		return CONSTANTS.colors?.[event.color] ?? event.color ?? CONSTANTS.colors[CONSTANTS.science_color[event.event_type[0]]]
 	},
 
 	background_color: function(event) {
@@ -308,10 +308,10 @@ const render = (move_focus = true) => {
 		return Math.max(FILTER.school[0], FILTER.school[1]) >= Math.min(school_to_int(event.contestants.min, 0), school_to_int(event.contestants.max, 1)) && Math.min(FILTER.school[0], FILTER.school[1]) <= Math.max(school_to_int(event.contestants.max, 1), school_to_int(event.contestants.min, 0));
 	})
 
-	// Sciences filter
+	// event_type filter
 	visible_events = visible_events.filter((event) => {
-		for (let i = FILTER.sciences.length - 1; i >= 0; i--) {
-			if (event.sciences.indexOf(FILTER.sciences[i]) !== -1) {
+		for (let i = FILTER.event_type.length - 1; i >= 0; i--) {
+			if (event.event_type.indexOf(FILTER.event_type[i]) !== -1) {
 				return true
 			}
 		}

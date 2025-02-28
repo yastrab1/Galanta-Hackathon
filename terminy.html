@@ -39,7 +39,7 @@
         class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row"
       >
         <a href="index.html" class="font-bold text-xl mb-1 md:mb-0"
-          >KockatýKalendár.sk</a
+          >Galendar.sk</a
         >
 
         <ul class="flex font-bold">
@@ -157,7 +157,7 @@
                 <input
                   class="js-filter-checkbox hidden"
                   type="checkbox"
-                  data-filter="sciences"
+                  data-filter="event_type"
                   value="kult"
                 />
                 <span class="slider mat"></span>
@@ -167,7 +167,7 @@
                 <input
                   class="js-filter-checkbox hidden"
                   type="checkbox"
-                  data-filter="sciences"
+                  data-filter="event_type"
                   value="sport"
                 />
                 <span class="slider fyz"></span>
@@ -177,7 +177,7 @@
                 <input
                   class="js-filter-checkbox hidden"
                   type="checkbox"
-                  data-filter="sciences"
+                  data-filter="event_type"
                   value="vzd"
                 />
                 <span class="slider inf"></span>
@@ -189,7 +189,7 @@
                 <input
                   class="js-filter-checkbox hidden"
                   type="checkbox"
-                  data-filter="sciences"
+                  data-filter="event_type"
                   value="pol"
                 />
                 <span class="slider otr"></span>
@@ -199,7 +199,7 @@
                 <input
                   class="js-filter-checkbox hidden"
                   type="checkbox"
-                  data-filter="sciences"
+                  data-filter="event_type"
                   value="rek"
                 />
                 <span class="slider otr"></span>
@@ -209,7 +209,7 @@
                 <input
                   class="js-filter-checkbox hidden"
                   type="checkbox"
-                  data-filter="sciences"
+                  data-filter="event_type"
                   value="other"
                 />
                 <span class="slider otr"></span>
@@ -313,46 +313,72 @@
           Vedy
         </h2>
 
-        <label class="flex select-none items-center my-1">
-          <input
-            class="js-filter-checkbox hidden"
-            type="checkbox"
-            data-filter="sciences"
-            value="mat"
-          />
-          <span class="slider mat"></span>
-          Matematika
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input
-            class="js-filter-checkbox hidden"
-            type="checkbox"
-            data-filter="sciences"
-            value="fyz"
-          />
-          <span class="slider fyz"></span>
-          Fyzika
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input
-            class="js-filter-checkbox hidden"
-            type="checkbox"
-            data-filter="sciences"
-            value="inf"
-          />
-          <span class="slider inf"></span>
-          Informatika
-        </label>
-        <label class="flex select-none items-center my-1">
-          <input
-            class="js-filter-checkbox hidden"
-            type="checkbox"
-            data-filter="sciences"
-            value="other"
-          />
-          <span class="slider otr"></span>
-          Ostatné
-        </label>
+        <div class="w-full flex flex-row">
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="kult"
+              />
+              <span class="slider mat"></span>
+              Kultúra
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="sport"
+              />
+              <span class="slider fyz"></span>
+              Šport
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="vzd"
+              />
+              <span class="slider inf"></span>
+              Vzdelávanie
+            </label>
+          </div>
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="pol"
+              />
+              <span class="slider otr"></span>
+              Politické
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="rek"
+              />
+              <span class="slider otr"></span>
+              Rekreačné
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="other"
+              />
+              <span class="slider otr"></span>
+              Ostatné
+            </label>
+          </div>
+        </div>
 
         <h2
           id="org-filter-modal"
@@ -530,11 +556,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="app.js"></script>
-    <script
-      async
-      defer
-      data-website-id="e76c1f53-9376-4047-8c8e-45cc01532075"
-      src="https://stats.p-mat.sk/umami.js"
-    ></script>
   </body>
 </html>
