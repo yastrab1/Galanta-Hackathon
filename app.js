@@ -25,6 +25,11 @@ const CONSTANTS = {
 		'other': 'Iné',
 		'any': 'Všetky',
 	},
+	audience: {
+		'sen': "Senióry",
+		'kid': "Deti",
+		'any': "Všetci",
+	},
 	colors: {
 		'red': '#E53E3E',
 		'orange': '#ED8936',
@@ -61,6 +66,7 @@ let max_loaded_year = 0;
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
 	school: [0, CONSTANTS.school_years.length-1],
 	event_type: Object.keys(CONSTANTS.event_type),
+	audience: Object.keys(CONSTANTS.audience),
 	organizers: [...DEFAULT_ORGANIZERS, '*'],
 	default_organizers: DEFAULT_ORGANIZERS,
 }
