@@ -855,6 +855,11 @@ img, video {
   background-color: #dd6b20;
 }
 
+.bg-red-500 {
+  background-color: #c74646;
+}
+
+
 .bg-red-700 {
   background-color: #c53030;
 }

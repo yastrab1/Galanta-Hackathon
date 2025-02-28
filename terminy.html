@@ -20,16 +20,16 @@
   <meta property="og:site_name" content="KockatýKalendár.sk" />
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
-  <header class="bg-blue-500 text-white">
+  <header class="bg-red-500 text-white">
     <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
       <a href="index.html" class="font-bold text-xl mb-1 md:mb-0">KockatýKalendár.sk</a>
 
       <ul class="flex font-bold">
         <li class="mr-3">
-          <a class="inline-block border border-white rounded py-1 px-3 bg-blue-500 text-white
+          <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white
               hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="index.html">O nás</a>
-          <a class="inline-block border border-blue-700 rounded py-1 px-3 bg-blue-700 text-white" href="terminy.html">Akcie</a>
-          <a class="inline-block border border-white rounded py-1 px-3 bg-blue-500 text-white
+          <a class="inline-block border border-blue-700 rounded py-1 px-3 bg-red-700 text-white" href="terminy.html">Akcie</a>
+          <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white
               hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="ical.html">Export</a>
         </li>
       </ul>
@@ -111,7 +111,7 @@
           <svg width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z' stroke='#06b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
         </label>
         <input class="h-18 appearance-none mx-4 font-semibold flex-auto bg-transparent focus:outline-none" aria-autocomplete="list" aria-labelledby="mobile-search-label" id="mobile-search-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Hľadať udalosť" maxlength="64" type="search">
-        <button type="reset" title="Zmaže hľadanie" class="flex-none rounded-lg border border-blue-500 text-blue-500 font-bold px-3 py-2 hover:bg-blue-100 text-xs" onclick="close_search()">Zmaž</button>
+        <button type="reset" title="Zmaže hľadanie" class="flex-none rounded-lg border border-blue-500 text-blue-500 font-bold px-3 py-2 hover:bg-red-100 text-xs" onclick="close_search()">Zmaž</button>
       </div>
 
       <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Ročníky</h2>
@@ -150,7 +150,7 @@
 
       <h2 id="org-filter-modal" class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">Organizátori</h2>
 
-      <button class="mt-6 rounded-lg bg-blue-500 text-white font-bold px-3 py-2 hover:bg-blue-600 text-xs" onclick="close_modal()">Zobraziť výsledky</button>
+      <button class="mt-6 rounded-lg bg-red-500 text-white font-bold px-3 py-2 hover:bg-red-600 text-xs" onclick="close_modal()">Zobraziť výsledky</button>
     </div>
   </div>
 
@@ -159,7 +159,7 @@
       <svg width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z' stroke='#06b6d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>
     </label>
     <input class="h-18 appearance-none mx-4 font-semibold flex-auto bg-transparent focus:outline-none" aria-autocomplete="list" aria-labelledby="search-label" id="search-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Hľadať udalosť" maxlength="64" type="search">
-    <button class="flex-none rounded-lg border border-blue-500 text-blue-500 font-bold px-3 py-2 hover:bg-blue-100 text-xs" onclick="close_search()">Esc</button>
+    <button class="flex-none rounded-lg border border-blue-500 text-blue-500 font-bold px-3 py-2 hover:bg-red-100 text-xs" onclick="close_search()">Esc</button>
   </div>
 
   <script id="template-event-item" type="x-tmpl-mustache">
