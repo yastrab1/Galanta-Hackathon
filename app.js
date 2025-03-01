@@ -65,7 +65,7 @@ CONSTANTS.costs = [
 ];
 
 const DATA_URL_PREFIX =
-  "https://raw.githubusercontent.com/yastrab1/Galanta-Hackathon/refs/heads/master/";
+  "https://galendar.netlify.app/";
 let ORGANIZERS = [];
 let DEFAULT_ORGANIZERS = ["trojsten", "p-mat", "sezam", "strom", "riesky"];
 let DATA = [];
@@ -201,14 +201,18 @@ const FILTER_TEMPLATE = document.getElementById(
   "template-filter-organization"
 ).innerHTML;
 const render_filter = async () => {
+
   let html = DEFAULT_ORGANIZERS.reduce(
     (html, org) =>
-      html +
+    {
+      console.log(org)
+      console.log(ORGANIZERS)
+      return html +
       Mustache.render(FILTER_TEMPLATE, {
         key: org,
         name: ORGANIZERS[org].name,
         logo: DATA_URL_PREFIX + ORGANIZERS[org].icon,
-      }),
+      })},
     ""
   );
   html += Mustache.render(FILTER_TEMPLATE, { key: "*", name: "Ostatní" });

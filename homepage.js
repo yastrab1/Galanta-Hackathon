@@ -9,7 +9,7 @@ const load_json = async url => {
 }
 
 const DEFAULT_ORGANIZERS = ['trojsten', 'p-mat', 'riesky', 'sezam', 'strom']
-const DATA_URL_PREFIX = 'https://raw.githubusercontent.com/yastrab1/Galanta-Hackathon/refs/heads/master/'
+const DATA_URL_PREFIX = 'https://galendar.netlify.app/'
 
 let ORGANIZERS = load_json(`${DATA_URL_PREFIX}organizers.json`)
 
