@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="build.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Add your description." />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
     <title>Galendár</title>
 
@@ -126,4 +129,14 @@
 
     <script async defer data-website-id="e76c1f53-9376-4047-8c8e-45cc01532075" src="https://stats.p-mat.sk/umami.js"></script>
 </body>
+<script>
+    // PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(
+        '/service-worker.js', {
+          scope: '/'
+        }
+      )
+    }
+  </script>
 </html>
