@@ -135,7 +135,9 @@
           >
             <label class="sr-only" for="v0">Začiatok intervalu</label>
             <input class="va" type="range" id="v0" min="0" value="0" max="14" />
-            <output for="v0" style="--c: var(--va)"><span>Zadarmo</span></output>
+            <output for="v0" style="--c: var(--va)"
+              ><span>Zadarmo</span></output
+            >
             <label class="sr-only" for="v1">Koniec intervalu</label>
             <input
               class="vb"
@@ -145,7 +147,9 @@
               value="14"
               max="14"
             />
-            <output for="v1" style="--c: var(--vb)"><span>Drahšie</span></output>
+            <output for="v1" style="--c: var(--vb)"
+              ><span>Drahšie</span></output
+            >
           </div>
 
           <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
@@ -192,7 +196,7 @@
                   data-filter="event_type"
                   value="pol"
                 />
-                <span class="slider pol"></span>
+                <span class="slider otr"></span>
                 Politické
               </label>
               <label class="flex select-none items-center my-1">
@@ -202,7 +206,7 @@
                   data-filter="event_type"
                   value="rek"
                 />
-                <span class="slider rek"></span>
+                <span class="slider otr"></span>
                 Rekreačné
               </label>
               <label class="flex select-none items-center my-1">
@@ -369,188 +373,184 @@
           </button>
         </div>
 
-          <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">
-            Cena lístka
-          </h2>
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
+          Ročníky
+        </h2>
 
-          <div
-            class="double-slider"
-            role="group"
-            aria-labelledby="multi-lbl"
-            style="--va: 0; --vb: 14"
+        <div
+          class="double-slider"
+          role="group"
+          aria-labelledby="multi-lbl"
+          style="--va: 0; --vb: 14"
+        >
+          <label class="sr-only" for="v2">Začiatok intervalu</label>
+          <input class="va" type="range" id="v2" min="0" value="0" max="14" />
+          <output for="v2" style="--c: var(--va)"><span>Mladší</span></output>
+          <label class="sr-only" for="v3">Koniec intervalu</label>
+          <input class="vb" type="range" id="v3" min="0" value="14" max="14" />
+          <output for="v3" style="--c: var(--vb); z-index: 99"
+            ><span>Starší</span></output
           >
-            <label class="sr-only" for="v0">Začiatok intervalu</label>
-            <input class="va" type="range" id="v0" min="0" value="0" max="14" />
-            <output for="v0" style="--c: var(--va)"><span>Zadarmo</span></output>
-            <label class="sr-only" for="v1">Koniec intervalu</label>
-            <input
-              class="vb"
-              type="range"
-              id="v1"
-              min="0"
-              value="14"
-              max="14"
-            />
-            <output for="v1" style="--c: var(--vb)"><span>Drahšie</span></output>
-          </div>
+        </div>
 
-          <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
-            Typ podujatia
-          </h2>
-          <div class="w-full flex flex-row">
-            <div class="w-full">
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="event_type"
-                  value="kult"
-                />
-                <span class="slider mat"></span>
-                Kultúra
-              </label>
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="event_type"
-                  value="sport"
-                />
-                <span class="slider fyz"></span>
-                Šport
-              </label>
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="event_type"
-                  value="vzd"
-                />
-                <span class="slider inf"></span>
-                Vzdelávanie
-              </label>
-            </div>
-            <div class="w-full">
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="event_type"
-                  value="pol"
-                />
-                <span class="slider otr"></span>
-                Politické
-              </label>
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="event_type"
-                  value="rek"
-                />
-                <span class="slider otr"></span>
-                Rekreačné
-              </label>
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="event_type"
-                  value="other"
-                />
-                <span class="slider otr"></span>
-                Ostatné
-              </label>
-            </div>
-          </div>
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
+          Vedy
+        </h2>
 
-          <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
-            Publikum
-          </h2>
-          <div class="w-full flex flex-row">
-            <div class="w-full">
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="audience"
-                  value="sen"
-                />
-                <span class="slider mat"></span>
-                Pre seniorov
-              </label>
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="audience"
-                  value="kid"
-                />
-                <span class="slider fyz"></span>
-                Pre deti
-              </label>
-            </div>
-            <div class="w-full">
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="audience"
-                  value="inv"
-                />
-                <span class="slider otr"></span>
-                Pre invalidov
-              </label>
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="audience"
-                  value="other"
-                />
-                <span class="slider otr"></span>
-                Ostatné
-              </label>
-            </div>
+        <div class="w-full flex flex-row">
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="kult"
+              />
+              <span class="slider mat"></span>
+              Kultúra
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="sport"
+              />
+              <span class="slider fyz"></span>
+              Šport
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="vzd"
+              />
+              <span class="slider inf"></span>
+              Vzdelávanie
+            </label>
           </div>
-
-          <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
-            Miesto podujatia
-          </h2>
-          <div class="w-full flex flex-row">
-            <div class="w-full">
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="place"
-                  value="out"
-                />
-                <span class="slider mat"></span>
-                Outdoor
-              </label>
-            </div>
-            <div class="w-full">
-              <label class="flex select-none items-center my-1">
-                <input
-                  class="js-filter-checkbox hidden"
-                  type="checkbox"
-                  data-filter="place"
-                  value="in"
-                />
-                <span class="slider otr"></span>
-                Indoor
-              </label>
-            </div>
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="pol"
+              />
+              <span class="slider otr"></span>
+              Politické
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="rek"
+              />
+              <span class="slider otr"></span>
+              Rekreačné
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="event_type"
+                value="other"
+              />
+              <span class="slider otr"></span>
+              Ostatné
+            </label>
           </div>
+        </div>
 
-          <h2
-            id="org-filter-aside"
-            class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2"
-          >
-            Organizátori
-          </h2>
-        
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
+          Publikum
+        </h2>
+        <div class="w-full flex flex-row">
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="audience"
+                value="sen"
+              />
+              <span class="slider mat"></span>
+              Pre seniorov
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="audience"
+                value="kid"
+              />
+              <span class="slider fyz"></span>
+              Pre deti
+            </label>
+          </div>
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="audience"
+                value="inv"
+              />
+              <span class="slider otr"></span>
+              Pre invalidov
+            </label>
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="audience"
+                value="other"
+              />
+              <span class="slider otr"></span>
+              Ostatné
+            </label>
+          </div>
+        </div>
+
+        <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
+          Miesto podujatia
+        </h2>
+        <div class="w-full flex flex-row">
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="place"
+                value="out"
+              />
+              <span class="slider mat"></span>
+              Outdoor
+            </label>
+          </div>
+          <div class="w-full">
+            <label class="flex select-none items-center my-1">
+              <input
+                class="js-filter-checkbox hidden"
+                type="checkbox"
+                data-filter="place"
+                value="in"
+              />
+              <span class="slider otr"></span>
+              Indoor
+            </label>
+          </div>
+        </div>
+
+        <h2
+          id="org-filter-modal"
+          class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2"
+        >
+          Organizátori
+        </h2>
+
         <button
           class="mt-6 rounded-lg bg-red-500 text-white font-bold px-3 py-2 hover:bg-red-600 text-xs"
           onclick="close_modal()"
