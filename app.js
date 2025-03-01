@@ -250,11 +250,11 @@ const fmt = {
 		}
 
 		if (!event.contestants.min && event.contestants.max) {
-			return '<' + fmt_contestant(event.contestants.max) + '€'
+			return '<' + fmt_contestant(event.contestants.max)
 		}
 
 		if (event.contestants.min && !event.contestants.max) {
-			return '>' + fmt_contestant(event.contestants.min) + '€'
+			return '>' + fmt_contestant(event.contestants.min)
 		}
 
 		if (event.contestants.min == event.contestants.max) {
@@ -399,6 +399,8 @@ const render = (move_focus = true) => {
 			scroll_to_id(`event-item-${event.id}`)
 		}
 	}
+
+	console.log(visible_events)
 }
 
 const insert_event = (node, color) => {

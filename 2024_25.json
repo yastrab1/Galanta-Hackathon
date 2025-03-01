@@ -10,7 +10,7 @@
     "organizers": ["trojsten"],
     "link": "https://galanta.sk/kultura",
     "places": ["Galanta - Námestie slobody"],
-    "contestants": {"min": "zadarmo", "max": "10"},
+    "contestants": {"min": "zadarmo", "max": "10€"},
     "short-info": "Hudobné vystúpenia, divadlo a ochutnávky regionálnych jedál.",
     "color": "#ff5733",
     "volatile": false,
