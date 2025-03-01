@@ -23,117 +23,107 @@
     <script async src="homepage.js"></script>
 </head>
 <body class="antialiased max-h-screen h-screen flex flex-col">
-    <header class="bg-red-500 text-white">
-        <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
-            <a href="index.html" class="font-bold text-xl mb-1 md:mb-0">Galendár.sk</a>
+  <header class="bg-red-500 text-white">
+    <nav class="px-4 md:px-6 flex justify-center md:justify-between items-center py-4 flex-col md:flex-row">
+      <a href="index.html" class="font-bold text-xl mb-1 md:mb-0">Galendár.sk</a>
+      <ul class="flex font-bold">
+        <li class="mr-3">
+          <a class="inline-block border border-blue-700 rounded py-1 px-3 bg-red-700 text-white" href="index.html">O nás</a>
+          <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="terminy.html">Akcie</a>
+          <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="export.html">Export</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="overflow-y-scroll">
+    <div class="bg-red-400 bg-cover bg-center relative">
+      <picture>
+        <source srcset="img/header.avif" type="image/avif">
+        <source srcset="img/header.webp" type="image/webp">
+        <img class="object-cover w-full h-full absolute" src="img/header.jpg" alt="Podujatia v Galante">
+      </picture>
+      <div class="container mx-auto px-8 py-24 text-center relative">
+        <h1 class="font-bold text-3xl md:text-5xl">Inteligentný sprievodca podujatiami</h1>
+        <p class="text-xl md:-mt-1 mb-4">
+          Centralizovaný kalendár a správca mestských podujatí
+        </p>
+        <a class="rounded bg-red-600 hover:bg-red-700 text-white text-2xl py-2 px-6 font-bold inline-flex items-center shadow-xl" href="terminy.html">
+          Zobraziť podujatia <svg class="ml-3 w-6 h-6 svg"><circle cx="12" cy="12" r="10"/><path d="m12 16 4-4-4-4m-4 4h8"/></svg>
+        </a>
+      </div>
+    </div>
 
-            <ul class="flex font-bold">
-                <li class="mr-3">
-                    <a class="inline-block border border-blue-700 rounded py-1 px-3 bg-red-700 text-white" href="index.html">O nás</a>
-                    <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white
-                        hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="terminy.html">Akcie</a>
-                    <a class="inline-block border border-white rounded py-1 px-3 bg-red-500 text-white
-                        hover:text-blue-500 hover:border-gray-200 hover:bg-gray-200" href="ical.html">Export</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main class="overflow-y-scroll">
-        <div class="bg-red-400 bg-cover bg-center relative">
-            <picture>
-                <source srcset="img/header.jpg" type="image/avif">
-                <source srcset="img/header.webp" type="image/webp">
-                <img class="object-cover w-full h-full absolute" src="img/header.jpg">
-            </picture>
-            <div class="container mx-auto px-8 py-24 text-center relative">
-                <h1 class="font-bold text-3xl md:text-5xl">Galendár</h1>
-                <p class="text-xl md:-mt-1 mb-4">
-                    Prehľad akcií v Galante
-                </p>
-                <a class="rounded bg-red-600 hover:bg-red-700 text-white text-2xl py-2 px-6 font-bold inline-flex items-center shadow-xl" href="terminy.html">
-                    Prejsť na akcie <svg class="ml-3 w-6 h-6 svg"><circle cx="12" cy="12" r="10"/><path d="m12 16 4-4-4-4m-4 4h8"/></svg>
-                </a>
-            </div>
+    <div class="container mx-auto p-8">
+      <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Čo je náš produkt?</h2>
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="mb-2">
+          Náš produkt je centralizovaný online systém pre správu a evidenciu mestských podujatí v Galante.
+        </p>
+        <p class="mb-2">
+          Umožňuje organizátorom jednoducho plánovať a spravovať svoje akcie a poskytuje občanom aktuálny prehľad o dianí v meste.
+        </p>
+        <p class="mb-2 font-bold">
+          Všetky podujatia na jednom mieste.
+        </p>
+        <p>
+          Systém podporuje dvojúrovňový prístup – špecializované rozhranie pre organizátorov a verejnosť s možnosťou filtrovania, notifikácií a personalizovaných odporúčaní.
+        </p>
+      </div>
+
+      <h2 class="font-bold mt-12 mb-6 text-center text-3xl">Pre koho je systém určený?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="text-center border shadow rounded-lg p-8">
+          <svg class="w-20 h-20 mx-auto mb-1 svg" viewBox="0 0 24 24">
+            <path d="M4 20a3 3 0 0 1 3-3h13"/>
+            <path d="M7 2h13v20H7a3 3 0 0 1-3-2V5a3 3 0 0 1 3-3z"/>
+          </svg>
+          <div class="text-2xl font-bold mb-2">Organizátori</div>
+          <p>
+            Spravujte, plánujte a aktualizujte svoje podujatia s možnosťou rezervácií, predaja vstupeniek a komunikácie s občanmi.
+          </p>
         </div>
-
-        <div class="container mx-auto p-8">
-            <h2 class="font-bold mt-8 mb-6 text-center text-3xl">Čo je Galendár?</h2>
-            <div class="mx-auto max-w-2xl text-center">
-                <p class="mb-2">
-                    Na Slovensku existuje množstvo organizácií ponúkajúcich podujatia v Galante.
-                    Súťaží a akcií je tak veľa, že môže byť zložité vyznať sa vo všetkých.
-                </p>
-                <p class="mb-2">
-                    Galendár je spoločná iniciatíva týchto organizácií, ktorá ponúka jednoduchý,
-                    jasný a pochopiteľný prehľad podujatí v Galante.
-                </p>
-                <p class="mb-2 font-bold">
-                    Jediné miesto, kde sa dozvieš všetky termíny podujatí v Galante.
-                </p>
-
-            </div>
-
-
-            <h2 class="font-bold mt-12 mb-6 text-center text-3xl">Pre koho je?</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="text-center border shadow rounded-lg p-8">
-                    <svg class="w-20 h-20 mx-auto mb-1 svg" viewBox="0 0 24 24"><path d="M4 20a3 3 0 0 1 3-3h13"/><path d="M7 2h13v20H7a3 3 0 0 1-3-2V5a3 3 0 0 1 3-3z"/></svg>
-                    <div class="text-2xl font-bold mb-2">Žiak</div>
-                    <p>
-                        Maj prehľad o súťažiach pre tvoj ročník,
-                        pozri si všetky termíny na jednom mieste a
-                        objav nové možnosti rozvoja.
-                    </p>
-                </div>
-                <div class="text-center border shadow rounded-lg p-8">
-                    <svg class="w-20 h-20 mx-auto mb-1 svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 0 1 6 1c0 2-3 3-3 3m0 4h0"/></svg>
-                    <div class="text-2xl font-bold mb-2">Učiteľ</div>
-                    <p>
-                        Nájdi aktivity pre šikovných žiakov,
-                        informuj sa o tých, ktoré už robia a
-                        udržuj si prehľad z jedného miesta.
-                    </p>
-                </div>
-                <div class="text-center border shadow rounded-lg p-8">
-                    <svg class="w-20 h-20 mx-auto mb-1 svg" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zm4-7v3m4-3v3m4-3v3"/></svg>
-                    <div class="text-2xl font-bold mb-2">Rodič</div>
-                    <p>
-                        Nájdi tú správnu súťaž pre tvoje dieťa,
-                        pochop tej, ktorú už robí a maj
-                        prehľad o termínoch, ktoré má dodržať.
-                    </p>
-                </div>
-            </div>
-
-            <div class="text-center mt-8 mb-4">
-                <a class="rounded bg-red-500 hover:bg-red-600 text-white text-2xl py-2 px-6 font-bold inline-flex items-center" href="terminy.html">
-                    Prejsť na akcie <svg class="ml-3 svg w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="m12 16 4-4-4-4m-4 4h8"/></svg>
-                </a>
-            </div>
-
-
-            <div class="mx-auto max-w-2xl mt-8 border border-blue-500 rounded-md py-4 px-6 bg-red-100 text-blue-800">
-                <p><b>Novinka!</b> Galendár už aj v tvojom kalendári!</p>
-                <p>
-                    Ak si chceš pridať akcie z Kockatého Kalendára do svojho Google / Outlook kalendára alebo do mobilu, pripravili sme si pre teba
-                    <a href="./ical.html" class="underline text-blue-900">kalendár vo formáte .ics</a>!
-                </p>
-            </div>
-
+        <div class="text-center border shadow rounded-lg p-8">
+          <svg class="w-20 h-20 mx-auto mb-1 svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9 9a3 3 0 0 1 6 1c0 2-3 3-3 3m0 4h0"/>
+          </svg>
+          <div class="text-2xl font-bold mb-2">Verejnosť</div>
+          <p>
+            Získajte prehľad o aktuálnych a pripravovaných podujatiach, využite notifikácie a personalizované odporúčania.
+          </p>
         </div>
-    </main>
+        <div class="text-center border shadow rounded-lg p-8">
+          <svg class="w-20 h-20 mx-auto mb-1 svg" viewBox="0 0 24 24">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zm4-7v3m4-3v3m4-3v3"/>
+          </svg>
+          <div class="text-2xl font-bold mb-2">Mestská správa</div>
+          <p>
+            Koordinujte a schvaľujte podujatia so zreteľom na mestský plán a prepojenie s existujúcimi systémami.
+          </p>
+        </div>
+      </div>
 
-    <script async defer data-website-id="e76c1f53-9376-4047-8c8e-45cc01532075" src="https://stats.p-mat.sk/umami.js"></script>
-</body>
-<script>
+      <div class="text-center mt-8 mb-4">
+        <a class="rounded bg-red-500 hover:bg-red-600 text-white text-2xl py-2 px-6 font-bold inline-flex items-center" href="terminy.html">
+          Prezrieť systém <svg class="ml-3 svg w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="m12 16 4-4-4-4m-4 4h8"/></svg>
+        </a>
+      </div>
+
+      <div class="mx-auto max-w-2xl mt-8 border border-blue-500 rounded-md py-4 px-6 bg-red-100 text-blue-800">
+        <p><b>Hackathon 2025!</b> Prezentácia produktu „Inteligentný sprievodca podujatiami“.</p>
+        <p>
+          Termín: 28.2. – 1.3.2025. Objavte, ako náš centralizovaný systém zjednodušuje správu a prehľad podujatí v meste Galanta a podporuje komunikáciu medzi organizátormi a občanmi.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script async defer data-website-id="e76c1f53-9376-4047-8c8e-45cc01532075" src="https://stats.p-mat.sk/umami.js"></script>
+  <script>
     // PWA
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(
-        '/service-worker.js', {
-          scope: '/'
-        }
-      )
+      navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
     }
   </script>
+</body>
 </html>
