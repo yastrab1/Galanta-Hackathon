@@ -1,38 +1,38 @@
 {
-  "p-mat": {
-    "name": "P-mat",
-    "icon": "logos/p-mat.svg",
+  "msks": {
+    "name": "MsKS",
+    "icon": "logos/msks.svg",
     "web": "https://p-mat.sk",
-    "type": "no",
-    "info": "Neziskov\u00e1 organiz\u00e1cia P-Mat prostredn\u00edctvom matematiky, fyziky, hier a netradi\u010dn\u00fdch z\u00e1\u017eitkov vytv\u00e1ra dostupn\u00e9, priate\u013esk\u00e9 a podnetn\u00e9 prostredie pre zvedav\u00e9 deti a rozv\u00edja tak ich logick\u00e9 a kritick\u00e9 myslenie, schopnos\u0165 rie\u0161i\u0165 probl\u00e9my, soci\u00e1lne zru\u010dnosti a mor\u00e1lne c\u00edtenie. Okrem kore\u0161ponden\u010dnej \u010dasti a s\u00fastreden\u00ed organizuje aj pobytov\u00e9 v\u00edkendov\u00e9 akcie, jednod\u0148ov\u00e9 s\u00fa\u0165a\u017ee nie len offline, ale aj online najm\u00e4 pre z\u00e1kladn\u00e9 \u0161koly a pr\u00edslu\u0161n\u00e9 ro\u010dn\u00edky gymn\u00e1zi\u00ed.",
+    "type": "statna",
+    "info": "Mestské kultúrne stredisko (MsKS) v Galante je príspevkovou organizáciou mesta, zameranou na rozvoj kultúrno-spoločenského života. Organizuje a koordinuje rôzne kultúrne, spoločenské, výchovné a vzdelávacie podujatia pre občanov všetkých vekových kategórií. Sídlom MsKS je Dom kultúry na Mierovom námestí 942/3 v Galante. \u200B",
     "color": "#F68712"
   },
-  "nucem": {
-    "name": "N\u00daCEM",
-    "icon": "logos/nucem.svg",
+  "gos": {
+    "name": "GOS",
+    "icon": "logos/gos.svg",
     "web": "https://nucem.sk",
     "type": "statna"
   },
-  "sezam": {
-    "name": "SEZAM",
-    "icon": "logos/sezam.svg",
+  "zus": {
+    "name": "ZUŠ J. Haydna",
+    "icon": "logos/zus.webp",
     "web": "https://sezam.sk",
-    "info": "SEZAM sa venuje organiz\u00e1cii kore\u0161ponden\u010dn\u00fdch semin\u00e1rov SEZAM a SEZAMKO pre \u017eiakov od 5. po 9. ro\u010dn\u00edk z\u00e1kladn\u00fdch \u0161k\u00f4l a pr\u00edslu\u0161n\u00fdch ro\u010dn\u00edkov gymn\u00e1zi\u00ed. Pre naj\u00faspe\u0161nej\u0161\u00edch rie\u0161ite\u013eov organizuje stretnutia v zime aj v lete. Na t\u00fdchto stretnutiach sa venuj\u00fa matematike, \u0161portu, r\u00f4znym hr\u00e1m, hlavolamom a in\u00fdm zauj\u00edmav\u00fdm aktivit\u00e1m.",
+    "info": "Základná umelecká škola Josepha Haydna v Galante poskytuje vzdelávanie v hudobnom odbore, zameranom na hru na rôznych nástrojoch a spev. Sídlom školy je Hlavná 1007/20, 924 01 Galanta. \u200B",
     "color": "#09BAE7",
     "type": "other"
   },
-  "riesky": {
-    "name": "Rie\u0161ky",
-    "icon": "logos/riesky.svg",
+  "kniznica": {
+    "name": "GA Knižnica",
+    "icon": "logos/kniznica.svg",
     "web": "https://riesky.sk",
     "type": "oz",
-    "info": "Rie\u0161ky s\u00fa kore\u0161ponden\u010dn\u00fd semin\u00e1r pre \u017eiakov 5. - 9. ro\u010dn\u00edka z\u00e1kladn\u00fdch \u0161k\u00f4l a pr\u00edslu\u0161n\u00fdch ro\u010dn\u00edkov gymn\u00e1zi\u00ed. Naj\u00faspe\u0161nej\u0161\u00edch rie\u0161ite\u013eov \u010dak\u00e1 t\u00fd\u017ed\u0148ov\u00e9 s\u00fastredenie pln\u00e9 zauj\u00edmavej matematiky, netradi\u010dn\u00fdch hier a mno\u017estvom z\u00e1bavy. Okrem toho organizuj\u00fa aj denn\u00fd t\u00e1bor v Bratislave, ktor\u00fd je ochutn\u00e1vkou toho, \u010do na s\u00fastreden\u00ed m\u00f4\u017eete za\u017ei\u0165.",
+    "info": "Galantská knižnica je univerzálna verejná knižnica poskytujúca bezplatný prístup k informáciám pre všetkých bez ohľadu na vek, národnosť či spoločenské postavenie. ",
     "color": "#000000"
   },
-  "edub": {
-    "name": "eduB",
+  "externy": {
+    "name": "Externý organizátor",
     "web": "https://edub.sk",
-    "icon": "logos/edub.svg",
+    "icon": "logos/trojsten.svg",
     "type": "oz"
   },
   "iuventa": {
