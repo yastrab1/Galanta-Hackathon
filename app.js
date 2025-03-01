@@ -28,6 +28,8 @@ const CONSTANTS = {
 	audience: {
 		'sen': "Senióry",
 		'kid': "Deti",
+		'mlad': "Mladý",
+		'other': "Iné",
 		'any': "Všetci",
 	},
 	colors: {
@@ -67,6 +69,7 @@ let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
 	school: [0, CONSTANTS.school_years.length-1],
 	event_type: Object.keys(CONSTANTS.event_type),
 	audience: Object.keys(CONSTANTS.audience),
+	place: ['in', 'out'],
 	organizers: [...DEFAULT_ORGANIZERS, '*'],
 	default_organizers: DEFAULT_ORGANIZERS,
 }
@@ -190,6 +193,7 @@ const render_filter = async () => {
 		const value = event.currentTarget.value
 		const checked = event.currentTarget.checked
 
+		console.log(filter_type, value, checked)
 		if (checked && FILTER[filter_type].indexOf(value) === -1) {
 			FILTER[filter_type].push(value)
 			localStorage.setItem('filter', JSON.stringify(FILTER));
@@ -274,6 +278,10 @@ const fmt = {
 		return event.event_type.map((x) => CONSTANTS.event_type[x]).join(', ')
 	},
 
+	pretty_audience: function (event) {
+		return event.audience.map((x) => CONSTANTS.audience[x]).join(', ')
+	},
+
 	color: function (event) {
 		return CONSTANTS.colors?.[event.color] ?? event.color ?? CONSTANTS.colors[CONSTANTS.science_color[event.event_type[0]]]
 	},
@@ -318,6 +326,28 @@ const render = (move_focus = true) => {
 	visible_events = visible_events.filter((event) => {
 		for (let i = FILTER.event_type.length - 1; i >= 0; i--) {
 			if (event.event_type.indexOf(FILTER.event_type[i]) !== -1) {
+				return true
+			}
+		}
+
+		return false
+	})
+
+	// audience filter
+	visible_events = visible_events.filter((event) => {
+		for (let i = FILTER.audience.length - 1; i >= 0; i--) {
+			if (event.audience.indexOf(FILTER.audience[i]) !== -1) {
+				return true
+			}
+		}
+
+		return false
+	})
+
+	// place filter
+	visible_events = visible_events.filter((event) => {
+		for (let i = FILTER.place.length - 1; i >= 0; i--) {
+			if (event.place.indexOf(FILTER.place[i]) !== -1) {
 				return true
 			}
 		}
@@ -379,8 +409,6 @@ const render = (move_focus = true) => {
 			scroll_to_id(`event-item-${event.id}`)
 		}
 	}
-
-	console.log(visible_events)
 }
 
 const insert_event = (node, color) => {
