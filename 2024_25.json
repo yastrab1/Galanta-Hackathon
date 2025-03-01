@@ -100,5 +100,93 @@
     "color": "#ff6666",
     "volatile": false,
     "cancelled": false
+  },
+  {
+    "name": "Galantský filmový festival",
+    "event_type": ["kult"],
+    "audience": ["sen", "any"],
+    "place": ["in"],
+    "date": {
+      "start": "2025-11-05",
+      "end": "2025-11-10"
+    },
+    "organizers": ["gos"],
+    "link": "https://galantafilmfest.sk/",
+    "places": ["Galanta - Kino Centrum"],
+    "contestants": {"min": "5€", "max": "20€"},
+    "short-info": "Prehliadka domácich a zahraničných filmov s diskusiami a workshopmi.",
+    "color": "#e74c3c",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Vianočné trhy v Galante",
+    "event_type": ["kult"],
+    "audience": ["sen", "kid", "any"],
+    "place": ["out"],
+    "date": {
+      "start": "2025-12-01",
+      "end": "2025-12-24"
+    },
+    "organizers": ["msks"],
+    "link": "https://vianocegalanta.sk/",
+    "places": ["Galanta - Hlavné námestie"],
+    "contestants": {"min": "Zadarmo", "max": "10€"},
+    "short-info": "Tradičné vianočné trhy s remeselnými výrobkami, jedlom a kultúrnym programom.",
+    "color": "#27ae60",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Letný hudobný festival",
+    "event_type": ["kult"],
+    "audience": ["any"],
+    "place": ["out"],
+    "date": {
+      "start": "2025-07-20",
+      "end": "2025-07-22"
+    },
+    "organizers": ["gos"],
+    "link": "https://letohudba.sk/",
+    "places": ["Galanta - Amfiteáter"],
+    "contestants": {"min": "10€", "max": "50€"},
+    "short-info": "Trojdenný festival s vystúpeniami domácich a zahraničných hudobných skupín.",
+    "color": "#3498db",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Galantský literárny večer",
+    "event_type": ["vzd"],
+    "audience": ["sen", "any"],
+    "place": ["in"],
+    "date": {
+      "start": "2025-10-15"
+    },
+    "organizers": ["msks"],
+    "link": "https://literarnyvecer.sk/",
+    "places": ["Galanta - Mestská knižnica"],
+    "contestants": {"min": "Zadarmo", "max": "5€"},
+    "short-info": "Stretnutie s autormi, čítanie z kníh a diskusie o literatúre.",
+    "color": "#9b59b6",
+    "volatile": false,
+    "cancelled": false
+  },
+  {
+    "name": "Detský deň plný hier",
+    "event_type": ["rek"],
+    "audience": ["kid"],
+    "place": ["out"],
+    "date": {
+      "start": "2025-06-01"
+    },
+    "organizers": ["zus"],
+    "link": "https://detskyradost.sk/",
+    "places": ["Galanta - Mestský park"],
+    "contestants": {"min": "Zadarmo", "max": "5€"},
+    "short-info": "Zábavný deň pre deti s rôznymi hrami, súťažami a atrakciami.",
+    "color": "#f39c12",
+    "volatile": false,
+    "cancelled": false
   }
 ]
