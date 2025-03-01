@@ -1,0 +1,12 @@
+{
+ "name": "Your Project Name",
+ "short_name": "project-short-name",
+ "scope": "/",
+ "start_url": ".",
+ "icons": [
+
+ ],
+ "theme_color": "#ffffff",
+ "background_color": "#ffffff",
+ "display": "standalone"
+}
