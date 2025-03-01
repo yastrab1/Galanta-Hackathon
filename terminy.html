@@ -124,7 +124,7 @@
 
         <section class="px-6 pt-6 hidden md:block filter">
           <h2 class="font-bold uppercase text-gray-700 text-sm mb-2">
-            Ročníky
+            Cena lístka
           </h2>
 
           <div
@@ -135,7 +135,7 @@
           >
             <label class="sr-only" for="v0">Začiatok intervalu</label>
             <input class="va" type="range" id="v0" min="0" value="0" max="14" />
-            <output for="v0" style="--c: var(--va)"><span>Mladší</span></output>
+            <output for="v0" style="--c: var(--va)"><span>Zadarmo</span></output>
             <label class="sr-only" for="v1">Koniec intervalu</label>
             <input
               class="vb"
@@ -145,7 +145,7 @@
               value="14"
               max="14"
             />
-            <output for="v1" style="--c: var(--vb)"><span>Starší</span></output>
+            <output for="v1" style="--c: var(--vb)"><span>Drahšie</span></output>
           </div>
 
           <h2 class="font-bold uppercase text-gray-700 text-sm mt-6 mb-2">
@@ -231,7 +231,7 @@
                   value="sen"
                 />
                 <span class="slider mat"></span>
-                Senióry
+                Pre seniorov
               </label>
               <label class="flex select-none items-center my-1">
                 <input
@@ -241,7 +241,7 @@
                   value="kid"
                 />
                 <span class="slider fyz"></span>
-                Deti
+                Pre deti
               </label>
             </div>
             <div class="w-full">
@@ -250,10 +250,10 @@
                   class="js-filter-checkbox hidden"
                   type="checkbox"
                   data-filter="audience"
-                  value="mlad"
+                  value="inv"
                 />
                 <span class="slider otr"></span>
-                Mladý
+                Pre invalidov
               </label>
               <label class="flex select-none items-center my-1">
                 <input

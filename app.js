@@ -12,10 +12,6 @@ const CONSTANTS = {
 		'prednasky': 'prednášky',
 		'other': 'iné',
 	},
-	contestant_types: {
-		'zs': 'ZŠ',
-		'ss': 'SŠ',
-	},
 	event_type: {
 		'kult': 'Kultúra',
 		'sport': 'Šport',
@@ -28,7 +24,7 @@ const CONSTANTS = {
 	audience: {
 		'sen': "Senióry",
 		'kid': "Deti",
-		'mlad': "Mladý",
+		'inv': "Invalidi",
 		'other': "Iné",
 		'any': "Všetci",
 	},
@@ -49,11 +45,10 @@ const CONSTANTS = {
 	},
 }
 
-CONSTANTS.school_years = [
-	'Mladší',
-	...Array(9).fill().map( (x, i) => `${CONSTANTS.contestant_types['zs']} ${i+1}`),
-	...Array(4).fill().map( (x, i) => `${CONSTANTS.contestant_types['ss']} ${i+1}`),
-	'Starší'
+CONSTANTS.costs = [
+	'Zadarmo',
+	...Array(13).fill().map( (x, i) => `${(i+1)*5}€`),
+	'Drahšie'
 ]
 
 const DATA_URL_PREFIX = 'https://raw.githubusercontent.com/yastrab1/Galanta-Hackathon/refs/heads/master/'
@@ -65,7 +60,7 @@ let min_loaded_year = 0;
 let max_loaded_year = 0;
 
 let FILTER = JSON.parse(localStorage.getItem('filter')) ?? {
-	school: [0, CONSTANTS.school_years.length-1],
+	school: [0, CONSTANTS.costs.length-1],
 	event_type: Object.keys(CONSTANTS.event_type),
 	audience: Object.keys(CONSTANTS.audience),
 	place: ['in', 'out'],
@@ -251,15 +246,15 @@ const fmt = {
 
 	pretty_contestants: function (event) {
 		if (!event.contestants.min && !event.contestants.max) {
-			return 'ktokoľvek'
+			return 'neznáme'
 		}
 
 		if (!event.contestants.min && event.contestants.max) {
-			return fmt_contestant(event.contestants.max) + ' a mladší'
+			return '<' + fmt_contestant(event.contestants.max) + '€'
 		}
 
 		if (event.contestants.min && !event.contestants.max) {
-			return fmt_contestant(event.contestants.min) + ' a starší'
+			return '>' + fmt_contestant(event.contestants.min) + '€'
 		}
 
 		if (event.contestants.min == event.contestants.max) {
@@ -632,7 +627,7 @@ document.querySelectorAll('.double-slider').forEach(parent => {
 		document.querySelectorAll(`.${e.target.className}`).forEach( el => {
 			el.parentNode.style.setProperty(`--${e.target.className}`, +e.target.value);
 			el.value = e.target.value;
-			el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.school_years[e.target.value];
+			el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.costs[e.target.value];
 		});
 		
 		if((parseInt(document.getElementById('v1').value) < parseInt(document.getElementById('v0').value)) && !switched) {
@@ -658,11 +653,11 @@ document.querySelectorAll('.double-slider').forEach(parent => {
 document.querySelectorAll('.va').forEach( el => {
 	el.parentNode.style.setProperty('--va', FILTER.school[0]);
 	el.value = FILTER.school[0];
-	el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.school_years[FILTER.school[0]];
+	el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.costs[FILTER.school[0]];
 });
 
 document.querySelectorAll('.vb').forEach( el => {
 	el.parentNode.style.setProperty('--vb', FILTER.school[1]);
 	el.value = FILTER.school[1];
-	el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.school_years[FILTER.school[1]];
+	el.nextElementSibling.firstElementChild.innerHTML = CONSTANTS.costs[FILTER.school[1]];
 });
