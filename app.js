@@ -33,7 +33,7 @@ const CONSTANTS = {
     any: "Všetky",
   },
   audience: {
-    sen: "Senióry",
+    sen: "Seniori",
     kid: "Deti",
     inv: "Invalidi",
     other: "Iné",
