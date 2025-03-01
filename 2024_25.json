@@ -4,7 +4,6 @@
     "event_type":["kult"],
     "audience":["sen","kid","any"],
     "place": ["out"],
-    "type":"sutaz",
     "date": {
       "start": "2025-06-15"
     },
@@ -22,7 +21,6 @@
     "event_type":["vzd"],
     "audience":["any"],
     "place": ["in"],
-    "type":"sutaz",
     "date": {
       "start": "2025-03-10"
     },
@@ -40,7 +38,6 @@
     "event_type":["sport"],
     "audience":["kid"],
     "place": ["out"],
-    "type":"sutaz",
     "date": {
       "start": "2025-05-01"
     },
@@ -58,7 +55,6 @@
     "event_type":["pol"],
     "audience":["sen","any"],
     "place": ["in"],
-    "type":"sutaz",
     "date": {
       "start": "2025-09-20"
     },
@@ -76,7 +72,6 @@
     "event_type":["rek"],
     "audience":["kid","any"],
     "place": ["in"],
-    "type":"sutaz",
     "date": {
       "start": "2025-04-08"
     },
@@ -94,7 +89,6 @@
     "event_type":["kult"],
     "audience":["sen","kid","any"],
     "place": ["in"],
-    "type":"sutaz",
     "date": {
       "start": "2025-07-12"
     },

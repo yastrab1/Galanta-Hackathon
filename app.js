@@ -56,7 +56,6 @@ CONSTANTS.school_years = [
 	'Starší'
 ]
 
-
 const DATA_URL_PREFIX = 'https://raw.githubusercontent.com/yastrab1/Galanta-Hackathon/refs/heads/master/'
 let ORGANIZERS = []
 let DEFAULT_ORGANIZERS = ['trojsten', 'p-mat', 'sezam', 'strom', 'riesky']
@@ -241,10 +240,6 @@ const fmt = {
 		if (date_start.getFullYear() != new Date().getFullYear()) result += ' ' + date_start.getFullYear()
 
 		return result
-	},
-
-	pretty_type: function (event) {
-		return CONSTANTS.types[event.type]
 	},
 
 	pretty_organizers: function(event) {
