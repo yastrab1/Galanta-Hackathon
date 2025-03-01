@@ -67,7 +67,7 @@ CONSTANTS.costs = [
 const DATA_URL_PREFIX =
   "https://galendar.netlify.app/";
 let ORGANIZERS = [];
-let DEFAULT_ORGANIZERS = ["trojsten", "p-mat", "sezam", "strom", "riesky"];
+let DEFAULT_ORGANIZERS = ["zus", "msks", "gos", "kniznica"];
 let DATA = [];
 let DATA_INDEX = [];
 let min_loaded_year = 0;
