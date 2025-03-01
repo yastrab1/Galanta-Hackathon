@@ -1124,6 +1124,14 @@ input:checked + .slider.pol:before {
   border-color: rgb(6 ,92 ,56);
 }
 
+input:checked + .slider.rekreacne {
+  background-color: #603333;
+}
+
+input:checked + .slider.rekreacne:before {
+  border-color: #603333;
+}
+
 input:checked + .slider.outdoor {
   background-color: #4A5660;
 }
