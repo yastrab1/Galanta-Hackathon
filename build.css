@@ -856,7 +856,7 @@ img, video {
 }
 
 .bg-red-500 {
-  background-color: #c74646;
+  background-color: #BA161C;
 }
 
 
@@ -1120,13 +1120,32 @@ input:checked + .slider.pol {
   background-color: rgb(6 ,92 ,56);
 }
 
+input:checked + .slider.pol:before {
+  border-color: rgb(6 ,92 ,56);
+}
+
+input:checked + .slider.outdoor {
+  background-color: #4A5660;
+}
+
+input:checked + .slider.outdoor:before {
+  border-color: #4A5660;
+}
+
+input:checked + .slider.indoor {
+  background-color: #000000;
+}
+
+
+input:checked + .slider.indoor:before {
+  border-color: #000000;
+}
+
 input:checked + .slider.rek {
   background-color: rgb(103, 16, 176)
 }
 
-input:checked + .slider.pol:before {
-  border-color: rgb(6 ,92 ,56);
-}
+
 
 input:checked + .slider.rek:before {
   border-color: rgb(103, 16, 176)
@@ -1136,12 +1155,12 @@ input:checked + .slider:before {
   border-color: #4299e1;
 }
 
-input:checked + .slider.inf {
-  background-color: #7cb342;
+input:checked + .slider.vzdelavanie {
+  background-color: #5264BF;
 }
 
-input:checked + .slider.inf:before {
-  border-color: #7cb342;
+input:checked + .slider.vzdelavanie:before {
+  border-color: #5264BF;
 }
 
 input:checked + .slider.mat {
@@ -1152,12 +1171,12 @@ input:checked + .slider.mat:before {
   border-color: #4299e1;
 }
 
-input:checked + .slider.fyz {
-  background-color: #ed8936;
+input:checked + .slider.sport {
+  background-color: #FF9500;
 }
 
-input:checked + .slider.fyz:before {
-  border-color: #ed8936;
+input:checked + .slider.sport:before {
+  border-color: #FF9500;
 }
 
 input:checked + .slider.otr {

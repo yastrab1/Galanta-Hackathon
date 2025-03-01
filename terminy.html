@@ -20,7 +20,7 @@
     <meta name="theme-color" content="#4299e1" />
     <meta
       name="description"
-      content="Prezri si termíny najbližších mat/fyz/inf súťaží rýchlo a prehľadne v Kockatom Kalendári."
+      content="Prezri si termíny najbližších mat/fyz/vzdelavanie súťaží rýchlo a prehľadne v Kockatom Kalendári."
     />
 
     <meta property="og:image" content="img/social.jpg" />
@@ -29,7 +29,7 @@
     <meta property="og:title" content="Termíny súťaží a akcií" />
     <meta
       property="og:description"
-      content="Prezri si termíny najbližších mat/fyz/inf súťaží rýchlo a prehľadne v Kockatom Kalendári"
+      content="Prezri si termíny najbližších mat/fyz/vzdelavanie súťaží rýchlo a prehľadne v Kockatom Kalendári"
     />
     <meta property="og:site_name" content="Galendár" />
   </head>
@@ -170,7 +170,7 @@
                   data-filter="event_type"
                   value="sport"
                 />
-                <span class="slider fyz"></span>
+                <span class="slider sport"></span>
                 Šport
               </label>
               <label class="flex select-none items-center my-1">
@@ -180,7 +180,7 @@
                   data-filter="event_type"
                   value="vzd"
                 />
-                <span class="slider inf"></span>
+                <span class="slider vzdelavanie"></span>
                 Vzdelávanie
               </label>
             </div>
@@ -192,7 +192,7 @@
                   data-filter="event_type"
                   value="pol"
                 />
-                <span class="slider otr"></span>
+                <span class="slider pol"></span>
                 Politické
               </label>
               <label class="flex select-none items-center my-1">
@@ -280,7 +280,7 @@
                   data-filter="place"
                   value="out"
                 />
-                <span class="slider mat"></span>
+                <span class="slider outdoor"></span>
                 Outdoor
               </label>
             </div>
@@ -292,7 +292,7 @@
                   data-filter="place"
                   value="in"
                 />
-                <span class="slider otr"></span>
+                <span class="slider indoor"></span>
                 Indoor
               </label>
             </div>
@@ -422,7 +422,7 @@
                 data-filter="event_type"
                 value="vzd"
               />
-              <span class="slider inf"></span>
+              <span class="slider vzdelavanie"></span>
               Vzdelávanie
             </label>
           </div>
@@ -544,13 +544,13 @@
               <span class="{{#cancelled}}line-through{{/cancelled}} leading-tight">{{ name }}</span>
             </h2>
 
-            {{#info}}
-            <div class="hidden md:block mb-2 mt-1">{{ info }}</div>
-            {{/info}}
+            {{#vzdelavanieo}}
+            <div class="hidden md:block mb-2 mt-1">{{ vzdelavanieo }}</div>
+            {{/vzdelavanieo}}
 
             <div class="flex flex-wrap justify-between md:justify-start text-gray-600 w-full mt-1 js-event-icons md:flex">
               <div class="flex items-center md:mr-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info w-4 mr-2 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-vzdelavanieo w-4 mr-2 flex-shrink-0"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 <span>{{ pretty_event_type }}</span>
               </div>
               <div class="flex items-center md:mr-5">
@@ -591,7 +591,7 @@
               <span>{{ pretty_places }}</span>
             </div>
             <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info w-4 mr-2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-vzdelavanieo w-4 mr-2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
               <span>{{ pretty_type }}</span>
             </div>
             {{#link}}
@@ -603,9 +603,9 @@
             {{/link}}
           </div>
 
-          {{#info}}
-          <div class="mt-2">{{ info }}</div>
-          {{/info}}
+          {{#vzdelavanieo}}
+          <div class="mt-2">{{ vzdelavanieo }}</div>
+          {{/vzdelavanieo}}
         </div>
       </section>
     </script>
